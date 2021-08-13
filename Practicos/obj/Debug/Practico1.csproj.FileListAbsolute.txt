@@ -1,0 +1,10 @@
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\bin\Debug\Practicos.exe.config
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\bin\Debug\Practicos.exe
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\bin\Debug\Practicos.pdb
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\obj\Debug\Practico1.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\obj\Debug\Practicos.Formulario1.resources
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\obj\Debug\Practicos.Properties.Resources.resources
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\obj\Debug\Practico1.csproj.GenerateResource.cache
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\obj\Debug\Practico1.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\obj\Debug\Practicos.exe
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\obj\Debug\Practicos.pdb
