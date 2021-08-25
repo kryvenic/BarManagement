@@ -44,9 +44,9 @@ namespace Practico3
             // LNyA
             // 
             this.LNyA.AutoSize = true;
-            this.LNyA.Location = new System.Drawing.Point(66, 46);
+            this.LNyA.Location = new System.Drawing.Point(59, 37);
             this.LNyA.Name = "LNyA";
-            this.LNyA.Size = new System.Drawing.Size(140, 20);
+            this.LNyA.Size = new System.Drawing.Size(127, 17);
             this.LNyA.TabIndex = 0;
             this.LNyA.Text = "Nombre y Apellido:";
             this.LNyA.Click += new System.EventHandler(this.label1_Click);
@@ -54,27 +54,27 @@ namespace Practico3
             // LNombre
             // 
             this.LNombre.AutoSize = true;
-            this.LNombre.Location = new System.Drawing.Point(66, 217);
+            this.LNombre.Location = new System.Drawing.Point(59, 174);
             this.LNombre.Name = "LNombre";
-            this.LNombre.Size = new System.Drawing.Size(104, 30);
+            this.LNombre.Size = new System.Drawing.Size(62, 17);
             this.LNombre.TabIndex = 1;
             this.LNombre.Text = "Nombre:";
             // 
             // LApellido
             // 
             this.LApellido.AutoSize = true;
-            this.LApellido.Location = new System.Drawing.Point(66, 160);
+            this.LApellido.Location = new System.Drawing.Point(59, 128);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(104, 30);
+            this.LApellido.Size = new System.Drawing.Size(62, 17);
             this.LApellido.TabIndex = 2;
             this.LApellido.Text = "Apellido:";
             // 
             // LDni
             // 
             this.LDni.AutoSize = true;
-            this.LDni.Location = new System.Drawing.Point(66, 98);
+            this.LDni.Location = new System.Drawing.Point(59, 78);
             this.LDni.Name = "LDni";
-            this.LDni.Size = new System.Drawing.Size(62, 30);
+            this.LDni.Size = new System.Drawing.Size(35, 17);
             this.LDni.TabIndex = 3;
             this.LDni.Text = "DNI:";
             // 
@@ -82,57 +82,64 @@ namespace Practico3
             // 
             this.LModificar.AutoSize = true;
             this.LModificar.ForeColor = System.Drawing.Color.Red;
-            this.LModificar.Location = new System.Drawing.Point(234, 46);
+            this.LModificar.Location = new System.Drawing.Point(208, 37);
             this.LModificar.Name = "LModificar";
-            this.LModificar.Size = new System.Drawing.Size(73, 20);
+            this.LModificar.Size = new System.Drawing.Size(65, 17);
             this.LModificar.TabIndex = 4;
             this.LModificar.Text = "modificar";
             this.LModificar.Click += new System.EventHandler(this.LModificar_Click);
             // 
             // TDni
             // 
-            this.TDni.Location = new System.Drawing.Point(175, 95);
+            this.TDni.Location = new System.Drawing.Point(156, 76);
+            this.TDni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDni.Name = "TDni";
-            this.TDni.Size = new System.Drawing.Size(156, 26);
+            this.TDni.Size = new System.Drawing.Size(139, 22);
             this.TDni.TabIndex = 5;
+            this.TDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDni_KeyPress);
             // 
             // TNombre
             // 
-            this.TNombre.Location = new System.Drawing.Point(175, 214);
+            this.TNombre.Location = new System.Drawing.Point(156, 171);
+            this.TNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TNombre.Name = "TNombre";
-            this.TNombre.Size = new System.Drawing.Size(156, 26);
+            this.TNombre.Size = new System.Drawing.Size(139, 22);
             this.TNombre.TabIndex = 6;
             // 
             // TApellido
             // 
-            this.TApellido.Location = new System.Drawing.Point(175, 157);
+            this.TApellido.Location = new System.Drawing.Point(156, 126);
+            this.TApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TApellido.Name = "TApellido";
-            this.TApellido.Size = new System.Drawing.Size(156, 26);
+            this.TApellido.Size = new System.Drawing.Size(139, 22);
             this.TApellido.TabIndex = 7;
             // 
             // BGuardar
             // 
-            this.BGuardar.Location = new System.Drawing.Point(70, 294);
+            this.BGuardar.Location = new System.Drawing.Point(62, 235);
+            this.BGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BGuardar.Name = "BGuardar";
-            this.BGuardar.Size = new System.Drawing.Size(94, 28);
+            this.BGuardar.Size = new System.Drawing.Size(84, 37);
             this.BGuardar.TabIndex = 8;
             this.BGuardar.Text = "Guardar";
             this.BGuardar.UseVisualStyleBackColor = true;
+            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
             // 
             // BEliminar
             // 
-            this.BEliminar.Location = new System.Drawing.Point(200, 294);
+            this.BEliminar.Location = new System.Drawing.Point(178, 235);
+            this.BEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BEliminar.Name = "BEliminar";
-            this.BEliminar.Size = new System.Drawing.Size(95, 28);
+            this.BEliminar.Size = new System.Drawing.Size(84, 37);
             this.BEliminar.TabIndex = 9;
             this.BEliminar.Text = "Eliminar";
             this.BEliminar.UseVisualStyleBackColor = true;
             // 
             // PequenioFormulario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 400);
+            this.ClientSize = new System.Drawing.Size(369, 320);
             this.Controls.Add(this.BEliminar);
             this.Controls.Add(this.BGuardar);
             this.Controls.Add(this.TApellido);
@@ -143,8 +150,12 @@ namespace Practico3
             this.Controls.Add(this.LApellido);
             this.Controls.Add(this.LNombre);
             this.Controls.Add(this.LNyA);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PequenioFormulario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "Form1";
             this.Text = "Pequenio Formulario";
+            this.Load += new System.EventHandler(this.PequenioFormulario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

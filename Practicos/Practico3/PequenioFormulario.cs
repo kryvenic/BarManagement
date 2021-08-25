@@ -26,5 +26,33 @@ namespace Practico3
         {
 
         }
+
+        private void PequenioFormulario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BGuardar_Click(object sender, EventArgs e)
+        {
+            bool vacio = false;
+            foreach(Control c in this.Controls)
+            {
+                if(c is TextBox && String.IsNullOrWhiteSpace(c.Text))
+                {
+                    vacio = true;
+                }
+            }
+            if (vacio)
+            {
+                MessageBox.Show("Debe completar todos los campos");
+            }
+        }
+
+        private void TDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)){
+                e.Handled = true;
+            }
+        }
     }
 }

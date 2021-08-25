@@ -16,3 +16,5 @@ C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarM
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\Practico3\obj\Debug\Practico3.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\Practico3\obj\Debug\Practico3.exe
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\Practicos\Practico3\obj\Debug\Practico3.pdb
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\obj\Debug\Practico3.csprojAssemblyReference.cache
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\obj\Debug\Practico3.PequenioFormulario.resources
