@@ -1,0 +1,4 @@
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\obj\x86\Debug\Practico3.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\obj\x86\Debug\Practico3.PequeñoFormulario.resources
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\obj\x86\Debug\Practico3.csproj.GenerateResource.cache
+C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\obj\x86\Debug\Practico3.csproj.CoreCompileInputs.cache
