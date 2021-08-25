@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Practico3
 {
-    public partial class Form1 : Form
+    public partial class PequenioFormulario : Form
     {
-        public Form1()
+        public PequenioFormulario()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LModificar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
