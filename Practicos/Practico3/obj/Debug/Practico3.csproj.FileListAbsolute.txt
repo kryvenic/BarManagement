@@ -1,0 +1,8 @@
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\bin\Debug\Practico3.exe.config
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\bin\Debug\Practico3.exe
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\bin\Debug\Practico3.pdb
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\obj\Debug\Practico3.Properties.Resources.resources
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\obj\Debug\Practico3.csproj.GenerateResource.cache
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\obj\Debug\Practico3.csproj.CoreCompileInputs.cache
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\obj\Debug\Practico3.exe
+C:\Users\marti\source\repos\kryvenic\BarManagement\Practicos\Practico3\obj\Debug\Practico3.pdb
