@@ -44,7 +44,12 @@ namespace Practico3
             }
             if (vacio)
             {
-                MessageBox.Show("Debe completar todos los campos");
+                MessageBox.Show("Debes completar todos los campos", "Advertencia",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                LModificar.Text = TApellido.Text + " " + TNombre.Text;
             }
         }
 
@@ -53,6 +58,27 @@ namespace Practico3
             if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)){
                 e.Handled = true;
             }
+        }
+
+        private void TApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void BEliminar_Click(object sender, EventArgs e)
+        {
+            LModificar.Text = "Modificar";
         }
     }
 }

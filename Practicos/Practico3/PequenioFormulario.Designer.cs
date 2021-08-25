@@ -86,6 +86,7 @@ namespace Practico3
             this.LModificar.Name = "LModificar";
             this.LModificar.Size = new System.Drawing.Size(65, 17);
             this.LModificar.TabIndex = 4;
+            this.LModificar.Tag = "TModificar";
             this.LModificar.Text = "modificar";
             this.LModificar.Click += new System.EventHandler(this.LModificar_Click);
             // 
@@ -95,7 +96,7 @@ namespace Practico3
             this.TDni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDni.Name = "TDni";
             this.TDni.Size = new System.Drawing.Size(139, 22);
-            this.TDni.TabIndex = 5;
+            this.TDni.TabIndex = 1;
             this.TDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDni_KeyPress);
             // 
             // TNombre
@@ -104,7 +105,8 @@ namespace Practico3
             this.TNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TNombre.Name = "TNombre";
             this.TNombre.Size = new System.Drawing.Size(139, 22);
-            this.TNombre.TabIndex = 6;
+            this.TNombre.TabIndex = 3;
+            this.TNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TNombre_KeyPress);
             // 
             // TApellido
             // 
@@ -112,7 +114,8 @@ namespace Practico3
             this.TApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TApellido.Name = "TApellido";
             this.TApellido.Size = new System.Drawing.Size(139, 22);
-            this.TApellido.TabIndex = 7;
+            this.TApellido.TabIndex = 2;
+            this.TApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TApellido_KeyPress);
             // 
             // BGuardar
             // 
@@ -134,6 +137,7 @@ namespace Practico3
             this.BEliminar.TabIndex = 9;
             this.BEliminar.Text = "Eliminar";
             this.BEliminar.UseVisualStyleBackColor = true;
+            this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
             // 
             // PequenioFormulario
             // 
