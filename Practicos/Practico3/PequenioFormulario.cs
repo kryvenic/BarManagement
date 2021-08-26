@@ -12,6 +12,13 @@ namespace Practico3
 {
     public partial class PequenioFormulario : Form
     {
+        /*enum DialogResul {
+            YES_NO,
+            HOLA,
+            ...
+        }
+
+        DialogResul _dialog = DialogResul.HOLA;*/
         public PequenioFormulario()
         {
             InitializeComponent();
@@ -35,9 +42,9 @@ namespace Practico3
         private void BGuardar_Click(object sender, EventArgs e)
         {
             bool vacio = false;
-            foreach(Control c in this.Controls)
+            foreach (Control c in this.Controls)
             {
-                if(c is TextBox && String.IsNullOrWhiteSpace(c.Text))
+                if (c is TextBox && String.IsNullOrWhiteSpace(c.Text))
                 {
                     vacio = true;
                 }
@@ -49,13 +56,22 @@ namespace Practico3
             }
             else
             {
-                LModificar.Text = TApellido.Text + " " + TNombre.Text;
+                //No vacio
+                //Mensaje pregunta
+                DialogResult result = MessageBox.Show("Seguro que desea ingresar el cliente?", "Confirmar Inserción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    LModificar.Text = TApellido.Text + " " + TNombre.Text;
+                    MessageBox.Show("El Cliente: " + TNombre.Text + " " + TApellido.Text + " se insertó correctamente", ".Guardar",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void TDni_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)){
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
                 e.Handled = true;
             }
         }
@@ -78,7 +94,29 @@ namespace Practico3
 
         private void BEliminar_Click(object sender, EventArgs e)
         {
-            LModificar.Text = "Modificar";
+            bool vacio = false;
+
+            if (LModificar.Text.Equals("modificar"))
+            {
+                vacio = true;
+            }
+
+            if (!vacio)
+            {
+                //No vacio
+                //Mensaje pregunta
+                DialogResult result = MessageBox.Show("Está a punto de eliminar el Cliente:" + TNombre.Text + " " + TApellido.Text, "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("El Cliente: " + TNombre.Text + " " + TApellido.Text + " se eliminó correctamente", "Eliminar",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LModificar.Text = "modificar";
+                    TDni.Text = String.Empty;
+                    TApellido.Text = String.Empty;
+                    TNombre.Text = String.Empty;
+                }
+
+            }
         }
     }
 }
