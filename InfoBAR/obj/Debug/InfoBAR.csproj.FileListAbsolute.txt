@@ -8,3 +8,12 @@ C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarM
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.exe
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.pdb
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.exe.config
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.exe
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.pdb
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.Properties.Resources.resources
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.GenerateResource.cache
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.CoreCompileInputs.cache
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.exe
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.pdb
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\PlayerUI.Form1.resources
