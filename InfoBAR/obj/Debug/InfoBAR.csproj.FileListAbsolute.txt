@@ -1,9 +1,0 @@
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\bin\Debug\InfoBAR.exe.config
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\bin\Debug\InfoBAR.exe
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\bin\Debug\InfoBAR.pdb
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.csproj.AssemblyReference.cache
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.Properties.Resources.resources
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.csproj.GenerateResource.cache
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.csproj.CoreCompileInputs.cache
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.exe
-C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.pdb
