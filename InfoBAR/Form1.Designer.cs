@@ -312,7 +312,7 @@
             // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.panelChildForm.Controls.Add(this.pictureBox9);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
@@ -323,6 +323,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(142, 147);
             this.pictureBox9.Name = "pictureBox9";
@@ -381,7 +382,7 @@
             this.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTools.ForeColor = System.Drawing.Color.Silver;
-            this.btnTools.Image = global::InfoBAR.Properties.Resources.reportes;
+            this.btnTools.Image = ((System.Drawing.Image)(resources.GetObject("btnTools.Image")));
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTools.Location = new System.Drawing.Point(0, 516);
             this.btnTools.Name = "btnTools";
@@ -402,7 +403,7 @@
             this.btnPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlaylist.ForeColor = System.Drawing.Color.Silver;
-            this.btnPlaylist.Image = global::InfoBAR.Properties.Resources.empleados;
+            this.btnPlaylist.Image = ((System.Drawing.Image)(resources.GetObject("btnPlaylist.Image")));
             this.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPlaylist.Location = new System.Drawing.Point(0, 306);
             this.btnPlaylist.Name = "btnPlaylist";
@@ -470,8 +471,8 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.panelChildForm);
