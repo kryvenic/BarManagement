@@ -17,3 +17,4 @@ C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csp
 C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.exe
 C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.pdb
 C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\PlayerUI.Form1.resources
+C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csprojAssemblyReference.cache
