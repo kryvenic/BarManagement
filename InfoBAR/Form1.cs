@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InfoBAR;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,9 @@ namespace PlayerUI
 
         private void hideSubMenu()
         {
-            panelMediaSubMenu.Visible = false;
-            panelPlaylistSubMenu.Visible = false;
-            panelToolsSubMenu.Visible = false;
+            panelProductoSubMenu.Visible = false;
+            panelEmpleadosSubMenu.Visible = false;
+            panelReportesSubMenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -36,17 +37,15 @@ namespace PlayerUI
                 subMenu.Visible = false;
         }
 
-        private void btnMedia_Click(object sender, EventArgs e)
+        private void btnProductos_click(object sender, EventArgs e)
         {
-            showSubMenu(panelMediaSubMenu);
+            showSubMenu(panelProductoSubMenu);
         }
 
-        #region MediaSubMenu
+        #region ProductoSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new AgregarProducto());
             hideSubMenu();
         }
 
@@ -77,7 +76,7 @@ namespace PlayerUI
 
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPlaylistSubMenu);
+            showSubMenu(panelEmpleadosSubMenu);
         }
 
         #region PlayListManagemetSubMenu
@@ -116,7 +115,7 @@ namespace PlayerUI
 
         private void btnTools_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelToolsSubMenu);
+            showSubMenu(panelReportesSubMenu);
         }
         #region ToolsSubMenu
         private void button13_Click(object sender, EventArgs e)
@@ -192,6 +191,11 @@ namespace PlayerUI
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelToolsSubMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
