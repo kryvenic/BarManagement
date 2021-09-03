@@ -6,16 +6,16 @@
 
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+InfoBAR/[Dd]ebug/
+InfoBAR/[Dd]ebugPublic/
+InfoBAR/[Rr]elease/
+InfoBAR/[Rr]eleases/
+InfoBAR/x64/
+InfoBAR/x86/
+InfoBAR/bld/
+InfoBAR/[Bb]in/
+InfoBAR/[Oo]bj/
+InfoBAR/[Ll]og/
 
 # User-specific files
 *.suo
