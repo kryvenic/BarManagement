@@ -1,6 +1,6 @@
 # BarManagement
 
-Un projecto colaborativo para la materia de Taller de Programacion 2.
+Un proyecto colaborativo para la materia de Taller de Programacion 2.
 
 Realizamos una aplicacion de escritorio CRUD con .NET Forms acerca de un comercio de BAR, de comidas y bebidas, donde se
 realizan pedidos y se registra la venta de los mismos como pagos. 
