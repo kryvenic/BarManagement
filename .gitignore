@@ -16,9 +16,10 @@ InfoBAR/bld/
 InfoBAR/[Bb]in/
 InfoBAR/[Oo]bj/
 InfoBAR/[Ll]og/
-
+InfoBAR/.vs/InfoBAR/v16/.suo
 # User-specific files
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+
