@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PlayerUI
 {
-    public partial class Form1 : Form
+    public partial class InfoBAR : Form
     {
-        public Form1()
+        public InfoBAR()
         {
             InitializeComponent();
             hideSubMenu();

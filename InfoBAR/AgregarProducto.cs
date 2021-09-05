@@ -35,10 +35,10 @@ namespace InfoBAR
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            result = MessageBox.Show("¿Quiere agregar el producto? " + TDescripcion.Text, "Confirmar alta", buttons, MessageBoxIcon.Question);
+            result = MessageBox.Show("¿Quiere agregar el producto?: " + TDescripcion.Text, "Confirmar alta", buttons, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                MessageBox.Show("Producto" + TDescripcion.Text + " agregado correctamente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Producto: " + TDescripcion.Text + " agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 VaciarCampos();
             }
         }

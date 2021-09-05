@@ -42,7 +42,7 @@ namespace InfoBAR
             if (txtUsuario.Text == "admin" && txtContra.Text == "admin")
             {
                 MessageBox.Show("You are now logged in!");
-                Form fm = new Form1 {
+                Form fm = new PlayerUI.InfoBAR {
 
                     Visible = true
                 };
