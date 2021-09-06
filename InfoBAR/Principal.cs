@@ -13,9 +13,12 @@ namespace InfoBAR
 {
     public partial class InfoBAR : Form
     {
-        public InfoBAR()
+        private string usuario;
+        public InfoBAR(string usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
+            LBienvenido.Text = "¡Bienvenido/a " + usuario + "!";
             hideSubMenu();
         }
 

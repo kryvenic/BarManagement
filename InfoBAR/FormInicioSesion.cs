@@ -84,9 +84,8 @@ namespace InfoBAR
 
         private void Ingresar()
         {
-            Form fm = new InfoBAR
+            Form fm = new InfoBAR(usuario)
             {
-
                 Visible = true
             };
             fm.Show();
