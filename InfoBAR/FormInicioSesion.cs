@@ -1,5 +1,4 @@
-﻿using PlayerUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +12,13 @@ namespace InfoBAR
 {
     public partial class FormInicioSesion : Form
     {
+        private string usuario;
+        private string contra;
+
         public FormInicioSesion()
         {
             InitializeComponent();
         }
-
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
@@ -39,21 +40,57 @@ namespace InfoBAR
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "admin" && txtContra.Text == "admin")
-            {
-                MessageBox.Show("You are now logged in!");
-                Form fm = new PlayerUI.InfoBAR {
+            usuario = txtUsuario.Text;
+            contra = txtContra.Text;
 
-                    Visible = true
-                };
-                fm.Show();
-                this.Hide();
-            }
-            else
+            switch (usuario)
             {
-                MessageBox.Show("Usuario y/o contraseña incorrecta");
-                
+                case "admin":
+                    if (contra.Equals("admin"))
+                    {
+                        Ingresar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                case "empleado":
+                    if (contra.Equals("empleado"))
+                    {
+                        Ingresar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                case "gerente":
+                    if (contra.Equals("gerente"))
+                    {
+                        Ingresar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+                default:
+                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
             }
+
+        }
+
+        private void Ingresar()
+        {
+            Form fm = new InfoBAR
+            {
+
+                Visible = true
+            };
+            fm.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)

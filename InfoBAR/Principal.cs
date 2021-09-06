@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PlayerUI
+namespace InfoBAR
 {
     public partial class InfoBAR : Form
     {
@@ -51,25 +51,17 @@ namespace PlayerUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new EliminarProducto());
             hideSubMenu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
             hideSubMenu();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
             hideSubMenu();
         }
         #endregion
@@ -153,17 +145,11 @@ namespace PlayerUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
             hideSubMenu();
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
             hideSubMenu();
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -198,6 +184,11 @@ namespace PlayerUI
         private void panelToolsSubMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void InfoBAR_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

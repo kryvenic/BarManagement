@@ -35,12 +35,12 @@ namespace InfoBAR
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.picImagen = new System.Windows.Forms.PictureBox();
             this.btnImagen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.CCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.picImagen = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
@@ -90,6 +90,7 @@ namespace InfoBAR
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(684, 57);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -100,8 +101,9 @@ namespace InfoBAR
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(351, 23);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Registrá un plato, bebida o postre";
+            this.label2.Text = "Registrá un plato o bebida";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -112,17 +114,6 @@ namespace InfoBAR
             this.label3.Size = new System.Drawing.Size(121, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Descripcion/Titulo";
-            // 
-            // picImagen
-            // 
-            this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.picImagen.Location = new System.Drawing.Point(502, 134);
-            this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(170, 171);
-            this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picImagen.TabIndex = 4;
-            this.picImagen.TabStop = false;
             // 
             // btnImagen
             // 
@@ -154,8 +145,7 @@ namespace InfoBAR
             this.CCategoria.FormattingEnabled = true;
             this.CCategoria.Items.AddRange(new object[] {
             "Comidas",
-            "Bebidas",
-            "Postres"});
+            "Bebidas"});
             this.CCategoria.Location = new System.Drawing.Point(181, 223);
             this.CCategoria.Name = "CCategoria";
             this.CCategoria.Size = new System.Drawing.Size(294, 24);
@@ -190,6 +180,17 @@ namespace InfoBAR
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // picImagen
+            // 
+            this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.picImagen.Location = new System.Drawing.Point(502, 134);
+            this.picImagen.Name = "picImagen";
+            this.picImagen.Size = new System.Drawing.Size(170, 171);
+            this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagen.TabIndex = 4;
+            this.picImagen.TabStop = false;
             // 
             // AgregarProducto
             // 
