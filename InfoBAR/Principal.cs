@@ -60,6 +60,7 @@ namespace InfoBAR
 
         private void button4_Click(object sender, EventArgs e)
         {
+            openChildForm(new BuscarProducto());
             hideSubMenu();
         }
 
@@ -74,12 +75,10 @@ namespace InfoBAR
             showSubMenu(panelEmpleadosSubMenu);
         }
 
-        #region PlayListManagemetSubMenu
+        #region Usuario
         private void button8_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new AgregarUsuario());
             hideSubMenu();
         }
 

@@ -38,11 +38,12 @@ namespace InfoBAR
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkTipo = new System.Windows.Forms.CheckBox();
-            this.cboTipo = new System.Windows.Forms.ComboBox();
-            this.chkNombre = new System.Windows.Forms.CheckBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.chkNombre = new System.Windows.Forms.CheckBox();
+            this.cboTipo = new System.Windows.Forms.ComboBox();
+            this.chkTipo = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -152,15 +153,25 @@ namespace InfoBAR
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // chkTipo
+            // txtNombre
             // 
-            this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(22, 24);
-            this.chkTipo.Name = "chkTipo";
-            this.chkTipo.Size = new System.Drawing.Size(58, 21);
-            this.chkTipo.TabIndex = 0;
-            this.chkTipo.Text = "Tipo";
-            this.chkTipo.UseVisualStyleBackColor = true;
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Location = new System.Drawing.Point(119, 76);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(281, 22);
+            this.txtNombre.TabIndex = 3;
+            // 
+            // chkNombre
+            // 
+            this.chkNombre.AutoSize = true;
+            this.chkNombre.Location = new System.Drawing.Point(22, 77);
+            this.chkNombre.Name = "chkNombre";
+            this.chkNombre.Size = new System.Drawing.Size(80, 21);
+            this.chkNombre.TabIndex = 2;
+            this.chkNombre.Text = "Nombre";
+            this.chkNombre.UseVisualStyleBackColor = true;
             // 
             // cboTipo
             // 
@@ -177,25 +188,15 @@ namespace InfoBAR
             this.cboTipo.Size = new System.Drawing.Size(281, 24);
             this.cboTipo.TabIndex = 1;
             // 
-            // chkNombre
+            // chkTipo
             // 
-            this.chkNombre.AutoSize = true;
-            this.chkNombre.Location = new System.Drawing.Point(22, 77);
-            this.chkNombre.Name = "chkNombre";
-            this.chkNombre.Size = new System.Drawing.Size(80, 21);
-            this.chkNombre.TabIndex = 2;
-            this.chkNombre.Text = "Nombre";
-            this.chkNombre.UseVisualStyleBackColor = true;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(119, 76);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(281, 22);
-            this.txtNombre.TabIndex = 3;
+            this.chkTipo.AutoSize = true;
+            this.chkTipo.Location = new System.Drawing.Point(22, 24);
+            this.chkTipo.Name = "chkTipo";
+            this.chkTipo.Size = new System.Drawing.Size(58, 21);
+            this.chkTipo.TabIndex = 0;
+            this.chkTipo.Text = "Tipo";
+            this.chkTipo.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -208,12 +209,26 @@ namespace InfoBAR
             this.checkBox1.Text = "Todos Los Productos";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnAgregar.Location = new System.Drawing.Point(479, 222);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(188, 41);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "Eliminar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
             // EliminarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(684, 561);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -248,5 +263,6 @@ namespace InfoBAR
         private System.Windows.Forms.CheckBox chkNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

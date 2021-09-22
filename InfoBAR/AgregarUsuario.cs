@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace InfoBAR
 {
-    public partial class EliminarProducto : Form
+    public partial class AgregarUsuario : Form
     {
-        public EliminarProducto()
+        public AgregarUsuario()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
 
         }

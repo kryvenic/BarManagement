@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace InfoBAR
 {
-    public partial class EliminarProducto : Form
+    public partial class BuscarProducto : Form
     {
-        public EliminarProducto()
+        public BuscarProducto()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
