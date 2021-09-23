@@ -40,7 +40,7 @@
             this.btnBuscarEmpleado = new System.Windows.Forms.Button();
             this.btnEliminarEmpleado = new System.Windows.Forms.Button();
             this.btnAgregarEmpleado = new System.Windows.Forms.Button();
-            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panelProductoSubMenu = new System.Windows.Forms.Panel();
             this.btnBuscarProductos = new System.Windows.Forms.Button();
             this.btnEliminarProductos = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@
             this.panelSideMenu.Controls.Add(this.panelReportesSubMenu);
             this.panelSideMenu.Controls.Add(this.btnReportes);
             this.panelSideMenu.Controls.Add(this.panelEmpleadosSubMenu);
-            this.panelSideMenu.Controls.Add(this.btnEmpleados);
+            this.panelSideMenu.Controls.Add(this.btnUsuarios);
             this.panelSideMenu.Controls.Add(this.panelProductoSubMenu);
             this.panelSideMenu.Controls.Add(this.btnProductos);
             this.panelSideMenu.Controls.Add(this.btnEqualizer);
@@ -236,7 +236,7 @@
             this.btnBuscarEmpleado.Text = "Buscar";
             this.btnBuscarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarEmpleado.UseVisualStyleBackColor = false;
-            this.btnBuscarEmpleado.Click += new System.EventHandler(this.button6_Click);
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarUsuario_Click);
             // 
             // btnEliminarEmpleado
             // 
@@ -256,7 +256,7 @@
             this.btnEliminarEmpleado.Text = "Eliminar";
             this.btnEliminarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarEmpleado.UseVisualStyleBackColor = false;
-            this.btnEliminarEmpleado.Click += new System.EventHandler(this.button7_Click);
+            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
             // btnAgregarEmpleado
             // 
@@ -278,28 +278,28 @@
             this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
             this.btnAgregarEmpleado.Click += new System.EventHandler(this.button8_Click);
             // 
-            // btnEmpleados
+            // btnUsuarios
             // 
-            this.btnEmpleados.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.btnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(185)))), ((int)(((byte)(8)))));
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
-            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 300);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnEmpleados.Size = new System.Drawing.Size(227, 45);
-            this.btnEmpleados.TabIndex = 3;
-            this.btnEmpleados.Text = "Usuarios";
-            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmpleados.UseVisualStyleBackColor = false;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnPlaylist_Click);
+            this.btnUsuarios.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(185)))), ((int)(((byte)(8)))));
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 300);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnUsuarios.Size = new System.Drawing.Size(227, 45);
+            this.btnUsuarios.TabIndex = 3;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // panelProductoSubMenu
             // 
@@ -331,7 +331,7 @@
             this.btnBuscarProductos.Text = "Buscar";
             this.btnBuscarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarProductos.UseVisualStyleBackColor = false;
-            this.btnBuscarProductos.Click += new System.EventHandler(this.button4_Click);
+            this.btnBuscarProductos.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // btnEliminarProductos
             // 
@@ -535,7 +535,7 @@
         private System.Windows.Forms.Button btnBuscarEmpleado;
         private System.Windows.Forms.Button btnEliminarEmpleado;
         private System.Windows.Forms.Button btnAgregarEmpleado;
-        private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;

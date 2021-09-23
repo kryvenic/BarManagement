@@ -17,8 +17,14 @@ namespace InfoBAR
         public InfoBAR(string usuario)
         {
             this.usuario = usuario;
+            
             InitializeComponent();
+            
             LBienvenido.Text = "¡Bienvenido/a " + usuario + "!";
+            foreach (Control c in panelSideMenu.Controls)
+            {
+                c.Visible = true;
+            }
             hideSubMenu();
         }
 
@@ -58,7 +64,7 @@ namespace InfoBAR
             hideSubMenu();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             openChildForm(new BuscarProducto());
             hideSubMenu();
@@ -70,7 +76,7 @@ namespace InfoBAR
         }
         #endregion
 
-        private void btnPlaylist_Click(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
             showSubMenu(panelEmpleadosSubMenu);
         }
@@ -82,7 +88,7 @@ namespace InfoBAR
             hideSubMenu();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             //..
             //your codes
@@ -90,7 +96,7 @@ namespace InfoBAR
             hideSubMenu();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnBuscarUsuario_Click(object sender, EventArgs e)
         {
             openChildForm(new BuscarUsuario());
             hideSubMenu();
