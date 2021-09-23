@@ -112,9 +112,7 @@ namespace InfoBAR
         #region ToolsSubMenu
         private void button13_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new ReporteVentas());
             hideSubMenu();
         }
 
