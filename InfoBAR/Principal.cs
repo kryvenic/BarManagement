@@ -124,9 +124,7 @@ namespace InfoBAR
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new ReporteEmpleados());
             hideSubMenu();
         }
 
