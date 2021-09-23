@@ -92,9 +92,7 @@ namespace InfoBAR
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new BuscarUsuario());
             hideSubMenu();
         }
 
@@ -147,6 +145,7 @@ namespace InfoBAR
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            openChildForm(new AgregarPedido());
             hideSubMenu();
         }
 
