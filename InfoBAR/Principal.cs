@@ -17,13 +17,19 @@ namespace InfoBAR
         public InfoBAR(string usuario)
         {
             this.usuario = usuario;
-            
             InitializeComponent();
-            
+            //Mensaje de bienvenida con el nombre del usuario
             LBienvenido.Text = "¡Bienvenido/a " + usuario + "!";
-            foreach (Control c in panelSideMenu.Controls)
+            //Se desactivan las opciones que no corresponden a cada usuario
+            if (!usuario.Equals("admin"))
             {
-                c.Visible = true;
+                foreach (Control c in panelSideMenu.Controls)
+                {
+                    if (!c.Name.Equals("panelLogo") && !c.Name.Equals("btnAyuda") && !c.Name.Equals("btnExit"))
+                    {
+                        OcultarOpcion(c.Name, c);
+                    }
+                }
             }
             hideSubMenu();
         }
@@ -33,6 +39,30 @@ namespace InfoBAR
             panelProductoSubMenu.Visible = false;
             panelEmpleadosSubMenu.Visible = false;
             panelReportesSubMenu.Visible = false;
+        }
+
+        /// <summary>
+        /// Oculta las opciones dependiendo de los usuarios Empleado y Gerente
+        /// </summary>
+        /// <param name="btnName"></param>
+        /// <param name="c"></param>
+        private void OcultarOpcion(string btnName, Control c)
+        {
+            switch (usuario)
+            {
+                case "empleado":
+                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnReportes") || btnName.Equals("btnProductos"))
+                    {
+                        c.Visible = false;
+                    }
+                    break;
+                case "gerente":
+                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnRegistrar") || btnName.Equals("btnProductos"))
+                    {
+                        c.Visible = false;
+                    }
+                    break;
+            }
         }
 
         private void showSubMenu(Panel subMenu)
@@ -190,6 +220,11 @@ namespace InfoBAR
         }
 
         private void InfoBAR_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }

@@ -40,6 +40,11 @@ namespace InfoBAR
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            VerificarContraYIngresar();
+        }
+
+        private void VerificarContraYIngresar()
+        {
             usuario = txtUsuario.Text;
             contra = txtContra.Text;
 
@@ -79,7 +84,6 @@ namespace InfoBAR
                     MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
-
         }
 
         private void Ingresar()
@@ -137,6 +141,22 @@ namespace InfoBAR
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                VerificarContraYIngresar();
+            }
+        }
+
+        private void txtContra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                VerificarContraYIngresar();
+            }
         }
     }
 }
