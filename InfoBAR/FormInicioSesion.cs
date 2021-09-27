@@ -158,5 +158,29 @@ namespace InfoBAR
                 VerificarContraYIngresar();
             }
         }
+
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                if(txtContra.PasswordChar == '*')
+                {
+                    txtContra.PasswordChar = '\0';
+                }
+            }
+            else
+            {
+                txtContra.PasswordChar = '*';
+            }
+        }
+
+        private void txtContra_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
