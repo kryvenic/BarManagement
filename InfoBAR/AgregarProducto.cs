@@ -56,6 +56,7 @@ namespace InfoBAR
         private void VaciarCampos()
         {
             TDescripcion.Text = "";
+            txtprecio.Text = "";
             CCategoria.SelectedIndex = -1;
             picImagen.Image = null;
         }
@@ -80,6 +81,11 @@ namespace InfoBAR
         }
 
         private void CCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
