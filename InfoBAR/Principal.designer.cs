@@ -91,6 +91,7 @@
             // btnAyuda
             // 
             this.btnAyuda.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnAyuda.FlatAppearance.BorderSize = 0;
             this.btnAyuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -113,6 +114,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -148,6 +150,7 @@
             // btnReportesEmpleados
             // 
             this.btnReportesEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnReportesEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportesEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportesEmpleados.FlatAppearance.BorderSize = 0;
             this.btnReportesEmpleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -168,6 +171,7 @@
             // btnReportesVentas
             // 
             this.btnReportesVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnReportesVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportesVentas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportesVentas.FlatAppearance.BorderSize = 0;
             this.btnReportesVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -189,6 +193,7 @@
             // btnReportes
             // 
             this.btnReportes.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportes.FlatAppearance.BorderSize = 0;
             this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -224,6 +229,7 @@
             // btnBuscarEmpleado
             // 
             this.btnBuscarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnBuscarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBuscarEmpleado.FlatAppearance.BorderSize = 0;
             this.btnBuscarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -244,6 +250,7 @@
             // btnEliminarEmpleado
             // 
             this.btnEliminarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnEliminarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEliminarEmpleado.FlatAppearance.BorderSize = 0;
             this.btnEliminarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -264,6 +271,7 @@
             // btnAgregarEmpleado
             // 
             this.btnAgregarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnAgregarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAgregarEmpleado.FlatAppearance.BorderSize = 0;
             this.btnAgregarEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -284,6 +292,7 @@
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
             this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -319,6 +328,7 @@
             // btnBuscarProductos
             // 
             this.btnBuscarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnBuscarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBuscarProductos.FlatAppearance.BorderSize = 0;
             this.btnBuscarProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -339,6 +349,7 @@
             // btnEliminarProductos
             // 
             this.btnEliminarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnEliminarProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEliminarProductos.FlatAppearance.BorderSize = 0;
             this.btnEliminarProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -359,6 +370,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarProducto.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
             this.btnAgregarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -379,6 +391,7 @@
             // btnProductos
             // 
             this.btnProductos.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -402,6 +415,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
@@ -433,6 +447,7 @@
             // 
             // logoInfoBar
             // 
+            this.logoInfoBar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logoInfoBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logoInfoBar.Image = ((System.Drawing.Image)(resources.GetObject("logoInfoBar.Image")));
             this.logoInfoBar.Location = new System.Drawing.Point(0, 0);
@@ -540,7 +555,7 @@
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(950, 598);
             this.Name = "InfoBAR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

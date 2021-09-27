@@ -31,12 +31,12 @@ namespace InfoBAR
         {
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.CCategoria = new System.Windows.Forms.ComboBox();
+            this.CTipo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.TDescripcion = new System.Windows.Forms.TextBox();
+            this.TNombre = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -75,21 +75,21 @@ namespace InfoBAR
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // CCategoria
+            // CTipo
             // 
-            this.CCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CCategoria.FormattingEnabled = true;
-            this.CCategoria.Items.AddRange(new object[] {
+            this.CTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTipo.FormattingEnabled = true;
+            this.CTipo.Items.AddRange(new object[] {
             "Administrador",
             "Empleado",
             "Gerente"});
-            this.CCategoria.Location = new System.Drawing.Point(181, 255);
-            this.CCategoria.Name = "CCategoria";
-            this.CCategoria.Size = new System.Drawing.Size(442, 24);
-            this.CCategoria.TabIndex = 17;
+            this.CTipo.Location = new System.Drawing.Point(181, 255);
+            this.CTipo.Name = "CTipo";
+            this.CTipo.Size = new System.Drawing.Size(442, 24);
+            this.CTipo.TabIndex = 17;
             // 
             // label4
             // 
@@ -135,15 +135,15 @@ namespace InfoBAR
             this.label2.Text = "Registrá un usuario";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TDescripcion
+            // TNombre
             // 
-            this.TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TDescripcion.Location = new System.Drawing.Point(181, 188);
-            this.TDescripcion.Name = "TDescripcion";
-            this.TDescripcion.Size = new System.Drawing.Size(442, 22);
-            this.TDescripcion.TabIndex = 11;
+            this.TNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TNombre.Location = new System.Drawing.Point(181, 188);
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Size = new System.Drawing.Size(442, 22);
+            this.TNombre.TabIndex = 11;
             // 
             // panel1
             // 
@@ -198,11 +198,11 @@ namespace InfoBAR
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.CCategoria);
+            this.Controls.Add(this.CTipo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.TDescripcion);
+            this.Controls.Add(this.TNombre);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarUsuario";
@@ -218,12 +218,12 @@ namespace InfoBAR
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ComboBox CCategoria;
+        private System.Windows.Forms.ComboBox CTipo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TDescripcion;
+        private System.Windows.Forms.TextBox TNombre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;

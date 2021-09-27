@@ -209,7 +209,8 @@ namespace InfoBAR
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            if(activeForm != null) activeForm.Close();
+            hideSubMenu();
         }
 
         private void panelToolsSubMenu_Paint(object sender, PaintEventArgs e)

@@ -150,6 +150,7 @@ namespace InfoBAR
             this.CCategoria.Name = "CCategoria";
             this.CCategoria.Size = new System.Drawing.Size(294, 24);
             this.CCategoria.TabIndex = 7;
+            this.CCategoria.SelectedIndexChanged += new System.EventHandler(this.CCategoria_SelectedIndexChanged);
             // 
             // btnAgregar
             // 
@@ -158,7 +159,7 @@ namespace InfoBAR
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnAgregar.Location = new System.Drawing.Point(24, 456);
+            this.btnAgregar.Location = new System.Drawing.Point(24, 487);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(188, 41);
             this.btnAgregar.TabIndex = 8;
@@ -173,7 +174,7 @@ namespace InfoBAR
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnCancelar.Location = new System.Drawing.Point(287, 456);
+            this.btnCancelar.Location = new System.Drawing.Point(287, 487);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(188, 41);
             this.btnCancelar.TabIndex = 9;
