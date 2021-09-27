@@ -120,9 +120,7 @@ namespace InfoBAR
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new EliminarUsuario());
             hideSubMenu();
         }
 
@@ -227,6 +225,17 @@ namespace InfoBAR
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToShortTimeString();
+            lblfecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

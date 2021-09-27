@@ -54,11 +54,12 @@ namespace InfoBAR
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("Roboto", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(153, 0);
+            this.label1.Location = new System.Drawing.Point(184, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 52);
+            this.label1.Size = new System.Drawing.Size(452, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "Eliminar Producto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -69,9 +70,10 @@ namespace InfoBAR
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(684, 57);
+            this.panel2.Size = new System.Drawing.Size(821, 68);
             this.panel2.TabIndex = 4;
             // 
             // label2
@@ -79,9 +81,10 @@ namespace InfoBAR
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(158, 18);
+            this.label2.Location = new System.Drawing.Point(190, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(351, 23);
+            this.label2.Size = new System.Drawing.Size(421, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Eliminá un plato o bebida";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,8 +95,9 @@ namespace InfoBAR
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 54);
+            this.panel1.Size = new System.Drawing.Size(821, 65);
             this.panel1.TabIndex = 3;
             // 
             // dataGridView1
@@ -109,11 +113,12 @@ namespace InfoBAR
             this.Descripcion,
             this.Categoria,
             this.Imagen});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 279);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 335);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(660, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(792, 324);
             this.dataGridView1.TabIndex = 5;
             // 
             // Descripcion
@@ -146,9 +151,11 @@ namespace InfoBAR
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.groupBox1.Location = new System.Drawing.Point(35, 143);
+            this.groupBox1.Location = new System.Drawing.Point(42, 172);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 120);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(499, 144);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -158,17 +165,19 @@ namespace InfoBAR
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(119, 76);
+            this.txtNombre.Location = new System.Drawing.Point(143, 91);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(281, 22);
+            this.txtNombre.Size = new System.Drawing.Size(337, 26);
             this.txtNombre.TabIndex = 3;
             // 
             // chkNombre
             // 
             this.chkNombre.AutoSize = true;
-            this.chkNombre.Location = new System.Drawing.Point(22, 77);
+            this.chkNombre.Location = new System.Drawing.Point(26, 92);
+            this.chkNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkNombre.Name = "chkNombre";
-            this.chkNombre.Size = new System.Drawing.Size(80, 21);
+            this.chkNombre.Size = new System.Drawing.Size(91, 24);
             this.chkNombre.TabIndex = 2;
             this.chkNombre.Text = "Nombre";
             this.chkNombre.UseVisualStyleBackColor = true;
@@ -183,17 +192,19 @@ namespace InfoBAR
             this.cboTipo.Items.AddRange(new object[] {
             "Comidas",
             "Bebidas"});
-            this.cboTipo.Location = new System.Drawing.Point(119, 21);
+            this.cboTipo.Location = new System.Drawing.Point(143, 25);
+            this.cboTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(281, 24);
+            this.cboTipo.Size = new System.Drawing.Size(336, 28);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
             // 
             this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(22, 24);
+            this.chkTipo.Location = new System.Drawing.Point(26, 29);
+            this.chkTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkTipo.Name = "chkTipo";
-            this.chkTipo.Size = new System.Drawing.Size(58, 21);
+            this.chkTipo.Size = new System.Drawing.Size(65, 24);
             this.chkTipo.TabIndex = 0;
             this.chkTipo.Text = "Tipo";
             this.chkTipo.UseVisualStyleBackColor = true;
@@ -202,9 +213,10 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(479, 164);
+            this.checkBox1.Location = new System.Drawing.Point(575, 197);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(165, 21);
+            this.checkBox1.Size = new System.Drawing.Size(185, 24);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Todos Los Productos";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -213,21 +225,22 @@ namespace InfoBAR
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnAgregar.Location = new System.Drawing.Point(479, 222);
+            this.btnAgregar.Location = new System.Drawing.Point(575, 266);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(188, 41);
+            this.btnAgregar.Size = new System.Drawing.Size(226, 49);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Eliminar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // EliminarProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.ClientSize = new System.Drawing.Size(821, 673);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
@@ -235,6 +248,7 @@ namespace InfoBAR
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EliminarProducto";
             this.Text = "EliminarProducto";
             this.panel2.ResumeLayout(false);
