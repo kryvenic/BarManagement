@@ -559,6 +559,7 @@
             this.MinimumSize = new System.Drawing.Size(950, 598);
             this.Name = "InfoBAR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "InfoBAR";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InfoBAR_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelSideMenu.ResumeLayout(false);
