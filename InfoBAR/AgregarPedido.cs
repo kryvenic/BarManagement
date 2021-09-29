@@ -47,7 +47,7 @@ namespace InfoBAR
         {
             if (!VerificarCampos.VerificarCamposVacios(groupPedido))
             {
-                dataGridView1.Rows.Add(txtNombre.Text, cboTipo.Text, txtCantidad.Text);
+                dataGridView1.Rows.Add(comboProd.Text, cboTipo.Text, txtCantidad.Text);
             }
             else
             {
@@ -74,6 +74,11 @@ namespace InfoBAR
                 MessageBox.Show("No hay comidas/bebidas agregadas al pedido", "Error: No hay productos agregados", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

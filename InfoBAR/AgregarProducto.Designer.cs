@@ -41,6 +41,8 @@ namespace InfoBAR
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.picImagen = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtprecio = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
@@ -52,19 +54,21 @@ namespace InfoBAR
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 54);
+            this.panel1.Size = new System.Drawing.Size(821, 65);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("Roboto", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(153, 0);
+            this.label1.Location = new System.Drawing.Point(184, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 52);
+            this.label1.Size = new System.Drawing.Size(439, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "Agregar Producto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -74,9 +78,10 @@ namespace InfoBAR
             this.TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TDescripcion.Location = new System.Drawing.Point(181, 156);
+            this.TDescripcion.Location = new System.Drawing.Point(217, 187);
+            this.TDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TDescripcion.Name = "TDescripcion";
-            this.TDescripcion.Size = new System.Drawing.Size(294, 22);
+            this.TDescripcion.Size = new System.Drawing.Size(352, 26);
             this.TDescripcion.TabIndex = 1;
             // 
             // panel2
@@ -86,9 +91,10 @@ namespace InfoBAR
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(684, 57);
+            this.panel2.Size = new System.Drawing.Size(821, 68);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -97,9 +103,10 @@ namespace InfoBAR
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(158, 18);
+            this.label2.Location = new System.Drawing.Point(190, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(351, 23);
+            this.label2.Size = new System.Drawing.Size(421, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Registrá un plato o bebida";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,18 +116,20 @@ namespace InfoBAR
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label3.Location = new System.Drawing.Point(21, 156);
+            this.label3.Location = new System.Drawing.Point(25, 187);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 17);
+            this.label3.Size = new System.Drawing.Size(134, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Descripcion/Titulo";
             // 
             // btnImagen
             // 
             this.btnImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImagen.Location = new System.Drawing.Point(527, 311);
+            this.btnImagen.Location = new System.Drawing.Point(632, 373);
+            this.btnImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImagen.Name = "btnImagen";
-            this.btnImagen.Size = new System.Drawing.Size(124, 29);
+            this.btnImagen.Size = new System.Drawing.Size(149, 35);
             this.btnImagen.TabIndex = 5;
             this.btnImagen.Text = "Subir Imagen";
             this.btnImagen.UseVisualStyleBackColor = true;
@@ -130,9 +139,10 @@ namespace InfoBAR
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label4.Location = new System.Drawing.Point(21, 223);
+            this.label4.Location = new System.Drawing.Point(25, 268);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Categoria";
             // 
@@ -146,9 +156,10 @@ namespace InfoBAR
             this.CCategoria.Items.AddRange(new object[] {
             "Comidas",
             "Bebidas"});
-            this.CCategoria.Location = new System.Drawing.Point(181, 223);
+            this.CCategoria.Location = new System.Drawing.Point(217, 268);
+            this.CCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CCategoria.Name = "CCategoria";
-            this.CCategoria.Size = new System.Drawing.Size(294, 24);
+            this.CCategoria.Size = new System.Drawing.Size(352, 28);
             this.CCategoria.TabIndex = 7;
             this.CCategoria.SelectedIndexChanged += new System.EventHandler(this.CCategoria_SelectedIndexChanged);
             // 
@@ -157,11 +168,12 @@ namespace InfoBAR
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnAgregar.Location = new System.Drawing.Point(24, 487);
+            this.btnAgregar.Location = new System.Drawing.Point(29, 584);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(188, 41);
+            this.btnAgregar.Size = new System.Drawing.Size(226, 49);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar Producto";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -172,11 +184,12 @@ namespace InfoBAR
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnCancelar.Location = new System.Drawing.Point(287, 487);
+            this.btnCancelar.Location = new System.Drawing.Point(344, 584);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(188, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(226, 49);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -186,20 +199,46 @@ namespace InfoBAR
             // 
             this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.picImagen.Location = new System.Drawing.Point(502, 134);
+            this.picImagen.Location = new System.Drawing.Point(602, 161);
+            this.picImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(170, 171);
+            this.picImagen.Size = new System.Drawing.Size(204, 205);
             this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagen.TabIndex = 4;
             this.picImagen.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.label5.Location = new System.Drawing.Point(26, 349);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Precio";
+            // 
+            // txtprecio
+            // 
+            this.txtprecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtprecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtprecio.Location = new System.Drawing.Point(218, 349);
+            this.txtprecio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtprecio.Name = "txtprecio";
+            this.txtprecio.Size = new System.Drawing.Size(352, 26);
+            this.txtprecio.TabIndex = 10;
+            this.txtprecio.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // AgregarProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.ClientSize = new System.Drawing.Size(821, 673);
             this.ControlBox = false;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtprecio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.CCategoria);
@@ -212,6 +251,7 @@ namespace InfoBAR
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AgregarProducto";
             this.ShowIcon = false;
             this.Text = "AgregarProducto";
@@ -237,5 +277,7 @@ namespace InfoBAR
         private System.Windows.Forms.PictureBox picImagen;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtprecio;
     }
 }

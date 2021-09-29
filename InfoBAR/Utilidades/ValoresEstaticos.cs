@@ -12,7 +12,7 @@ namespace InfoBAR.Utilidades
 
         public static void AgregarProductosDatagrid(DataGridView dataGridView)
         {
-            dataGridView.Rows.Add("Hamburguesa Especial", "Comidas","2");
+            dataGridView.Rows.Add("Hamburguesa Especial", "Comidas","2", "600");
         }
     }
 }
