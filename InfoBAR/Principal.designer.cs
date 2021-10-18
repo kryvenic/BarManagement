@@ -85,7 +85,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 641);
             this.panelSideMenu.TabIndex = 0;
             // 
             // btnAyuda
@@ -470,7 +470,7 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(684, 561);
+            this.panelChildForm.Size = new System.Drawing.Size(1022, 641);
             this.panelChildForm.TabIndex = 2;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
@@ -481,10 +481,10 @@
             this.lblfecha.Font = new System.Drawing.Font("Courier New", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
             this.lblfecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(11)))));
             this.lblfecha.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblfecha.Location = new System.Drawing.Point(42, 511);
+            this.lblfecha.Location = new System.Drawing.Point(42, 591);
             this.lblfecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(592, 31);
+            this.lblfecha.Size = new System.Drawing.Size(930, 31);
             this.lblfecha.TabIndex = 6;
             this.lblfecha.Text = "fecha";
             this.lblfecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -496,10 +496,10 @@
             this.lblhora.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(11)))));
             this.lblhora.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.lblhora.Location = new System.Drawing.Point(42, 456);
+            this.lblhora.Location = new System.Drawing.Point(42, 536);
             this.lblhora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(592, 37);
+            this.lblhora.Size = new System.Drawing.Size(930, 37);
             this.lblhora.TabIndex = 5;
             this.lblhora.Text = "hora";
             this.lblhora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -510,7 +510,7 @@
             this.LTipoUsuario.AutoSize = true;
             this.LTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTipoUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(11)))));
-            this.LTipoUsuario.Location = new System.Drawing.Point(294, 107);
+            this.LTipoUsuario.Location = new System.Drawing.Point(463, 107);
             this.LTipoUsuario.Name = "LTipoUsuario";
             this.LTipoUsuario.Size = new System.Drawing.Size(112, 18);
             this.LTipoUsuario.TabIndex = 4;
@@ -521,7 +521,7 @@
             this.LBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBienvenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.LBienvenido.Location = new System.Drawing.Point(121, 55);
+            this.LBienvenido.Location = new System.Drawing.Point(290, 55);
             this.LBienvenido.Name = "LBienvenido";
             this.LBienvenido.Size = new System.Drawing.Size(455, 37);
             this.LBienvenido.TabIndex = 3;
@@ -533,7 +533,7 @@
             this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(42, 147);
+            this.pictureBox9.Location = new System.Drawing.Point(211, 187);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(592, 239);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -550,7 +550,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(1272, 641);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
