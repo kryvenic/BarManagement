@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="InfobarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Detalle_Pedido">
+          <Key>
+            <PropertyRef Name="Id_Pedido" />
+            <PropertyRef Name="Id_Prod" />
+          </Key>
+          <Property Name="Id_Pedido" Type="int" Nullable="false" />
+          <Property Name="Id_Prod" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="Precio" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="PrecioTotal" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="Id_Pedido" />
+          </Key>
+          <Property Name="Id_Pedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_TipoPago" Type="int" />
+          <Property Name="Id_Usuario" Type="int" />
+          <Property Name="Mesa" Type="int" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Importe_Total" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Id_Producto" />
+          </Key>
+          <Property Name="Id_Producto" Type="int" Nullable="false" />
+          <Property Name="Id_TipoProd" Type="int" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="60" />
+          <Property Name="Precio" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="Imagen" Type="varchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="TipoPago">
+          <Key>
+            <PropertyRef Name="Id_TipoPago" />
+          </Key>
+          <Property Name="Id_TipoPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TipoProducto">
+          <Key>
+            <PropertyRef Name="Id_TipoProd" />
+          </Key>
+          <Property Name="Id_TipoProd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TipoUsuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Tipo" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+          <Property Name="Clave" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Detalle_P__Id_Pe__4BAC3F29">
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
+          <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="Id_Pedido" />
+            </Principal>
+            <Dependent Role="Detalle_Pedido">
+              <PropertyRef Name="Id_Pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Detalle_P__Id_Pr__4CA06362">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Id_Producto" />
+            </Principal>
+            <Dependent Role="Detalle_Pedido">
+              <PropertyRef Name="Id_Prod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedido__Id_TipoP__4222D4EF">
+          <End Role="TipoPago" Type="Self.TipoPago" Multiplicity="0..1" />
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPago">
+              <PropertyRef Name="Id_TipoPago" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_TipoPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedido__Id_Usuar__4316F928">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Producto__Id_Tip__3F466844">
+          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoProducto">
+              <PropertyRef Name="Id_TipoProd" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="Id_TipoProd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Id_Tipo__38996AB5">
+          <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InfobarModelStoreContainer">
+          <EntitySet Name="Detalle_Pedido" EntityType="Self.Detalle_Pedido" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoPago" EntityType="Self.TipoPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoProducto" EntityType="Self.TipoProducto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Detalle_P__Id_Pe__4BAC3F29" Association="Self.FK__Detalle_P__Id_Pe__4BAC3F29">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detalle_P__Id_Pr__4CA06362" Association="Self.FK__Detalle_P__Id_Pr__4CA06362">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedido__Id_TipoP__4222D4EF" Association="Self.FK__Pedido__Id_TipoP__4222D4EF">
+            <End Role="TipoPago" EntitySet="TipoPago" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedido__Id_Usuar__4316F928" Association="Self.FK__Pedido__Id_Usuar__4316F928">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Pedido" EntitySet="Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producto__Id_Tip__3F466844" Association="Self.FK__Producto__Id_Tip__3F466844">
+            <End Role="TipoProducto" EntitySet="TipoProducto" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Id_Tipo__38996AB5" Association="Self.FK__Usuario__Id_Tipo__38996AB5">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InfobarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Detalle_Pedido">
+          <Key>
+            <PropertyRef Name="Id_Pedido" />
+            <PropertyRef Name="Id_Prod" />
+          </Key>
+          <Property Name="Id_Pedido" Type="Int32" Nullable="false" />
+          <Property Name="Id_Prod" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="Precio" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="PrecioTotal" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="Pedido" Relationship="Self.FK__Detalle_P__Id_Pe__4BAC3F29" FromRole="Detalle_Pedido" ToRole="Pedido" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Detalle_P__Id_Pr__4CA06362" FromRole="Detalle_Pedido" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="Id_Pedido" />
+          </Key>
+          <Property Name="Id_Pedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_TipoPago" Type="Int32" />
+          <Property Name="Id_Usuario" Type="Int32" />
+          <Property Name="Mesa" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Importe_Total" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="Detalle_Pedido" Relationship="Self.FK__Detalle_P__Id_Pe__4BAC3F29" FromRole="Pedido" ToRole="Detalle_Pedido" />
+          <NavigationProperty Name="TipoPago" Relationship="Self.FK__Pedido__Id_TipoP__4222D4EF" FromRole="Pedido" ToRole="TipoPago" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Pedido__Id_Usuar__4316F928" FromRole="Pedido" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Id_Producto" />
+          </Key>
+          <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+          <Property Name="Id_TipoProd" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Imagen" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Detalle_Pedido" Relationship="Self.FK__Detalle_P__Id_Pr__4CA06362" FromRole="Producto" ToRole="Detalle_Pedido" />
+          <NavigationProperty Name="TipoProducto" Relationship="Self.FK__Producto__Id_Tip__3F466844" FromRole="Producto" ToRole="TipoProducto" />
+        </EntityType>
+        <EntityType Name="TipoPago">
+          <Key>
+            <PropertyRef Name="Id_TipoPago" />
+          </Key>
+          <Property Name="Id_TipoPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__Id_TipoP__4222D4EF" FromRole="TipoPago" ToRole="Pedido" />
+        </EntityType>
+        <EntityType Name="TipoProducto">
+          <Key>
+            <PropertyRef Name="Id_TipoProd" />
+          </Key>
+          <Property Name="Id_TipoProd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Productoes" Relationship="Self.FK__Producto__Id_Tip__3F466844" FromRole="TipoProducto" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="TipoUsuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="TipoUsuario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Tipo" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__Id_Usuar__4316F928" FromRole="Usuario" ToRole="Pedido" />
+          <NavigationProperty Name="TipoUsuario" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="Usuario" ToRole="TipoUsuario" />
+        </EntityType>
+        <Association Name="FK__Detalle_P__Id_Pe__4BAC3F29">
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
+          <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="Id_Pedido" />
+            </Principal>
+            <Dependent Role="Detalle_Pedido">
+              <PropertyRef Name="Id_Pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Detalle_P__Id_Pr__4CA06362">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Id_Producto" />
+            </Principal>
+            <Dependent Role="Detalle_Pedido">
+              <PropertyRef Name="Id_Prod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedido__Id_TipoP__4222D4EF">
+          <End Role="TipoPago" Type="Self.TipoPago" Multiplicity="0..1" />
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPago">
+              <PropertyRef Name="Id_TipoPago" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_TipoPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pedido__Id_Usuar__4316F928">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedido">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Producto__Id_Tip__3F466844">
+          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoProducto">
+              <PropertyRef Name="Id_TipoProd" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="Id_TipoProd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Id_Tipo__38996AB5">
+          <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InfobarEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Detalle_Pedido" EntityType="Self.Detalle_Pedido" />
+          <EntitySet Name="Pedidoes" EntityType="Self.Pedido" />
+          <EntitySet Name="Productoes" EntityType="Self.Producto" />
+          <EntitySet Name="TipoPagoes" EntityType="Self.TipoPago" />
+          <EntitySet Name="TipoProductoes" EntityType="Self.TipoProducto" />
+          <EntitySet Name="TipoUsuarios" EntityType="Self.TipoUsuario" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Detalle_P__Id_Pe__4BAC3F29" Association="Self.FK__Detalle_P__Id_Pe__4BAC3F29">
+            <End Role="Pedido" EntitySet="Pedidoes" />
+            <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detalle_P__Id_Pr__4CA06362" Association="Self.FK__Detalle_P__Id_Pr__4CA06362">
+            <End Role="Producto" EntitySet="Productoes" />
+            <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedido__Id_TipoP__4222D4EF" Association="Self.FK__Pedido__Id_TipoP__4222D4EF">
+            <End Role="TipoPago" EntitySet="TipoPagoes" />
+            <End Role="Pedido" EntitySet="Pedidoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pedido__Id_Usuar__4316F928" Association="Self.FK__Pedido__Id_Usuar__4316F928">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Pedido" EntitySet="Pedidoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producto__Id_Tip__3F466844" Association="Self.FK__Producto__Id_Tip__3F466844">
+            <End Role="TipoProducto" EntitySet="TipoProductoes" />
+            <End Role="Producto" EntitySet="Productoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Id_Tipo__38996AB5" Association="Self.FK__Usuario__Id_Tipo__38996AB5">
+            <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InfobarModelStoreContainer" CdmEntityContainer="InfobarEntities">
+          <EntitySetMapping Name="Detalle_Pedido">
+            <EntityTypeMapping TypeName="InfobarModel.Detalle_Pedido">
+              <MappingFragment StoreEntitySet="Detalle_Pedido">
+                <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
+                <ScalarProperty Name="Id_Prod" ColumnName="Id_Prod" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="PrecioTotal" ColumnName="PrecioTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedidoes">
+            <EntityTypeMapping TypeName="InfobarModel.Pedido">
+              <MappingFragment StoreEntitySet="Pedido">
+                <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
+                <ScalarProperty Name="Id_TipoPago" ColumnName="Id_TipoPago" />
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Mesa" ColumnName="Mesa" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Importe_Total" ColumnName="Importe_Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productoes">
+            <EntityTypeMapping TypeName="InfobarModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
+                <ScalarProperty Name="Id_TipoProd" ColumnName="Id_TipoProd" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoPagoes">
+            <EntityTypeMapping TypeName="InfobarModel.TipoPago">
+              <MappingFragment StoreEntitySet="TipoPago">
+                <ScalarProperty Name="Id_TipoPago" ColumnName="Id_TipoPago" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoProductoes">
+            <EntityTypeMapping TypeName="InfobarModel.TipoProducto">
+              <MappingFragment StoreEntitySet="TipoProducto">
+                <ScalarProperty Name="Id_TipoProd" ColumnName="Id_TipoProd" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoUsuarios">
+            <EntityTypeMapping TypeName="InfobarModel.TipoUsuario">
+              <MappingFragment StoreEntitySet="TipoUsuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="InfobarModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_Tipo" ColumnName="Id_Tipo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

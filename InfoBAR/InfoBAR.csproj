@@ -36,11 +36,20 @@
     <StartupObject>InfoBAR.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +91,9 @@
     <Compile Include="BuscarUsuario.Designer.cs">
       <DependentUpon>BuscarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Detalle_Pedido.cs">
+      <DependentUpon>ModeloBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="EliminarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,24 @@
     <Compile Include="EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModeloBar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloBar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>ModeloBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +135,9 @@
     </Compile>
     <Compile Include="FormInicioSesion.designer.cs">
       <DependentUpon>FormInicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>ModeloBar.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +152,18 @@
     </Compile>
     <Compile Include="ReporteVentas.Designer.cs">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago.cs">
+      <DependentUpon>ModeloBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoProducto.cs">
+      <DependentUpon>ModeloBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoUsuario.cs">
+      <DependentUpon>ModeloBar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>ModeloBar.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilidades\ValoresEstaticos.cs" />
     <Compile Include="Utilidades\VerificarCampos.cs" />
@@ -165,6 +210,13 @@
     <EmbeddedResource Include="ReporteVentas.resx">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="ModeloBar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloBar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModeloBar.edmx.diagram">
+      <DependentUpon>ModeloBar.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -190,6 +242,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Iconos\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModeloBar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloBar.edmx</DependentUpon>
+      <LastGenOutput>ModeloBar.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModeloBar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloBar.edmx</DependentUpon>
+      <LastGenOutput>ModeloBar.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
