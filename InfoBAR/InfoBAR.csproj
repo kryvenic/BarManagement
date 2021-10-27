@@ -247,6 +247,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Base\InfoBAR v2.sql" />
     <Content Include="ModeloBar.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloBar.edmx</DependentUpon>

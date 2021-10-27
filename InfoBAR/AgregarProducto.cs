@@ -13,6 +13,8 @@ namespace InfoBAR
 {
     public partial class AgregarProducto : Form
     {
+
+        private string PathImagen;
         public AgregarProducto()
         {
             InitializeComponent();
@@ -28,13 +30,14 @@ namespace InfoBAR
             {
                 picImagen.Image = Image.FromFile(open.FileName);
                 MessageBox.Show("Se ha agregado la imagen: " + open.FileName, "Subido exitosamente!");
+                PathImagen = open.FileName;
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            if (VerificarCampos.VerificarCamposVacios(this))
+            if (VerificarCampos.VerificarCamposVacios(this) && PathImagen.Equals(""))
             {
                 MessageBox.Show("Debe rellenar/completar todos los campos", "Error: Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -46,26 +49,37 @@ namespace InfoBAR
                 result = MessageBox.Show("¿Quiere agregar el producto?: " + TDescripcion.Text, "Confirmar alta", buttons, MessageBoxIcon.Question);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Producto: " + TDescripcion.Text + " agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    VaciarCampos();
+                    //Agregar a la base de datos
+                    try
+                    {
+                        using (InfobarEntities db = new InfobarEntities())
+                        {
+                            Producto oProducto = new Producto();
+                            oProducto.Id_Producto = int.Parse(txtId.Text);
+                            oProducto.Id_TipoProd = CCategoria.SelectedIndex + 1;
+                            oProducto.Descripcion = TDescripcion.Text;
+                            oProducto.Precio = int.Parse(txtprecio.Text);
+                            oProducto.Imagen = PathImagen;
+                            db.Productoes.Add(oProducto);
+                            db.SaveChanges();
+                        }
+
+                        MessageBox.Show("Producto: " + TDescripcion.Text + " agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        VaciarCampos();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("No se agrego correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
 
-            using (InfobarEntities db = new InfobarEntities())
-            {
-                Producto oProducto = new Producto();
-                oProducto.Descripcion = "Hamburguesa";
-                oProducto.Id_TipoProd = 1;
-                oProducto.Precio = 2;
-                oProducto.Imagen = "C:/Hamburguesa.jpg";
-                db.Productoes.Add(oProducto);
-                db.SaveChanges();
-            }
-            
         }
 
         private void VaciarCampos()
         {
+            txtId.Text = "";
             TDescripcion.Text = "";
             txtprecio.Text = "";
             CCategoria.SelectedIndex = -1;
