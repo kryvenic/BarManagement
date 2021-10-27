@@ -50,6 +50,17 @@ namespace InfoBAR
                     VaciarCampos();
                 }
             }
+
+            using (InfobarEntities db = new InfobarEntities())
+            {
+                Producto oProducto = new Producto();
+                oProducto.Descripcion = "Hamburguesa";
+                oProducto.Id_TipoProd = 1;
+                oProducto.Precio = 2;
+                oProducto.Imagen = "C:/Hamburguesa.jpg";
+                db.Productoes.Add(oProducto);
+                db.SaveChanges();
+            }
             
         }
 

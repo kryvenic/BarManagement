@@ -45,14 +45,14 @@ namespace InfoBAR
 
         private void btnEnlistar_Click(object sender, EventArgs e)
         {
-            if (!VerificarCampos.VerificarCamposVacios(groupPedido))
+            /*if (!VerificarCampos.VerificarCamposVacios(groupPedido))
             {
                 dataGridView1.Rows.Add(comboProd.Text, cboTipo.Text, txtCantidad.Text);
             }
             else
             {
                 MessageBox.Show("Debe rellenar/completar todos los campos", "Error: Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

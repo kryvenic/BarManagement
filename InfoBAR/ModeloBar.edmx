@@ -48,7 +48,7 @@
           <Key>
             <PropertyRef Name="Id_TipoProd" />
           </Key>
-          <Property Name="Id_TipoProd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_TipoProd" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="TipoUsuario">
@@ -67,7 +67,7 @@
           <Property Name="Nombre" Type="varchar" MaxLength="30" />
           <Property Name="Clave" Type="varchar" MaxLength="20" />
         </EntityType>
-        <Association Name="FK__Detalle_P__Id_Pe__4BAC3F29">
+        <Association Name="FK__Detalle_P__Id_Pe__45F365D3">
           <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
           <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
           <ReferentialConstraint>
@@ -79,7 +79,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_P__Id_Pr__4CA06362">
+        <Association Name="FK__Detalle_P__Id_Pr__46E78A0C">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
           <ReferentialConstraint>
@@ -147,11 +147,11 @@
           <EntitySet Name="TipoProducto" EntityType="Self.TipoProducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Detalle_P__Id_Pe__4BAC3F29" Association="Self.FK__Detalle_P__Id_Pe__4BAC3F29">
+          <AssociationSet Name="FK__Detalle_P__Id_Pe__45F365D3" Association="Self.FK__Detalle_P__Id_Pe__45F365D3">
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_P__Id_Pr__4CA06362" Association="Self.FK__Detalle_P__Id_Pr__4CA06362">
+          <AssociationSet Name="FK__Detalle_P__Id_Pr__46E78A0C" Association="Self.FK__Detalle_P__Id_Pr__46E78A0C">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
           </AssociationSet>
@@ -187,8 +187,8 @@
           <Property Name="Cantidad" Type="Int32" />
           <Property Name="Precio" Type="Decimal" Precision="8" Scale="2" />
           <Property Name="PrecioTotal" Type="Decimal" Precision="8" Scale="2" />
-          <NavigationProperty Name="Pedido" Relationship="Self.FK__Detalle_P__Id_Pe__4BAC3F29" FromRole="Detalle_Pedido" ToRole="Pedido" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Detalle_P__Id_Pr__4CA06362" FromRole="Detalle_Pedido" ToRole="Producto" />
+          <NavigationProperty Name="Pedido" Relationship="Self.FK__Detalle_P__Id_Pe__45F365D3" FromRole="Detalle_Pedido" ToRole="Pedido" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Detalle_P__Id_Pr__46E78A0C" FromRole="Detalle_Pedido" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Pedido">
           <Key>
@@ -200,7 +200,7 @@
           <Property Name="Mesa" Type="Int32" />
           <Property Name="Fecha" Type="DateTime" Precision="0" />
           <Property Name="Importe_Total" Type="Decimal" Precision="8" Scale="2" />
-          <NavigationProperty Name="Detalle_Pedido" Relationship="Self.FK__Detalle_P__Id_Pe__4BAC3F29" FromRole="Pedido" ToRole="Detalle_Pedido" />
+          <NavigationProperty Name="Detalle_Pedido" Relationship="Self.FK__Detalle_P__Id_Pe__45F365D3" FromRole="Pedido" ToRole="Detalle_Pedido" />
           <NavigationProperty Name="TipoPago" Relationship="Self.FK__Pedido__Id_TipoP__4222D4EF" FromRole="Pedido" ToRole="TipoPago" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Pedido__Id_Usuar__4316F928" FromRole="Pedido" ToRole="Usuario" />
         </EntityType>
@@ -213,7 +213,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="Precio" Type="Decimal" Precision="8" Scale="2" />
           <Property Name="Imagen" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Detalle_Pedido" Relationship="Self.FK__Detalle_P__Id_Pr__4CA06362" FromRole="Producto" ToRole="Detalle_Pedido" />
+          <NavigationProperty Name="Detalle_Pedido" Relationship="Self.FK__Detalle_P__Id_Pr__46E78A0C" FromRole="Producto" ToRole="Detalle_Pedido" />
           <NavigationProperty Name="TipoProducto" Relationship="Self.FK__Producto__Id_Tip__3F466844" FromRole="Producto" ToRole="TipoProducto" />
         </EntityType>
         <EntityType Name="TipoPago">
@@ -228,7 +228,7 @@
           <Key>
             <PropertyRef Name="Id_TipoProd" />
           </Key>
-          <Property Name="Id_TipoProd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_TipoProd" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Productoes" Relationship="Self.FK__Producto__Id_Tip__3F466844" FromRole="TipoProducto" ToRole="Producto" />
         </EntityType>
@@ -251,7 +251,7 @@
           <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__Id_Usuar__4316F928" FromRole="Usuario" ToRole="Pedido" />
           <NavigationProperty Name="TipoUsuario" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="Usuario" ToRole="TipoUsuario" />
         </EntityType>
-        <Association Name="FK__Detalle_P__Id_Pe__4BAC3F29">
+        <Association Name="FK__Detalle_P__Id_Pe__45F365D3">
           <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
           <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
           <ReferentialConstraint>
@@ -263,7 +263,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detalle_P__Id_Pr__4CA06362">
+        <Association Name="FK__Detalle_P__Id_Pr__46E78A0C">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Detalle_Pedido" Type="Self.Detalle_Pedido" Multiplicity="*" />
           <ReferentialConstraint>
@@ -331,11 +331,11 @@
           <EntitySet Name="TipoProductoes" EntityType="Self.TipoProducto" />
           <EntitySet Name="TipoUsuarios" EntityType="Self.TipoUsuario" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK__Detalle_P__Id_Pe__4BAC3F29" Association="Self.FK__Detalle_P__Id_Pe__4BAC3F29">
+          <AssociationSet Name="FK__Detalle_P__Id_Pe__45F365D3" Association="Self.FK__Detalle_P__Id_Pe__45F365D3">
             <End Role="Pedido" EntitySet="Pedidoes" />
             <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detalle_P__Id_Pr__4CA06362" Association="Self.FK__Detalle_P__Id_Pr__4CA06362">
+          <AssociationSet Name="FK__Detalle_P__Id_Pr__46E78A0C" Association="Self.FK__Detalle_P__Id_Pr__46E78A0C">
             <End Role="Producto" EntitySet="Productoes" />
             <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
           </AssociationSet>
