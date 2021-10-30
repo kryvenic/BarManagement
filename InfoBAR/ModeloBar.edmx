@@ -32,7 +32,7 @@
             <PropertyRef Name="Id_Producto" />
           </Key>
           <Property Name="Id_Producto" Type="int" Nullable="false" />
-          <Property Name="Id_TipoProd" Type="int" />
+          <Property Name="Id_TipoProd" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="60" />
           <Property Name="Precio" Type="decimal" Precision="8" Scale="2" />
           <Property Name="Imagen" Type="varchar" MaxLength="120" />
@@ -116,7 +116,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Producto__Id_Tip__3F466844">
-          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="0..1" />
+          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoProducto">
@@ -209,7 +209,7 @@
             <PropertyRef Name="Id_Producto" />
           </Key>
           <Property Name="Id_Producto" Type="Int32" Nullable="false" />
-          <Property Name="Id_TipoProd" Type="Int32" />
+          <Property Name="Id_TipoProd" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="Precio" Type="Decimal" Precision="8" Scale="2" />
           <Property Name="Imagen" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
@@ -222,7 +222,7 @@
           </Key>
           <Property Name="Id_TipoPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__Id_TipoP__4222D4EF" FromRole="TipoPago" ToRole="Pedido" />
+          <NavigationProperty Name="Pedido" Relationship="Self.FK__Pedido__Id_TipoP__4222D4EF" FromRole="TipoPago" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="TipoProducto">
           <Key>
@@ -230,7 +230,7 @@
           </Key>
           <Property Name="Id_TipoProd" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Productoes" Relationship="Self.FK__Producto__Id_Tip__3F466844" FromRole="TipoProducto" ToRole="Producto" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__Id_Tip__3F466844" FromRole="TipoProducto" ToRole="Producto" />
         </EntityType>
         <EntityType Name="TipoUsuario">
           <Key>
@@ -238,7 +238,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="TipoUsuario" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="TipoUsuario" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -248,7 +248,7 @@
           <Property Name="Id_Tipo" Type="Int32" />
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Pedidoes" Relationship="Self.FK__Pedido__Id_Usuar__4316F928" FromRole="Usuario" ToRole="Pedido" />
+          <NavigationProperty Name="Pedido" Relationship="Self.FK__Pedido__Id_Usuar__4316F928" FromRole="Usuario" ToRole="Pedido" />
           <NavigationProperty Name="TipoUsuario" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="Usuario" ToRole="TipoUsuario" />
         </EntityType>
         <Association Name="FK__Detalle_P__Id_Pe__45F365D3">
@@ -300,7 +300,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Producto__Id_Tip__3F466844">
-          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="0..1" />
+          <End Role="TipoProducto" Type="Self.TipoProducto" Multiplicity="1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoProducto">
@@ -325,35 +325,35 @@
         </Association>
         <EntityContainer Name="InfobarEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Detalle_Pedido" EntityType="Self.Detalle_Pedido" />
-          <EntitySet Name="Pedidoes" EntityType="Self.Pedido" />
-          <EntitySet Name="Productoes" EntityType="Self.Producto" />
-          <EntitySet Name="TipoPagoes" EntityType="Self.TipoPago" />
-          <EntitySet Name="TipoProductoes" EntityType="Self.TipoProducto" />
-          <EntitySet Name="TipoUsuarios" EntityType="Self.TipoUsuario" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <EntitySet Name="Pedido" EntityType="Self.Pedido" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="TipoPago" EntityType="Self.TipoPago" />
+          <EntitySet Name="TipoProducto" EntityType="Self.TipoProducto" />
+          <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <AssociationSet Name="FK__Detalle_P__Id_Pe__45F365D3" Association="Self.FK__Detalle_P__Id_Pe__45F365D3">
-            <End Role="Pedido" EntitySet="Pedidoes" />
+            <End Role="Pedido" EntitySet="Pedido" />
             <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
           </AssociationSet>
           <AssociationSet Name="FK__Detalle_P__Id_Pr__46E78A0C" Association="Self.FK__Detalle_P__Id_Pr__46E78A0C">
-            <End Role="Producto" EntitySet="Productoes" />
+            <End Role="Producto" EntitySet="Producto" />
             <End Role="Detalle_Pedido" EntitySet="Detalle_Pedido" />
           </AssociationSet>
           <AssociationSet Name="FK__Pedido__Id_TipoP__4222D4EF" Association="Self.FK__Pedido__Id_TipoP__4222D4EF">
-            <End Role="TipoPago" EntitySet="TipoPagoes" />
-            <End Role="Pedido" EntitySet="Pedidoes" />
+            <End Role="TipoPago" EntitySet="TipoPago" />
+            <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
           <AssociationSet Name="FK__Pedido__Id_Usuar__4316F928" Association="Self.FK__Pedido__Id_Usuar__4316F928">
-            <End Role="Usuario" EntitySet="Usuarios" />
-            <End Role="Pedido" EntitySet="Pedidoes" />
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
           <AssociationSet Name="FK__Producto__Id_Tip__3F466844" Association="Self.FK__Producto__Id_Tip__3F466844">
-            <End Role="TipoProducto" EntitySet="TipoProductoes" />
-            <End Role="Producto" EntitySet="Productoes" />
+            <End Role="TipoProducto" EntitySet="TipoProducto" />
+            <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
           <AssociationSet Name="FK__Usuario__Id_Tipo__38996AB5" Association="Self.FK__Usuario__Id_Tipo__38996AB5">
-            <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
-            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -373,7 +373,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Pedidoes">
+          <EntitySetMapping Name="Pedido">
             <EntityTypeMapping TypeName="InfobarModel.Pedido">
               <MappingFragment StoreEntitySet="Pedido">
                 <ScalarProperty Name="Id_Pedido" ColumnName="Id_Pedido" />
@@ -385,7 +385,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Productoes">
+          <EntitySetMapping Name="Producto">
             <EntityTypeMapping TypeName="InfobarModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
                 <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
@@ -396,7 +396,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TipoPagoes">
+          <EntitySetMapping Name="TipoPago">
             <EntityTypeMapping TypeName="InfobarModel.TipoPago">
               <MappingFragment StoreEntitySet="TipoPago">
                 <ScalarProperty Name="Id_TipoPago" ColumnName="Id_TipoPago" />
@@ -404,7 +404,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TipoProductoes">
+          <EntitySetMapping Name="TipoProducto">
             <EntityTypeMapping TypeName="InfobarModel.TipoProducto">
               <MappingFragment StoreEntitySet="TipoProducto">
                 <ScalarProperty Name="Id_TipoProd" ColumnName="Id_TipoProd" />
@@ -412,7 +412,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TipoUsuarios">
+          <EntitySetMapping Name="TipoUsuario">
             <EntityTypeMapping TypeName="InfobarModel.TipoUsuario">
               <MappingFragment StoreEntitySet="TipoUsuario">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -420,7 +420,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuarios">
+          <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="InfobarModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -444,7 +444,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

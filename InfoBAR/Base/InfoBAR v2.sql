@@ -32,7 +32,7 @@ GO
 
 CREATE TABLE Producto(
 	Id_Producto INTEGER PRIMARY KEY,
-	Id_TipoProd INTEGER,
+	Id_TipoProd INTEGER NOT NULL,
 	Descripcion VARCHAR(60),
 	Precio DEC(8,2),
 	Imagen VARCHAR(120),

@@ -21,7 +21,7 @@ namespace InfoBAR
         }
     
         public int Id_Producto { get; set; }
-        public Nullable<int> Id_TipoProd { get; set; }
+        public int Id_TipoProd { get; set; }
         public string Descripcion { get; set; }
         public Nullable<decimal> Precio { get; set; }
         public string Imagen { get; set; }

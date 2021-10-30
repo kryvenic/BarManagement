@@ -17,13 +17,13 @@ namespace InfoBAR
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TipoPago()
         {
-            this.Pedidoes = new HashSet<Pedido>();
+            this.Pedido = new HashSet<Pedido>();
         }
     
         public int Id_TipoPago { get; set; }
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedidoes { get; set; }
+        public virtual ICollection<Pedido> Pedido { get; set; }
     }
 }

@@ -26,11 +26,11 @@ namespace InfoBAR
         }
     
         public virtual DbSet<Detalle_Pedido> Detalle_Pedido { get; set; }
-        public virtual DbSet<Pedido> Pedidoes { get; set; }
-        public virtual DbSet<Producto> Productoes { get; set; }
-        public virtual DbSet<TipoPago> TipoPagoes { get; set; }
-        public virtual DbSet<TipoProducto> TipoProductoes { get; set; }
-        public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
-        public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<Pedido> Pedido { get; set; }
+        public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<TipoPago> TipoPago { get; set; }
+        public virtual DbSet<TipoProducto> TipoProducto { get; set; }
+        public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

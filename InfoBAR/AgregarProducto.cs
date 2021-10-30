@@ -60,7 +60,7 @@ namespace InfoBAR
                             oProducto.Descripcion = TDescripcion.Text;
                             oProducto.Precio = int.Parse(txtprecio.Text);
                             oProducto.Imagen = PathImagen;
-                            db.Productoes.Add(oProducto);
+                            db.Producto.Add(oProducto);
                             db.SaveChanges();
                         }
 
