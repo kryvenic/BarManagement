@@ -3,7 +3,7 @@ CREATE DATABASE Infobar;
 USE Infobar;
 
 CREATE TABLE TipoUsuario(
-	Id Integer IDENTITY PRIMARY KEY,
+	Id Integer PRIMARY KEY,
 	Descripcion VARCHAR(10)
 	)
 GO
@@ -18,7 +18,7 @@ CREATE TABLE Usuario(
 GO
 
 CREATE TABLE TipoPago(
-	Id_TipoPago INTEGER IDENTITY PRIMARY KEY,
+	Id_TipoPago INTEGER PRIMARY KEY,
 	Descripcion VARCHAR(20)
 	)
 GO
@@ -66,3 +66,7 @@ GO
 
 insert into TipoProducto values (1, 'Comidas');
 insert into TipoProducto values (2, 'Bebidas');
+
+insert into TipoUsuario values (1, 'Admin');
+insert into TipoUsuario values (2, 'Gerente');
+insert into TipoUsuario values (3, 'Empleado');

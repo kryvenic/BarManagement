@@ -84,8 +84,8 @@ namespace InfoBAR
             this.CTipo.FormattingEnabled = true;
             this.CTipo.Items.AddRange(new object[] {
             "Administrador",
-            "Empleado",
-            "Gerente"});
+            "Gerente",
+            "Empleado"});
             this.CTipo.Location = new System.Drawing.Point(181, 255);
             this.CTipo.Name = "CTipo";
             this.CTipo.Size = new System.Drawing.Size(442, 24);

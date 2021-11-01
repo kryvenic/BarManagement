@@ -32,8 +32,28 @@ namespace InfoBAR
                 result = MessageBox.Show("¿Quiere agregar este Usuario?: " + TNombre.Text, "Confirmar alta", buttons, MessageBoxIcon.Question);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Usuario: " + TNombre.Text + " agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    VaciarCampos();
+                    //Agregar a la base de datos
+                    try
+                    {
+                        using (InfobarEntities db = new InfobarEntities())
+                        {
+                            Usuario oUsuario = new Usuario();
+                            oUsuario.Nombre = TNombre.Text;
+                            oUsuario.Id_Tipo = CTipo.SelectedIndex+1;
+                            oUsuario.Clave = TClave.Text;
+                            db.Usuario.Add(oUsuario);
+                            db.SaveChanges();
+                        }
+
+                        MessageBox.Show("Usuario: " + TNombre.Text + " agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        VaciarCampos();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("No se agrego correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                    
                 }
             }
         }

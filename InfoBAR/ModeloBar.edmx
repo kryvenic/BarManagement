@@ -41,7 +41,7 @@
           <Key>
             <PropertyRef Name="Id_TipoPago" />
           </Key>
-          <Property Name="Id_TipoPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_TipoPago" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TipoProducto">
@@ -55,7 +55,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Usuario">
@@ -220,7 +220,7 @@
           <Key>
             <PropertyRef Name="Id_TipoPago" />
           </Key>
-          <Property Name="Id_TipoPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_TipoPago" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Pedido" Relationship="Self.FK__Pedido__Id_TipoP__4222D4EF" FromRole="TipoPago" ToRole="Pedido" />
         </EntityType>
@@ -236,7 +236,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="TipoUsuario" ToRole="Usuario" />
         </EntityType>
