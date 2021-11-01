@@ -165,6 +165,7 @@
     <Compile Include="Usuario.cs">
       <DependentUpon>ModeloBar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades\CheckBoxs.cs" />
     <Compile Include="Utilidades\ValoresEstaticos.cs" />
     <Compile Include="Utilidades\VerificarCampos.cs" />
     <EmbeddedResource Include="AgregarPedido.resx">

@@ -54,7 +54,7 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(479, 170);
+            this.checkBox1.Location = new System.Drawing.Point(453, 24);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(165, 21);
             this.checkBox1.TabIndex = 11;
@@ -64,14 +64,15 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.chkNombre);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.groupBox1.Location = new System.Drawing.Point(35, 149);
+            this.groupBox1.Location = new System.Drawing.Point(25, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 120);
+            this.groupBox1.Size = new System.Drawing.Size(637, 120);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -83,7 +84,7 @@ namespace InfoBAR
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Location = new System.Drawing.Point(119, 76);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(281, 22);
+            this.txtNombre.Size = new System.Drawing.Size(300, 22);
             this.txtNombre.TabIndex = 3;
             // 
             // chkNombre
@@ -108,7 +109,7 @@ namespace InfoBAR
             "Bebidas"});
             this.cboTipo.Location = new System.Drawing.Point(119, 21);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(281, 24);
+            this.cboTipo.Size = new System.Drawing.Size(300, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
@@ -120,9 +121,11 @@ namespace InfoBAR
             this.chkTipo.TabIndex = 0;
             this.chkTipo.Text = "Tipo";
             this.chkTipo.UseVisualStyleBackColor = true;
+            this.chkTipo.CheckedChanged += new System.EventHandler(this.chkTipo_CheckedChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -138,7 +141,8 @@ namespace InfoBAR
             this.dataGridView1.Location = new System.Drawing.Point(12, 285);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.RowTemplate.Height = 100;
             this.dataGridView1.Size = new System.Drawing.Size(660, 270);
             this.dataGridView1.TabIndex = 13;
             // 
@@ -214,7 +218,6 @@ namespace InfoBAR
             this.Imagen.MinimumWidth = 6;
             this.Imagen.Name = "Imagen";
             this.Imagen.ReadOnly = true;
-            this.Imagen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Imagen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // BuscarProducto
@@ -223,7 +226,6 @@ namespace InfoBAR
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(684, 561);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
@@ -237,7 +239,6 @@ namespace InfoBAR
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
