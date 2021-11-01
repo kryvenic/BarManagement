@@ -35,27 +35,29 @@ namespace InfoBAR
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.totaltxt = new System.Windows.Forms.Label();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridPedido = new System.Windows.Forms.DataGridView();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.chkNombre = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gridProductos = new System.Windows.Forms.DataGridView();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPedido)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,7 +87,7 @@ namespace InfoBAR
             // 
             this.labelLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.labelLista.Location = new System.Drawing.Point(666, 57);
+            this.labelLista.Location = new System.Drawing.Point(651, 57);
             this.labelLista.Name = "labelLista";
             this.labelLista.Size = new System.Drawing.Size(167, 39);
             this.labelLista.TabIndex = 2;
@@ -94,14 +96,13 @@ namespace InfoBAR
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnAgregar.Location = new System.Drawing.Point(447, 528);
+            this.btnAgregar.Location = new System.Drawing.Point(447, 541);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(188, 46);
             this.btnAgregar.TabIndex = 23;
@@ -111,14 +112,13 @@ namespace InfoBAR
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(834, 527);
+            this.btnRegistrar.Location = new System.Drawing.Point(834, 542);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(198, 47);
             this.btnRegistrar.TabIndex = 24;
@@ -128,65 +128,39 @@ namespace InfoBAR
             // 
             // totaltxt
             // 
+            this.totaltxt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.totaltxt.AutoSize = true;
             this.totaltxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totaltxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.totaltxt.Location = new System.Drawing.Point(666, 538);
+            this.totaltxt.Location = new System.Drawing.Point(666, 548);
             this.totaltxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totaltxt.Name = "totaltxt";
             this.totaltxt.Size = new System.Drawing.Size(104, 29);
             this.totaltxt.TabIndex = 23;
             this.totaltxt.Text = "TOTAL:";
             // 
-            // Importe
+            // gridPedido
             // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MinimumWidth = 8;
-            this.Importe.Name = "Importe";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridPedido.AllowUserToAddRows = false;
+            this.gridPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dataGridView1.ColumnHeadersHeight = 29;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridPedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.gridPedido.ColumnHeadersHeight = 29;
+            this.gridPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
             this.Nombre,
-            this.Tipo,
             this.Cantidad,
             this.Importe});
-            this.dataGridView1.Location = new System.Drawing.Point(671, 99);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(361, 405);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.gridPedido.Location = new System.Drawing.Point(656, 99);
+            this.gridPedido.Name = "gridPedido";
+            this.gridPedido.RowHeadersVisible = false;
+            this.gridPedido.RowHeadersWidth = 51;
+            this.gridPedido.RowTemplate.Height = 24;
+            this.gridPedido.Size = new System.Drawing.Size(376, 405);
+            this.gridPedido.TabIndex = 22;
+            this.gridPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // checkBox1
             // 
@@ -198,6 +172,7 @@ namespace InfoBAR
             this.checkBox1.TabIndex = 25;
             this.checkBox1.Text = "Todos Los Productos";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // groupBox1
             // 
@@ -233,6 +208,7 @@ namespace InfoBAR
             this.chkNombre.TabIndex = 2;
             this.chkNombre.Text = "Nombre";
             this.chkNombre.UseVisualStyleBackColor = true;
+            this.chkNombre.CheckedChanged += new System.EventHandler(this.chkNombre_CheckedChanged);
             // 
             // cboTipo
             // 
@@ -258,29 +234,63 @@ namespace InfoBAR
             this.chkTipo.TabIndex = 0;
             this.chkTipo.Text = "Tipo";
             this.chkTipo.UseVisualStyleBackColor = true;
+            this.chkTipo.CheckedChanged += new System.EventHandler(this.chkTipo_CheckedChanged);
             // 
-            // dataGridView2
+            // gridProductos
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridProductos.AllowUserToAddRows = false;
+            this.gridProductos.AllowUserToDeleteRows = false;
+            this.gridProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dataGridView2.ColumnHeadersHeight = 29;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.gridProductos.ColumnHeadersHeight = 29;
+            this.gridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Descripcion,
             this.Categoria,
+            this.Precio,
             this.Imagen});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 250);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(623, 254);
-            this.dataGridView2.TabIndex = 26;
+            this.gridProductos.Location = new System.Drawing.Point(12, 250);
+            this.gridProductos.Name = "gridProductos";
+            this.gridProductos.RowHeadersWidth = 51;
+            this.gridProductos.RowTemplate.Height = 45;
+            this.gridProductos.RowTemplate.ReadOnly = true;
+            this.gridProductos.Size = new System.Drawing.Size(623, 254);
+            this.gridProductos.TabIndex = 26;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCantidad.Location = new System.Drawing.Point(156, 556);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(65, 22);
+            this.txtCantidad.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Snow;
+            this.label2.Location = new System.Drawing.Point(12, 548);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 32);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Cantidad";
+            // 
+            // Id
+            // 
+            this.Id.FillWeight = 53.47594F;
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
             // 
             // Descripcion
             // 
+            this.Descripcion.FillWeight = 111.631F;
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
@@ -288,13 +298,22 @@ namespace InfoBAR
             // 
             // Categoria
             // 
+            this.Categoria.FillWeight = 111.631F;
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.MinimumWidth = 6;
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
             // 
+            // Precio
+            // 
+            this.Precio.FillWeight = 111.631F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            // 
             // Imagen
             // 
+            this.Imagen.FillWeight = 111.631F;
             this.Imagen.HeaderText = "Imagen";
             this.Imagen.MinimumWidth = 6;
             this.Imagen.Name = "Imagen";
@@ -302,26 +321,34 @@ namespace InfoBAR
             this.Imagen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Imagen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // textBox1
+            // dataGridViewTextBoxColumn1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(156, 545);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 22);
-            this.textBox1.TabIndex = 26;
+            this.dataGridViewTextBoxColumn1.FillWeight = 42.78075F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // label2
+            // Nombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(12, 535);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 32);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Cantidad";
+            this.Nombre.FillWeight = 119.0731F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 119.0731F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Importe
+            // 
+            this.Importe.FillWeight = 119.0731F;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MinimumWidth = 8;
+            this.Importe.Name = "Importe";
             // 
             // AgregarPedido
             // 
@@ -330,13 +357,13 @@ namespace InfoBAR
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(1044, 601);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.gridProductos);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.totaltxt);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridPedido);
             this.Controls.Add(this.labelLista);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -345,10 +372,10 @@ namespace InfoBAR
             this.Text = "AgregarPedido";
             this.Load += new System.EventHandler(this.AgregarPedido_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPedido)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,22 +388,24 @@ namespace InfoBAR
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label totaltxt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridPedido;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.CheckBox chkNombre;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.CheckBox chkTipo;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gridProductos;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewImageColumn Imagen;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
     }
 }

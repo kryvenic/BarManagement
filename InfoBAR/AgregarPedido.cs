@@ -40,24 +40,43 @@ namespace InfoBAR
 
         private void AgregarPedido_Load(object sender, EventArgs e)
         {
-            ValoresEstaticos.AgregarProductosDatagrid(dataGridView1);
+            ValoresEstaticos.AgregarProductosDatagrid(gridPedido);
         }
 
         private void btnEnlistar_Click(object sender, EventArgs e)
         {
-            /*if (!VerificarCampos.VerificarCamposVacios(groupPedido))
+            int selectedRowCount = gridProductos.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //Hay filas seleccionadas
+            if (selectedRowCount > 0)
             {
-                dataGridView1.Rows.Add(comboProd.Text, cboTipo.Text, txtCantidad.Text);
+                //Recorre cada fila
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+                    //Guarda los valores por fila
+                    List<string> valoresPorFila = new List<string>();
+                    //Recorre cada valor de celda
+                    for(int j = 0; j < gridProductos.ColumnCount; j++)
+                    {
+                        //Añade
+                        valoresPorFila.Add(gridProductos.SelectedRows[i].Cells[j].Value.ToString());
+                    }
+                    AgregarAlDatagrid(valoresPorFila);
+                    //Limpia la lista
+                    valoresPorFila.Clear();
+                }
             }
-            else
-            {
-                MessageBox.Show("Debe rellenar/completar todos los campos", "Error: Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+        }
+
+        private void AgregarAlDatagrid(List<string> valoresPorFila)
+        {
+            if (txtCantidad.Text.Equals("")) return;
+            gridPedido.Rows.Add(valoresPorFila[0], valoresPorFila[1], txtCantidad.Text,
+                float.Parse(valoresPorFila[3]) * float.Parse(txtCantidad.Text));
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.Rows.Count > 0)
+            if(gridPedido.Rows.Count > 0)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result;
@@ -65,7 +84,7 @@ namespace InfoBAR
                 result = MessageBox.Show("¿Quiere agregar el pedido?", "Confirmar pedido", buttons, MessageBoxIcon.Question);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    dataGridView1.Rows.Clear();
+                    gridPedido.Rows.Clear();
                     MessageBox.Show("Pedido agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -79,6 +98,109 @@ namespace InfoBAR
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                //Buscar en la based de datos
+                try
+                {
+                    using (InfobarEntities db = new InfobarEntities())
+                    {
+                        Producto oProducto = new Producto();
+
+                        //Traer todos los productos con categoria
+                        var list = from prod in db.Producto
+                                   join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                                   select new
+                                   {
+                                       //Necesario para hacer el foreach
+                                       Prod = prod,
+                                       Tipo = tipo
+                                   };
+
+                        //Añadir al datagrid
+                        foreach (var i in list)
+                        {
+                            Image imagen = null;
+                            if (i.Prod.Imagen != null)
+                            {
+                                imagen = Image.FromFile(i.Prod.Imagen);
+                            }
+                            gridProductos.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                        }
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                ResetearGrid();
+            }
+        }
+
+        private void chkTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTipo.Checked)
+            {
+                //Buscar en la based de datos
+                try
+                {
+                    using (InfobarEntities db = new InfobarEntities())
+                    {
+                        Producto oProducto = new Producto();
+
+                        //Traer todos los productos con categoria
+                        var list = from prod in db.Producto
+                                   join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                                   where tipo.Id_TipoProd == (cboTipo.SelectedIndex + 1)
+                                   select new
+                                   {
+                                       //Necesario para hacer el foreach
+                                       Prod = prod,
+                                       Tipo = tipo
+                                   };
+
+                        //Añadir al datagrid
+                        foreach (var i in list)
+                        {
+                            Image imagen = null;
+                            if (i.Prod.Imagen != null)
+                            {
+                                imagen = Image.FromFile(i.Prod.Imagen);
+                            }
+                            gridProductos.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                        }
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                ResetearGrid();
+            }
+        }
+
+        private void chkNombre_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ResetearGrid()
+        {
+            gridPedido.Rows.Clear();
+            gridPedido.Refresh();
+            CheckBoxs.DesHabilitarCheckboxs(groupBox1);
         }
     }
 }

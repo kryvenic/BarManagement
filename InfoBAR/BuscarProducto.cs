@@ -16,7 +16,7 @@ namespace InfoBAR
         public BuscarProducto()
         {
             InitializeComponent();
-            ((DataGridViewImageColumn)dataGridView1.Columns[3]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+            ((DataGridViewImageColumn)dataGridView1.Columns[4]).ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace InfoBAR
                             {
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
-                            dataGridView1.Rows.Add(i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio,imagen);
+                            dataGridView1.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio,imagen);
                         }
                     }
 
@@ -94,7 +94,7 @@ namespace InfoBAR
                             {
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
-                            dataGridView1.Rows.Add(i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                            dataGridView1.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
                         }
                     }
 
