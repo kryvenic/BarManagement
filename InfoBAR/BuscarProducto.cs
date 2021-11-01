@@ -60,9 +60,7 @@ namespace InfoBAR
             }
             else
             {
-                dataGridView1.Rows.Clear();
-                dataGridView1.Refresh();
-                CheckBoxs.DesHabilitarCheckboxs(groupBox1);
+                ResetearGrid();
             }
         }
 
@@ -108,10 +106,15 @@ namespace InfoBAR
             }
             else
             {
-                dataGridView1.Rows.Clear();
-                dataGridView1.Refresh();
-                CheckBoxs.DesHabilitarCheckboxs(groupBox1);
+                ResetearGrid();
             }
+        }
+
+        private void ResetearGrid()
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            CheckBoxs.DesHabilitarCheckboxs(groupBox1);
         }
     }
 }
