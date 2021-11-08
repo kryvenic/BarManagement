@@ -16,6 +16,7 @@ namespace InfoBAR
         public AgregarPedido()
         {
             InitializeComponent();
+            ((DataGridViewImageColumn)gridProductos.Columns[4]).ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
