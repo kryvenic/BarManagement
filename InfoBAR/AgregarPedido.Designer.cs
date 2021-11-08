@@ -36,6 +36,10 @@ namespace InfoBAR
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.totaltxt = new System.Windows.Forms.Label();
             this.gridPedido = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -43,17 +47,16 @@ namespace InfoBAR
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
             this.gridProductos = new System.Windows.Forms.DataGridView();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtMesa = new System.Windows.Forms.TextBox();
+            this.lblMesa = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPedido)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -132,7 +135,7 @@ namespace InfoBAR
             this.totaltxt.AutoSize = true;
             this.totaltxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totaltxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.totaltxt.Location = new System.Drawing.Point(666, 548);
+            this.totaltxt.Location = new System.Drawing.Point(660, 520);
             this.totaltxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totaltxt.Name = "totaltxt";
             this.totaltxt.Size = new System.Drawing.Size(104, 29);
@@ -155,12 +158,42 @@ namespace InfoBAR
             this.Importe});
             this.gridPedido.Location = new System.Drawing.Point(656, 99);
             this.gridPedido.Name = "gridPedido";
-            this.gridPedido.RowHeadersVisible = false;
             this.gridPedido.RowHeadersWidth = 51;
             this.gridPedido.RowTemplate.Height = 24;
             this.gridPedido.Size = new System.Drawing.Size(376, 405);
             this.gridPedido.TabIndex = 22;
             this.gridPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.gridPedido.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.gridPedido_UserAddedRow);
+            this.gridPedido.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.gridPedido_UserDeletedRow);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 42.78075F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 119.0731F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 119.0731F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Importe
+            // 
+            this.Importe.FillWeight = 119.0731F;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MinimumWidth = 8;
+            this.Importe.Name = "Importe";
             // 
             // checkBox1
             // 
@@ -261,26 +294,6 @@ namespace InfoBAR
             this.gridProductos.Size = new System.Drawing.Size(623, 254);
             this.gridProductos.TabIndex = 26;
             // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidad.Location = new System.Drawing.Point(156, 556);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(65, 22);
-            this.txtCantidad.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(12, 548);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 32);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Cantidad";
-            // 
             // Id
             // 
             this.Id.FillWeight = 53.47594F;
@@ -321,34 +334,63 @@ namespace InfoBAR
             this.Imagen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Imagen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // dataGridViewTextBoxColumn1
+            // txtCantidad
             // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 42.78075F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.txtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCantidad.Font = new System.Drawing.Font("Montserrat Subrayada", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(156, 548);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(65, 36);
+            this.txtCantidad.TabIndex = 26;
+            this.txtCantidad.Text = "1";
             // 
-            // Nombre
+            // label2
             // 
-            this.Nombre.FillWeight = 119.0731F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Snow;
+            this.label2.Location = new System.Drawing.Point(12, 552);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 32);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Cantidad";
             // 
-            // Cantidad
+            // lblTotal
             // 
-            this.Cantidad.FillWeight = 119.0731F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotal.Location = new System.Drawing.Point(702, 558);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(62, 29);
+            this.lblTotal.TabIndex = 29;
+            this.lblTotal.Text = "0.00";
             // 
-            // Importe
+            // txtMesa
             // 
-            this.Importe.FillWeight = 119.0731F;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MinimumWidth = 8;
-            this.Importe.Name = "Importe";
+            this.txtMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtMesa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMesa.Font = new System.Drawing.Font("Montserrat Subrayada", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMesa.Location = new System.Drawing.Point(324, 548);
+            this.txtMesa.Name = "txtMesa";
+            this.txtMesa.Size = new System.Drawing.Size(65, 36);
+            this.txtMesa.TabIndex = 30;
+            this.txtMesa.Text = "1";
+            // 
+            // lblMesa
+            // 
+            this.lblMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMesa.ForeColor = System.Drawing.Color.Snow;
+            this.lblMesa.Location = new System.Drawing.Point(227, 552);
+            this.lblMesa.Name = "lblMesa";
+            this.lblMesa.Size = new System.Drawing.Size(91, 32);
+            this.lblMesa.TabIndex = 31;
+            this.lblMesa.Text = "Mesa";
+            this.lblMesa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AgregarPedido
             // 
@@ -356,6 +398,9 @@ namespace InfoBAR
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(1044, 601);
+            this.Controls.Add(this.lblMesa);
+            this.Controls.Add(this.txtMesa);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnAgregar);
@@ -407,5 +452,8 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtMesa;
+        private System.Windows.Forms.Label lblMesa;
     }
 }

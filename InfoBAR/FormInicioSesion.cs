@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InfoBAR.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,6 +54,7 @@ namespace InfoBAR
                 case "admin":
                     if (contra.Equals("admin"))
                     {
+                        Global.TipoUsuario = 1;
                         Ingresar();
                     }
                     else
@@ -63,6 +65,7 @@ namespace InfoBAR
                 case "empleado":
                     if (contra.Equals("empleado"))
                     {
+                        Global.TipoUsuario = 2;
                         Ingresar();
                     }
                     else
@@ -73,6 +76,7 @@ namespace InfoBAR
                 case "gerente":
                     if (contra.Equals("gerente"))
                     {
+                        Global.TipoUsuario = 3;
                         Ingresar();
                     }
                     else
@@ -88,6 +92,7 @@ namespace InfoBAR
 
         private void Ingresar()
         {
+            Global.Usuario = usuario;
             Form fm = new InfoBAR(usuario)
             {
                 Visible = true

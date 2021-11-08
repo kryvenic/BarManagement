@@ -37,3 +37,13 @@ C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFrame
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csprojAssemblyReference.cache
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Antlr3.Runtime.dll
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Iesi.Collections.dll
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\NHibernate.dll
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.dll
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Antlr3.Runtime.xml
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Iesi.Collections.xml
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\NHibernate.xml
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.xml
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.EagerFetching.xml

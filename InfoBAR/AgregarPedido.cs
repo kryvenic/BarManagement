@@ -40,7 +40,6 @@ namespace InfoBAR
 
         private void AgregarPedido_Load(object sender, EventArgs e)
         {
-            ValoresEstaticos.AgregarProductosDatagrid(gridPedido);
         }
 
         private void btnEnlistar_Click(object sender, EventArgs e)
@@ -60,33 +59,30 @@ namespace InfoBAR
                         //Añade
                         valoresPorFila.Add(gridProductos.SelectedRows[i].Cells[j].Value.ToString());
                     }
-                    AgregarAlDatagrid(valoresPorFila);
+                    AgregarAlDatagridPedido(valoresPorFila);
                     //Limpia la lista
                     valoresPorFila.Clear();
                 }
             }
         }
 
-        private void AgregarAlDatagrid(List<string> valoresPorFila)
+        private void AgregarAlDatagridPedido(List<string> valoresPorFila)
         {
             if (txtCantidad.Text.Equals("")) return;
             gridPedido.Rows.Add(valoresPorFila[0], valoresPorFila[1], txtCantidad.Text,
                 float.Parse(valoresPorFila[3]) * float.Parse(txtCantidad.Text));
+            lblTotal.Text = CalcularImporteTotal().ToString();
+
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if(gridPedido.Rows.Count > 0)
             {
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
-
-                result = MessageBox.Show("¿Quiere agregar el pedido?", "Confirmar pedido", buttons, MessageBoxIcon.Question);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    gridPedido.Rows.Clear();
-                    MessageBox.Show("Pedido agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                
+                    RegistrarPedidoEnBase();
+                
             }
             else
             {
@@ -95,11 +91,69 @@ namespace InfoBAR
             
         }
 
+        private void RegistrarPedidoEnBase()
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show("¿Quiere registrar el pedido? " , "Confirmar alta", buttons, MessageBoxIcon.Question);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                //Agregar a la base de datos
+                try
+                {
+                    using (InfobarEntities db = new InfobarEntities())
+                    {
+                        Pedido oPedido = new Pedido();
+                        int IdUsuario = (from user in db.Usuario
+                                        where user.Nombre.Contains(Global.Usuario)
+                                        select user.Id).First();
+                        oPedido.Id_Usuario = IdUsuario;
+                        oPedido.Fecha = new DateTime();
+                        oPedido.Mesa = int.Parse(txtMesa.Text);
+                        oPedido.Importe_Total = decimal.Parse(lblTotal.Text);
+                        db.Pedido.Add(oPedido);
+                        
+                        db.SaveChanges();
+                        
+                    }
+                    using (InfobarEntities db = new InfobarEntities())
+                    {
+                        int ultimoId = (from pedido in db.Pedido
+                                        select pedido.Id_Pedido).Max();
+                        foreach (DataGridViewRow row in gridPedido.Rows)
+                        {
+                            Detalle_Pedido oDetalle = new Detalle_Pedido();
+                            oDetalle.Id_Pedido = ultimoId;
+                            // Celda del Id
+                            oDetalle.Id_Prod = int.Parse(row.Cells[0].Value.ToString());
+                            // Cantidad
+                            oDetalle.Cantidad = int.Parse(row.Cells[2].Value.ToString());
+                            // Importe
+                            oDetalle.Precio = decimal.Parse(row.Cells[3].Value.ToString());
+                            oDetalle.PrecioTotal = (decimal)CalcularImporteTotal();
+                            db.Detalle_Pedido.Add(oDetalle);
+                        }
+                        db.SaveChanges();
+                    }
+
+                    gridPedido.Rows.Clear();
+                    MessageBox.Show("Pedido registrado ", "Agregar pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se agrego correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+             
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
+        //Data grid productos por Tipo
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -131,6 +185,7 @@ namespace InfoBAR
                             }
                             gridProductos.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
                         }
+
                     }
 
                 }
@@ -201,6 +256,26 @@ namespace InfoBAR
             gridPedido.Rows.Clear();
             gridPedido.Refresh();
             CheckBoxs.DesHabilitarCheckboxs(groupBox1);
+        }
+
+        private void gridPedido_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            lblTotal.Text = CalcularImporteTotal().ToString();
+        }
+
+        private float CalcularImporteTotal()
+        {
+            float importeTotal = 0f;
+            foreach (DataGridViewRow row in gridPedido.Rows)
+            {
+               importeTotal  += float.Parse(row.Cells["Importe"].Value.ToString());
+            }
+            return importeTotal;
+        }
+
+        private void gridPedido_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            lblTotal.Text = CalcularImporteTotal().ToString();
         }
     }
 }
