@@ -53,12 +53,13 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(476, 152);
+            this.checkBox1.Location = new System.Drawing.Point(476, 173);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 21);
             this.checkBox1.TabIndex = 16;
             this.checkBox1.Text = "Todos Los Usuarios";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -102,8 +103,9 @@ namespace InfoBAR
             this.cboTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Items.AddRange(new object[] {
-            "Comidas",
-            "Bebidas"});
+            "Administrador",
+            "Gerente",
+            "Empleado"});
             this.cboTipo.Location = new System.Drawing.Point(119, 21);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(281, 24);
@@ -118,9 +120,12 @@ namespace InfoBAR
             this.chkTipo.TabIndex = 0;
             this.chkTipo.Text = "Tipo";
             this.chkTipo.UseVisualStyleBackColor = true;
+            this.chkTipo.CheckedChanged += new System.EventHandler(this.chkTipo_CheckedChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -219,7 +224,7 @@ namespace InfoBAR
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BuscarUsuario";
             this.Text = "BuscarUsuario";
             this.groupBox1.ResumeLayout(false);
