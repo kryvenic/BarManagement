@@ -36,6 +36,7 @@ CREATE TABLE Producto(
 	Descripcion VARCHAR(60),
 	Precio DEC(8,2),
 	Imagen VARCHAR(120),
+	Activado INTEGER NOT NULL,
 	FOREIGN KEY (Id_TipoProd) REFERENCES TipoProducto(Id_TipoProd)
 	)
 GO

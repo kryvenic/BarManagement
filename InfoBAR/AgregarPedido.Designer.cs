@@ -289,7 +289,7 @@ namespace InfoBAR
             this.gridProductos.Location = new System.Drawing.Point(12, 250);
             this.gridProductos.Name = "gridProductos";
             this.gridProductos.RowHeadersWidth = 51;
-            this.gridProductos.RowTemplate.Height = 45;
+            this.gridProductos.RowTemplate.Height = 50;
             this.gridProductos.RowTemplate.ReadOnly = true;
             this.gridProductos.Size = new System.Drawing.Size(623, 254);
             this.gridProductos.TabIndex = 26;

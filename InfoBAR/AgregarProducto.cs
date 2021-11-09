@@ -36,7 +36,6 @@ namespace InfoBAR
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
             if (VerificarCampos.VerificarCamposVacios(this) && PathImagen.Equals(""))
             {
                 MessageBox.Show("Debe rellenar/completar todos los campos", "Error: Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,6 +59,7 @@ namespace InfoBAR
                             oProducto.Descripcion = TDescripcion.Text;
                             oProducto.Precio = int.Parse(txtprecio.Text);
                             oProducto.Imagen = PathImagen;
+                            oProducto.Activado = 1;
                             db.Producto.Add(oProducto);
                             db.SaveChanges();
                         }
@@ -74,7 +74,6 @@ namespace InfoBAR
                     
                 }
             }
-
         }
 
         private void VaciarCampos()
