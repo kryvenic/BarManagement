@@ -169,6 +169,7 @@ namespace InfoBAR
                         //Traer todos los productos con categoria
                         var list = from prod in db.Producto
                                    join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                                   where prod.Activado == 1
                                    select new
                                    {
                                        //Necesario para hacer el foreach
@@ -197,7 +198,7 @@ namespace InfoBAR
             }
             else
             {
-                ResetearGrid();
+                ResetearGridProductos();
             }
         }
 
@@ -215,7 +216,7 @@ namespace InfoBAR
                         //Traer todos los productos con categoria
                         var list = from prod in db.Producto
                                    join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
-                                   where tipo.Id_TipoProd == (cboTipo.SelectedIndex + 1)
+                                   where tipo.Id_TipoProd == (cboTipo.SelectedIndex + 1) && prod.Activado == 1
                                    select new
                                    {
                                        //Necesario para hacer el foreach
@@ -243,7 +244,7 @@ namespace InfoBAR
             }
             else
             {
-                ResetearGrid();
+                ResetearGridProductos();
             }
         }
 
@@ -252,10 +253,10 @@ namespace InfoBAR
 
         }
 
-        private void ResetearGrid()
+        private void ResetearGridProductos()
         {
-            gridPedido.Rows.Clear();
-            gridPedido.Refresh();
+            gridProductos.Rows.Clear();
+            gridProductos.Refresh();
             CheckBoxs.DesHabilitarCheckboxs(groupBox1);
         }
 

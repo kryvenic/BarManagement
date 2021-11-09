@@ -105,7 +105,7 @@ namespace InfoBAR
             DialogResult result;
 
             result = MessageBox.Show("¿Esta seguro que quiere eliminar el/los producto/s? \n" +
-                "Advertencia: Los productos se eliminaran directamente de la base de datos", "Confirmar baja", buttons, MessageBoxIcon.Question);
+                "Las bajas no se hacen la base de datos", "Confirmar baja", buttons, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                     using (InfobarEntities db = new InfobarEntities())
@@ -145,8 +145,7 @@ namespace InfoBAR
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            result = MessageBox.Show("¿Esta seguro que quiere eliminar el/los producto/s? \n" +
-                "Advertencia: Los productos se eliminaran directamente de la base de datos", "Confirmar baja", buttons, MessageBoxIcon.Question);
+            result = MessageBox.Show("¿Esta seguro que quiere activar el producto? ", "Confirmar baja", buttons, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 using (InfobarEntities db = new InfobarEntities())
