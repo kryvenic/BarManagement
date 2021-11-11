@@ -28,7 +28,7 @@ namespace InfoBAR
                 {
                     using (InfobarEntities db = new InfobarEntities())
                     {
-                        //Traer todos los productos con categoria
+                        //Traer todas las ventas/pedidos con tipo de pago y usuario
                         var pedidosYDetalles = from pedi in db.Pedido
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
@@ -39,20 +39,30 @@ namespace InfoBAR
                                                    PagoPedido = pdp,
                                                    Usuario = user
                                                };
-                        //Añadir al datagrid
-                        foreach (var i in pedidosYDetalles)
+                        //Verificar si no se encontraron pedidos
+                        if (pedidosYDetalles.Any())
                         {
-                            var tipopago = "";
-                            if (i.PagoPedido == null)
+                            //Añadir al datagrid
+                            foreach (var i in pedidosYDetalles)
                             {
-                                tipopago = "No Pagado";
+                                var tipopago = "";
+                                if (i.PagoPedido == null)
+                                {
+                                    tipopago = "No Pagado";
+                                }
+                                else
+                                {
+                                    tipopago = i.PagoPedido.Descripcion;
+                                }
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre);
                             }
-                            else
-                            {
-                                tipopago = i.PagoPedido.Descripcion;
-                            }
-                            dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre);
                         }
+                        else
+                        {
+                            MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        
                     }
                 }
                 catch (Exception)
@@ -71,6 +81,64 @@ namespace InfoBAR
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             CheckBoxs.DesHabilitarCheckboxs(groupBox1);
+        }
+
+        private void chkTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTipo.Checked)
+            {
+                dataGridView1.Rows.Clear();
+                //Buscar en la base de datos
+                try
+                {
+                    using (InfobarEntities db = new InfobarEntities())
+                    {
+                        //Traer todas las ventas/pedidos por tipo de pago
+                        var pedidosYDetalles = from pedi in db.Pedido
+                                               join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
+                                               from pdp in PedidoPago.DefaultIfEmpty()
+                                               join user in db.Usuario on pedi.Id_Usuario equals user.Id
+                                               where pdp.Id_TipoPago == cboTipo.SelectedIndex + 1
+                                               select new
+                                               {
+                                                   Pedido = pedi,
+                                                   PagoPedido = pdp,
+                                                   Usuario = user
+                                               };
+                        //Verificar si no se encontraron pedidos
+                        if(pedidosYDetalles.Any())
+                        {
+                            //Añadir al datagrid
+                            foreach (var i in pedidosYDetalles)
+                            {
+                                var tipopago = "";
+                                if (i.PagoPedido == null)
+                                {
+                                    tipopago = "No Pagado";
+                                }
+                                else
+                                {
+                                    tipopago = i.PagoPedido.Descripcion;
+                                }
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                ResetearGrid();
+            }
         }
     }
 }
