@@ -30,25 +30,30 @@ namespace InfoBAR
                     {
                         //Traer todos los productos con categoria
                         var pedidosYDetalles = from pedi in db.Pedido
-                                               join detalle in db.Detalle_Pedido on pedi.Id_Pedido equals detalle.Id_Pedido
-                                               join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago
+                                               join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
+                                               from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
                                                select new
                                                {
                                                    Pedido = pedi,
-                                                   Detalle = detalle,
-                                                   TipoPago = tipo,
+                                                   PagoPedido = pdp,
                                                    Usuario = user
-                                               }
-                                               ;
+                                               };
                         //Añadir al datagrid
                         foreach (var i in pedidosYDetalles)
                         {
-                            var tipopago = i.TipoPago.Id_TipoPago;
+                            var tipopago = "";
+                            if (i.PagoPedido == null)
+                            {
+                                tipopago = "No Pagado";
+                            }
+                            else
+                            {
+                                tipopago = i.PagoPedido.Descripcion;
+                            }
                             dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre);
                         }
                     }
-
                 }
                 catch (Exception)
                 {

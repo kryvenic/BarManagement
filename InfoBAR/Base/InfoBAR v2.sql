@@ -75,3 +75,7 @@ insert into TipoUsuario values (3, 'Empleado');
 insert into Usuario (Id_Tipo,Nombre,Clave) values (1,'admin','admin')
 insert into Usuario (Id_Tipo,Nombre,Clave) values (2,'gerente','gerente')
 insert into Usuario (Id_Tipo,Nombre,Clave) values (3,'empleado','empleado')
+
+insert into TipoPago values (1,'Efectivo')
+insert into TipoPago values (2,'Debito')
+insert into TipoPago values (3,'Credito')
