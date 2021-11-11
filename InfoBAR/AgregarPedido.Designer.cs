@@ -43,7 +43,6 @@ namespace InfoBAR
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.chkNombre = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
             this.gridProductos = new System.Windows.Forms.DataGridView();
@@ -57,6 +56,7 @@ namespace InfoBAR
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtMesa = new System.Windows.Forms.TextBox();
             this.lblMesa = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPedido)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -199,7 +199,7 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(22, 104);
+            this.checkBox1.Location = new System.Drawing.Point(212, 120);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(165, 21);
             this.checkBox1.TabIndex = 25;
@@ -209,9 +209,9 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.chkNombre);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
@@ -227,21 +227,10 @@ namespace InfoBAR
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(119, 64);
+            this.txtNombre.Location = new System.Drawing.Point(144, 79);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(488, 22);
+            this.txtNombre.Size = new System.Drawing.Size(463, 22);
             this.txtNombre.TabIndex = 3;
-            // 
-            // chkNombre
-            // 
-            this.chkNombre.AutoSize = true;
-            this.chkNombre.Location = new System.Drawing.Point(22, 64);
-            this.chkNombre.Name = "chkNombre";
-            this.chkNombre.Size = new System.Drawing.Size(80, 21);
-            this.chkNombre.TabIndex = 2;
-            this.chkNombre.Text = "Nombre";
-            this.chkNombre.UseVisualStyleBackColor = true;
-            this.chkNombre.CheckedChanged += new System.EventHandler(this.chkNombre_CheckedChanged);
             // 
             // cboTipo
             // 
@@ -253,15 +242,15 @@ namespace InfoBAR
             this.cboTipo.Items.AddRange(new object[] {
             "Comidas",
             "Bebidas"});
-            this.cboTipo.Location = new System.Drawing.Point(119, 21);
+            this.cboTipo.Location = new System.Drawing.Point(144, 21);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(488, 24);
+            this.cboTipo.Size = new System.Drawing.Size(463, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
             // 
             this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(22, 24);
+            this.chkTipo.Location = new System.Drawing.Point(71, 24);
             this.chkTipo.Name = "chkTipo";
             this.chkTipo.Size = new System.Drawing.Size(58, 21);
             this.chkTipo.TabIndex = 0;
@@ -392,6 +381,22 @@ namespace InfoBAR
             this.lblMesa.Text = "Mesa";
             this.lblMesa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnBuscar.Location = new System.Drawing.Point(22, 74);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(107, 27);
+            this.btnBuscar.TabIndex = 27;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // AgregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -437,7 +442,6 @@ namespace InfoBAR
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.CheckBox chkNombre;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.CheckBox chkTipo;
         private System.Windows.Forms.DataGridView gridProductos;
@@ -455,5 +459,6 @@ namespace InfoBAR
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtMesa;
         private System.Windows.Forms.Label lblMesa;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

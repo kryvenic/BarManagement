@@ -41,10 +41,10 @@ namespace InfoBAR
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            VerificarContraYIngresar();
+            VerificarContraEIngresar();
         }
 
-        private void VerificarContraYIngresar()
+        private void VerificarContraEIngresar()
         {
             usuario = txtUsuario.Text;
             contra = txtContra.Text;
@@ -152,7 +152,7 @@ namespace InfoBAR
         {
             if(e.KeyCode == Keys.Enter)
             {
-                VerificarContraYIngresar();
+                VerificarContraEIngresar();
             }
         }
 
@@ -160,7 +160,7 @@ namespace InfoBAR
         {
             if (e.KeyCode == Keys.Enter)
             {
-                VerificarContraYIngresar();
+                VerificarContraEIngresar();
             }
         }
 

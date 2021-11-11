@@ -31,8 +31,6 @@ namespace InfoBAR
         {
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.chkNombre = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -53,7 +51,7 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(476, 173);
+            this.checkBox1.Location = new System.Drawing.Point(254, 74);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 21);
             this.checkBox1.TabIndex = 16;
@@ -63,37 +61,16 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.chkNombre);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 152);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 120);
+            this.groupBox1.Size = new System.Drawing.Size(660, 120);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(119, 76);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(281, 22);
-            this.txtNombre.TabIndex = 3;
-            // 
-            // chkNombre
-            // 
-            this.chkNombre.AutoSize = true;
-            this.chkNombre.Location = new System.Drawing.Point(22, 77);
-            this.chkNombre.Name = "chkNombre";
-            this.chkNombre.Size = new System.Drawing.Size(80, 21);
-            this.chkNombre.TabIndex = 2;
-            this.chkNombre.Text = "Nombre";
-            this.chkNombre.UseVisualStyleBackColor = true;
             // 
             // cboTipo
             // 
@@ -106,15 +83,15 @@ namespace InfoBAR
             "Administrador",
             "Gerente",
             "Empleado"});
-            this.cboTipo.Location = new System.Drawing.Point(119, 21);
+            this.cboTipo.Location = new System.Drawing.Point(168, 24);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(281, 24);
+            this.cboTipo.Size = new System.Drawing.Size(387, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
             // 
             this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(22, 24);
+            this.chkTipo.Location = new System.Drawing.Point(86, 27);
             this.chkTipo.Name = "chkTipo";
             this.chkTipo.Size = new System.Drawing.Size(58, 21);
             this.chkTipo.TabIndex = 0;
@@ -218,7 +195,6 @@ namespace InfoBAR
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(684, 561);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
@@ -233,7 +209,6 @@ namespace InfoBAR
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -241,8 +216,6 @@ namespace InfoBAR
 
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.CheckBox chkNombre;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.CheckBox chkTipo;
         private System.Windows.Forms.DataGridView dataGridView1;

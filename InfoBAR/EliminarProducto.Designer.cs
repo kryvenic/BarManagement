@@ -40,9 +40,9 @@ namespace InfoBAR
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActivar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -168,6 +168,18 @@ namespace InfoBAR
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.checkBox1.Location = new System.Drawing.Point(22, 90);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(165, 21);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Todos Los Productos";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // cboTipo
             // 
             this.cboTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -192,18 +204,7 @@ namespace InfoBAR
             this.chkTipo.TabIndex = 0;
             this.chkTipo.Text = "Tipo";
             this.chkTipo.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(22, 90);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(165, 21);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Todos Los Productos";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chkTipo.CheckedChanged += new System.EventHandler(this.chkTipo_CheckedChanged);
             // 
             // btnEliminar
             // 
@@ -212,7 +213,7 @@ namespace InfoBAR
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnEliminar.Location = new System.Drawing.Point(473, 139);
+            this.btnEliminar.Location = new System.Drawing.Point(473, 222);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(139, 41);
             this.btnEliminar.TabIndex = 9;
@@ -227,7 +228,7 @@ namespace InfoBAR
             this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActivar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnActivar.Location = new System.Drawing.Point(629, 139);
+            this.btnActivar.Location = new System.Drawing.Point(629, 222);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.Size = new System.Drawing.Size(139, 41);
             this.btnActivar.TabIndex = 10;

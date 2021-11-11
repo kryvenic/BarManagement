@@ -71,3 +71,7 @@ insert into TipoProducto values (2, 'Bebidas');
 insert into TipoUsuario values (1, 'Admin');
 insert into TipoUsuario values (2, 'Gerente');
 insert into TipoUsuario values (3, 'Empleado');
+
+insert into Usuario (Id_Tipo,Nombre,Clave) values (1,'admin','admin')
+insert into Usuario (Id_Tipo,Nombre,Clave) values (2,'gerente','gerente')
+insert into Usuario (Id_Tipo,Nombre,Clave) values (3,'empleado','empleado')

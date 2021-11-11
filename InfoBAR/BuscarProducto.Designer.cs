@@ -31,8 +31,8 @@ namespace InfoBAR
         {
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.chkNombre = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -45,7 +45,7 @@ namespace InfoBAR
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -54,9 +54,10 @@ namespace InfoBAR
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(453, 24);
+            this.checkBox1.Location = new System.Drawing.Point(674, 24);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(165, 21);
             this.checkBox1.TabIndex = 11;
@@ -66,41 +67,47 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.chkNombre);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.groupBox1.Location = new System.Drawing.Point(25, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(637, 120);
+            this.groupBox1.Size = new System.Drawing.Size(882, 120);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnModificar.Location = new System.Drawing.Point(659, 67);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(180, 36);
+            this.btnModificar.TabIndex = 25;
+            this.btnModificar.Text = "Modificar Producto";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtNombre
             // 
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(119, 76);
+            this.txtNombre.Location = new System.Drawing.Point(144, 76);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 22);
+            this.txtNombre.Size = new System.Drawing.Size(467, 22);
             this.txtNombre.TabIndex = 3;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
-            // 
-            // chkNombre
-            // 
-            this.chkNombre.AutoSize = true;
-            this.chkNombre.Location = new System.Drawing.Point(22, 77);
-            this.chkNombre.Name = "chkNombre";
-            this.chkNombre.Size = new System.Drawing.Size(80, 21);
-            this.chkNombre.TabIndex = 2;
-            this.chkNombre.Text = "Nombre";
-            this.chkNombre.UseVisualStyleBackColor = true;
             // 
             // cboTipo
             // 
@@ -112,15 +119,15 @@ namespace InfoBAR
             this.cboTipo.Items.AddRange(new object[] {
             "Comidas",
             "Bebidas"});
-            this.cboTipo.Location = new System.Drawing.Point(119, 21);
+            this.cboTipo.Location = new System.Drawing.Point(144, 21);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(300, 24);
+            this.cboTipo.Size = new System.Drawing.Size(467, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
             // 
             this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(22, 24);
+            this.chkTipo.Location = new System.Drawing.Point(71, 24);
             this.chkTipo.Name = "chkTipo";
             this.chkTipo.Size = new System.Drawing.Size(58, 21);
             this.chkTipo.TabIndex = 0;
@@ -131,6 +138,7 @@ namespace InfoBAR
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -144,12 +152,13 @@ namespace InfoBAR
             this.Categoria,
             this.Precio,
             this.Imagen});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(12, 285);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 100;
-            this.dataGridView1.Size = new System.Drawing.Size(660, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(895, 270);
             this.dataGridView1.TabIndex = 13;
             // 
             // Id
@@ -194,7 +203,7 @@ namespace InfoBAR
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(0, 66);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(684, 57);
+            this.panel2.Size = new System.Drawing.Size(919, 57);
             this.panel2.TabIndex = 12;
             // 
             // label2
@@ -202,7 +211,7 @@ namespace InfoBAR
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(158, 18);
+            this.label2.Location = new System.Drawing.Point(275, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(351, 23);
             this.label2.TabIndex = 1;
@@ -216,7 +225,7 @@ namespace InfoBAR
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 54);
+            this.panel1.Size = new System.Drawing.Size(919, 54);
             this.panel1.TabIndex = 10;
             // 
             // label1
@@ -225,35 +234,35 @@ namespace InfoBAR
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("Roboto", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(153, 0);
+            this.label1.Location = new System.Drawing.Point(270, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(366, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Producto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnModificar
+            // btnBuscar
             // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnModificar.Location = new System.Drawing.Point(438, 67);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(180, 36);
-            this.btnModificar.TabIndex = 25;
-            this.btnModificar.Text = "Modificar Producto";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnBuscar.Location = new System.Drawing.Point(22, 67);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(107, 36);
+            this.btnBuscar.TabIndex = 26;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // BuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.ClientSize = new System.Drawing.Size(919, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
@@ -275,7 +284,6 @@ namespace InfoBAR
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.CheckBox chkNombre;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.CheckBox chkTipo;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -289,5 +297,6 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewImageColumn Imagen;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -28,6 +28,7 @@ namespace InfoBAR
         {
             if (checkBox1.Checked)
             {
+                dataGridView1.Rows.Clear();
                 //Buscar en la based de datos
                 try
                 {
@@ -44,7 +45,7 @@ namespace InfoBAR
                                        Prod = prod,
                                        Tipo = tipo
                                    };
-
+                        int indice = 0;
                         //Añadir al datagrid
                         foreach (var i in list)
                         {
@@ -54,6 +55,10 @@ namespace InfoBAR
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
                             dataGridView1.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                            if (i.Prod.Activado == 0)
+                            {
+                                dataGridView1.Rows[indice].DefaultCellStyle.BackColor = Color.Red;
+                            }
                         }
                     }
 
@@ -73,6 +78,7 @@ namespace InfoBAR
         {
             if (chkTipo.Checked)
             {
+                dataGridView1.Rows.Clear();
                 //Buscar en la based de datos
                 try
                 {
@@ -90,7 +96,7 @@ namespace InfoBAR
                                        Prod = prod,
                                        Tipo = tipo
                                    };
-
+                        int indice = 0;
                         //Añadir al datagrid
                         foreach (var i in list)
                         {
@@ -100,6 +106,10 @@ namespace InfoBAR
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
                             dataGridView1.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                            if (i.Prod.Activado == 0)
+                            {
+                                dataGridView1.Rows[indice].DefaultCellStyle.BackColor = Color.Red;
+                            }
                         }
                     }
 
@@ -130,34 +140,10 @@ namespace InfoBAR
 
         private void txtNombre_KeyDown(object sender, KeyEventArgs e)
         {
+            dataGridView1.Rows.Clear();
             if (e.KeyCode == Keys.Enter)
             {
-                //Buscar en la based de datos
-
-                using (InfobarEntities db = new InfobarEntities())
-                {
-                    Producto oProducto = new Producto();
-                    //Traer el producto con el nombre
-                    var prodBuscado = (from prod in db.Producto
-                                       join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
-                                       where prod.Descripcion.Contains(txtNombre.Text)
-                                       select new
-                                       {
-                                           Prod = prod,
-                                           Tipo = tipo
-                                       }).First();
-                    //Añadir al datagrid
-                    
-                    Image imagen = null;
-                    if (prodBuscado.Prod.Imagen != null)
-                    {
-                        imagen = Image.FromFile(prodBuscado.Prod.Imagen);
-                    }
-                    dataGridView1.Rows.Add(prodBuscado.Prod.Id_Producto, prodBuscado.Prod.Descripcion,
-                        prodBuscado.Tipo.Descripcion, prodBuscado.Prod.Precio, imagen);
-                }
-
-
+                BuscarPorNombre();
             }
         }
 
@@ -177,6 +163,50 @@ namespace InfoBAR
             }
         }
 
-        
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            BuscarPorNombre();
+        }
+
+        private void BuscarPorNombre()
+        {
+            //Buscar en la based de datos
+            try
+            {
+                using (InfobarEntities db = new InfobarEntities())
+                {
+                    Producto oProducto = new Producto();
+                    //Traer el producto con el nombre
+                    var prodBuscado = (from prod in db.Producto
+                                       join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                                       where prod.Descripcion.Contains(txtNombre.Text)
+                                       select new
+                                       {
+                                           Prod = prod,
+                                           Tipo = tipo
+                                       }).FirstOrDefault();
+                    if (prodBuscado == null)
+                    {
+                        MessageBox.Show("No se encontro el producto", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    //Añadir al datagrid
+                    Image imagen = null;
+                    if (prodBuscado.Prod.Imagen != null)
+                    {
+                        imagen = Image.FromFile(prodBuscado.Prod.Imagen);
+                    }
+                    dataGridView1.Rows.Add(prodBuscado.Prod.Id_Producto, prodBuscado.Prod.Descripcion,
+                        prodBuscado.Tipo.Descripcion, prodBuscado.Prod.Precio, imagen);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }

@@ -106,7 +106,7 @@ namespace InfoBAR
                         Pedido oPedido = new Pedido();
                         int IdUsuario = (from user in db.Usuario
                                         where user.Nombre.Contains(Global.Usuario)
-                                        select user.Id).First();
+                                        select user.Id).FirstOrDefault();
                         oPedido.Id_Usuario = IdUsuario;
                         oPedido.Fecha = DateTime.Now;
                         oPedido.Mesa = int.Parse(txtMesa.Text);
@@ -157,6 +157,7 @@ namespace InfoBAR
         {
             if (checkBox1.Checked)
             {
+                gridProductos.Rows.Clear();
                 //Buscar en la based de datos
                 try
                 {
@@ -204,6 +205,7 @@ namespace InfoBAR
         {
             if (chkTipo.Checked)
             {
+                gridProductos.Rows.Clear();
                 //Buscar en la based de datos
                 try
                 {
@@ -276,6 +278,51 @@ namespace InfoBAR
         private void gridPedido_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             lblTotal.Text = CalcularImporteTotal().ToString();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            gridProductos.Rows.Clear();
+            BuscarPorNombre();
+        }
+        private void BuscarPorNombre()
+        {
+            //Buscar en la based de datos
+            try
+            {
+                using (InfobarEntities db = new InfobarEntities())
+                {
+                    Producto oProducto = new Producto();
+                    //Traer el producto con el nombre
+                    var prodBuscado = (from prod in db.Producto
+                                       join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                                       where prod.Descripcion.Contains(txtNombre.Text)
+                                       select new
+                                       {
+                                           Prod = prod,
+                                           Tipo = tipo
+                                       }).FirstOrDefault();
+                    if (prodBuscado == null)
+                    {
+                        MessageBox.Show("No se encontro el producto", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    //Añadir al datagrid
+                    Image imagen = null;
+                    if (prodBuscado.Prod.Imagen != null)
+                    {
+                        imagen = Image.FromFile(prodBuscado.Prod.Imagen);
+                    }
+                    gridProductos.Rows.Add(prodBuscado.Prod.Id_Producto, prodBuscado.Prod.Descripcion,
+                        prodBuscado.Tipo.Descripcion, prodBuscado.Prod.Precio, imagen);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }
