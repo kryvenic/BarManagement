@@ -49,51 +49,48 @@ namespace InfoBAR
             usuario = txtUsuario.Text;
             contra = txtContra.Text;
 
-            switch (usuario)
+            try
             {
-                case "admin":
-                    if (contra.Equals("admin"))
+                using (InfobarEntities db = new InfobarEntities())
+                {
+                    //Traer el producto con el nombre
+                    var usuarBuscado = (from user in db.Usuario
+                                       join tipo in db.TipoUsuario on user.Id equals tipo.Id
+                                       where user.Nombre.Contains(usuario)
+                                       select new
+                                       {
+                                           Usuario = user,
+                                           Tipo = tipo
+                                       }).FirstOrDefault();
+                    if (usuarBuscado == null)
                     {
-                        Global.TipoUsuario = 1;
+                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (contra.Equals(usuarBuscado.Usuario.Clave))
+                    {
+                        Global.TipoUsuario = usuarBuscado.Tipo.Id;
                         Ingresar();
                     }
                     else
                     {
                         MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    break;
-                case "empleado":
-                    if (contra.Equals("empleado"))
-                    {
-                        Global.TipoUsuario = 2;
-                        Ingresar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
-                case "gerente":
-                    if (contra.Equals("gerente"))
-                    {
-                        Global.TipoUsuario = 3;
-                        Ingresar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
-                default:
-                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexion a la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
 
         private void Ingresar()
         {
             Global.Usuario = usuario;
-            Form fm = new InfoBAR(usuario)
+            Form fm = new InfoBAR()
             {
                 Visible = true
             };

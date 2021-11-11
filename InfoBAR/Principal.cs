@@ -1,4 +1,5 @@
 ﻿using InfoBAR;
+using InfoBAR.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,17 +14,15 @@ namespace InfoBAR
 {
     public partial class InfoBAR : Form
     {
-        private string usuario;
         public static Panel panelContenedorPrincipal;
 
-        public InfoBAR(string usuario)
+        public InfoBAR()
         {
-            this.usuario = usuario;
             InitializeComponent();
             //Mensaje de bienvenida con el nombre del usuario
-            LBienvenido.Text = "¡Bienvenido/a " + usuario + "!";
+            LBienvenido.Text = "¡Bienvenido/a " + Global.Usuario + "!";
             //Se desactivan las opciones que no corresponden a cada usuario
-            if (!usuario.Equals("admin"))
+            if (Global.TipoUsuario != 1)
             {
                 foreach (Control c in panelSideMenu.Controls)
                 {
@@ -52,16 +51,16 @@ namespace InfoBAR
         /// <param name="c"></param>
         private void OcultarOpcion(string btnName, Control c)
         {
-            switch (usuario)
+            switch (Global.TipoUsuario)
             {
-                case "empleado":
-                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnReportes") || btnName.Equals("btnProductos"))
+                case 2:
+                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnRegistrar") || btnName.Equals("btnProductos"))
                     {
                         c.Visible = false;
                     }
                     break;
-                case "gerente":
-                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnRegistrar") || btnName.Equals("btnProductos"))
+                case 3:
+                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnReportes") || btnName.Equals("btnProductos"))
                     {
                         c.Visible = false;
                     }
