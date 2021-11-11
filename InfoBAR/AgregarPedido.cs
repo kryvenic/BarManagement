@@ -81,9 +81,7 @@ namespace InfoBAR
         {
             if(gridPedido.Rows.Count > 0)
             {
-                
-                    RegistrarPedidoEnBase();
-                
+                RegistrarPedidoEnBase();
             }
             else
             {
@@ -110,7 +108,7 @@ namespace InfoBAR
                                         where user.Nombre.Contains(Global.Usuario)
                                         select user.Id).First();
                         oPedido.Id_Usuario = IdUsuario;
-                        oPedido.Fecha = new DateTime();
+                        oPedido.Fecha = DateTime.Now;
                         oPedido.Mesa = int.Parse(txtMesa.Text);
                         oPedido.Importe_Total = decimal.Parse(lblTotal.Text);
                         db.Pedido.Add(oPedido);

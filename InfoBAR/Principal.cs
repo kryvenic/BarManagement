@@ -14,6 +14,8 @@ namespace InfoBAR
     public partial class InfoBAR : Form
     {
         private string usuario;
+        public static Panel panelContenedorPrincipal;
+
         public InfoBAR(string usuario)
         {
             this.usuario = usuario;
@@ -32,6 +34,8 @@ namespace InfoBAR
                 }
             }
             hideSubMenu();
+
+            panelContenedorPrincipal = panelChildForm;
         }
 
         private void hideSubMenu()
@@ -188,16 +192,16 @@ namespace InfoBAR
             Application.Exit();
         }
 
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        private static Form activeForm = null;
+        internal static void openChildForm(Form childForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childForm);
-            panelChildForm.Tag = childForm;
+            panelContenedorPrincipal.Controls.Add(childForm);
+            panelContenedorPrincipal.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }

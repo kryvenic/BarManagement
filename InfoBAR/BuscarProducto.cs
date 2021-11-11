@@ -1,4 +1,5 @@
 ﻿using InfoBAR.Utilidades;
+using NHibernate.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,13 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Linq;
 
 namespace InfoBAR
 {
     public partial class BuscarProducto : Form
     {
+
+        private int IdProductoAModificar;
         public BuscarProducto()
         {
+            IdProductoAModificar = -1;
             InitializeComponent();
             ((DataGridViewImageColumn)dataGridView1.Columns[4]).ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
@@ -41,14 +46,14 @@ namespace InfoBAR
                                    };
 
                         //Añadir al datagrid
-                        foreach(var i in list)
+                        foreach (var i in list)
                         {
                             Image imagen = null;
-                            if(i.Prod.Imagen != null)
+                            if (i.Prod.Imagen != null)
                             {
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
-                            dataGridView1.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio,imagen);
+                            dataGridView1.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
                         }
                     }
 
@@ -78,7 +83,7 @@ namespace InfoBAR
                         //Traer todos los productos con categoria
                         var list = from prod in db.Producto
                                    join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
-                                   where tipo.Id_TipoProd == (cboTipo.SelectedIndex + 1) 
+                                   where tipo.Id_TipoProd == (cboTipo.SelectedIndex + 1)
                                    select new
                                    {
                                        //Necesario para hacer el foreach
@@ -94,7 +99,7 @@ namespace InfoBAR
                             {
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
-                            dataGridView1.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                            dataGridView1.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
                         }
                     }
 
@@ -116,5 +121,62 @@ namespace InfoBAR
             dataGridView1.Refresh();
             CheckBoxs.DesHabilitarCheckboxs(groupBox1);
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Buscar en la based de datos
+
+                using (InfobarEntities db = new InfobarEntities())
+                {
+                    Producto oProducto = new Producto();
+                    //Traer el producto con el nombre
+                    var prodBuscado = (from prod in db.Producto
+                                       join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                                       where prod.Descripcion.Contains(txtNombre.Text)
+                                       select new
+                                       {
+                                           Prod = prod,
+                                           Tipo = tipo
+                                       }).First();
+                    //Añadir al datagrid
+                    
+                    Image imagen = null;
+                    if (prodBuscado.Prod.Imagen != null)
+                    {
+                        imagen = Image.FromFile(prodBuscado.Prod.Imagen);
+                    }
+                    dataGridView1.Rows.Add(prodBuscado.Prod.Id_Producto, prodBuscado.Prod.Descripcion,
+                        prodBuscado.Tipo.Descripcion, prodBuscado.Prod.Precio, imagen);
+                }
+
+
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //Seleccionar una sola
+            if (selectedRowCount > 0 && selectedRowCount <= 1)
+            {
+                //Añade a la lista
+                IdProductoAModificar = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                InfoBAR.openChildForm(new ModificarProducto(IdProductoAModificar));
+            }
+            else
+            {
+                //TODO Mensaje de que solo se puede seleccionar una sola fila
+            }
+        }
+
+        
     }
 }

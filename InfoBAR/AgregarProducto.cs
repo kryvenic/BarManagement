@@ -67,6 +67,10 @@ namespace InfoBAR
                         MessageBox.Show("Producto: " + TDescripcion.Text + " agregado correctamente ", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         VaciarCampos();
                     }
+                    catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                    {
+                        MessageBox.Show("El ID del producto ya podria existir en la base de datos (Error de guardado)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     catch (Exception)
                     {
                         MessageBox.Show("No se agrego correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

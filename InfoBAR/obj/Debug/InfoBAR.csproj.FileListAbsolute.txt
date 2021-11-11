@@ -47,3 +47,4 @@ C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Iesi.Collec
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\NHibernate.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ModificarProducto.resources
