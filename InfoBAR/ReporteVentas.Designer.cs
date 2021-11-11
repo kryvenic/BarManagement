@@ -286,7 +286,7 @@ namespace InfoBAR
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -298,6 +298,7 @@ namespace InfoBAR
             this.btnDetalle.TabIndex = 26;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // ReporteVentas
             // 

@@ -13,6 +13,7 @@ namespace InfoBAR
 {
     public partial class ReporteVentas : Form
     {
+        private int IdPedidoSeleccionado;
         public ReporteVentas()
         {
             InitializeComponent();
@@ -260,6 +261,30 @@ namespace InfoBAR
             else
             {
                 ResetearGrid();
+            }
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //Seleccionar una sola
+            if (selectedRowCount > 0 && selectedRowCount <= 1)
+            {
+                //Añade a la lista
+                IdPedidoSeleccionado = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                string TipoPago = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                int Mesa = int.Parse( dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+                float Total = float.Parse(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
+                string Usuario = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                string Fecha = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                InfoBAR.openChildForm(
+                    new DetallePedido(
+                        IdPedidoSeleccionado,TipoPago,Usuario,Mesa,Fecha,Total)
+                    );
+            }
+            else
+            {
+                //TODO Mensaje de que solo se puede seleccionar una sola fila
             }
         }
     }
