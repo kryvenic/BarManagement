@@ -120,9 +120,9 @@ namespace InfoBAR
                         }
                         db.SaveChanges();
                     }
+                ResetearGrid();
             }
 
-            ResetearGrid();
         }
 
         private void btnActivar_Click(object sender, EventArgs e)

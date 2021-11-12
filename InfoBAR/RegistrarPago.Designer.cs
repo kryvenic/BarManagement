@@ -36,14 +36,15 @@ namespace InfoBAR
             this.btnPago = new System.Windows.Forms.Button();
             this.chkFecha = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,6 +64,7 @@ namespace InfoBAR
             this.btnDetalle.TabIndex = 30;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // chkTodas
             // 
@@ -152,29 +154,6 @@ namespace InfoBAR
             this.dataGridView1.Size = new System.Drawing.Size(818, 297);
             this.dataGridView1.TabIndex = 28;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(875, 59);
-            this.panel1.TabIndex = 32;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(208, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 52);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Registrar Pago";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -214,12 +193,49 @@ namespace InfoBAR
             this.Fecha.MinimumWidth = 6;
             this.Fecha.Name = "Fecha";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(875, 59);
+            this.panel1.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.CausesValidation = false;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.label1.Location = new System.Drawing.Point(208, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(431, 52);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Registrar Pago";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblError
+            // 
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.CausesValidation = false;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblError.Location = new System.Drawing.Point(30, 526);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(818, 22);
+            this.lblError.TabIndex = 1;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // RegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(875, 548);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -251,5 +267,6 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.Label lblError;
     }
 }

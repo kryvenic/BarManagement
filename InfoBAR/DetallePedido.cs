@@ -12,19 +12,21 @@ namespace InfoBAR
 {
     public partial class DetallePedido: Form
     {
+        private Form formularioParaVolver;
         private int IdPedidoSeleccionado;
         public DetallePedido(int IdPedidoSeleccionado, string TipoPago, string Usuario, int Mesa, string Fecha
-            ,float ImporteTotal)
+            ,float ImporteTotal, Form formularioParaVolver)
         {
             InitializeComponent();
             //Si no se selecciono correctamente el producto sera -1 o menor a 0, por lo que tira error
             if (IdPedidoSeleccionado <= 0)
             {
                 MessageBox.Show("Id Invalido del producto a Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                InfoBAR.openChildForm(new ReporteVentas());
+                InfoBAR.openChildForm(formularioParaVolver);
             }
             else
             {
+                this.formularioParaVolver = formularioParaVolver;
                 //Traer datos usando el id pasado por parametro
                 this.IdPedidoSeleccionado = IdPedidoSeleccionado;
                 lblId.Text = IdPedidoSeleccionado.ToString();
@@ -40,7 +42,7 @@ namespace InfoBAR
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            InfoBAR.openChildForm(new ReporteVentas());
+            InfoBAR.openChildForm(formularioParaVolver);
         }
 
         private void TraerListaDeProductos()

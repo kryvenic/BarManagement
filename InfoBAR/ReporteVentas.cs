@@ -288,7 +288,7 @@ namespace InfoBAR
                 string Fecha = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
                 InfoBAR.openChildForm(
                     new DetallePedido(
-                        IdPedidoSeleccionado,TipoPago,Usuario,Mesa,Fecha,Total)
+                        IdPedidoSeleccionado,TipoPago,Usuario,Mesa,Fecha,Total,this)
                     );
             }
             else

@@ -90,6 +90,7 @@ namespace InfoBAR
             this.Controls.Add(this.cboTipo);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.Name = "ElegirPago";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ElegirPago";
             this.ResumeLayout(false);
 

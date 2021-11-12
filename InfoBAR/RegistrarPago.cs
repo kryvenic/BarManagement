@@ -32,13 +32,13 @@ namespace InfoBAR
                 using (InfobarEntities db = new InfobarEntities())
                 {
                     Pedido oPedido = (from pedi in db.Pedido
-                                          where pedi.Id_Pedido == IdPedidoSeleccionado
-                                          select pedi).First();
+                                      where pedi.Id_Pedido == IdPedidoSeleccionado
+                                      select pedi).First();
                     oPedido.Id_TipoPago = pagoSeleccionado;
                     db.SaveChanges();
                 }
                 MessageBox.Show("Pago realizado!", "Pagado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
             }
             catch (Exception)
             {
@@ -52,19 +52,30 @@ namespace InfoBAR
             if (!Application.OpenForms.OfType<ElegirPago>().Any())
             {
                 int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
                 //Seleccionar una sola
                 if (selectedRowCount > 0 && selectedRowCount <= 1)
                 {
-                    //Añade a la lista
-                    IdPedidoSeleccionado = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-                    ventanaElegirPago = new ElegirPago();
-                    ventanaElegirPago.Show();
+                    //Verificar si no esta pagado
+                    if (dataGridView1.SelectedRows[0].Cells["Pago"].Value.ToString().Equals("No Pagado"))
+                    {
+                        //Añade a la lista
+                        IdPedidoSeleccionado = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                        ventanaElegirPago = new ElegirPago();
+                        ventanaElegirPago.Show();
+                    }
+                    else
+                    {
+                        lblError.Text = "Error: El pedido ya esta pagado";
+                    }
                 }
                 else
                 {
-                    //TODO Mensaje de que solo se puede seleccionar una sola fila
+                    lblError.Text = "Error: Solo puedes selecionar una fila";
                 }
-                
+
+
+
             }
         }
 
@@ -182,10 +193,10 @@ namespace InfoBAR
                                 else
                                 {
                                     tipopago = i.PagoPedido.Descripcion;
-                                   
+
                                 }
                                 //Agregar fila
-                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre,i.Pedido.Fecha);
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
                                 //Cambiar color si esta pagado
                                 if (!tipopago.Equals("No Pagado"))
                                 {
@@ -209,6 +220,30 @@ namespace InfoBAR
             else
             {
                 ResetearGrid();
+            }
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //Seleccionar una sola
+            if (selectedRowCount > 0 && selectedRowCount <= 1)
+            {
+                //Añade a la lista
+                IdPedidoSeleccionado = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                string TipoPago = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                int Mesa = int.Parse(dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+                float Total = float.Parse(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
+                string Usuario = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                string Fecha = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                InfoBAR.openChildForm(
+                    new DetallePedido(
+                        IdPedidoSeleccionado, TipoPago, Usuario, Mesa, Fecha, Total,this)
+                    );
+            }
+            else
+            {
+                //TODO Mensaje de que solo se puede seleccionar una sola fila
             }
         }
     }
