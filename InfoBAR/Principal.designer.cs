@@ -36,7 +36,6 @@
             this.panelReportesSubMenu = new System.Windows.Forms.Panel();
             this.btnReportesEmpleados = new System.Windows.Forms.Button();
             this.btnReportesVentas = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
             this.panelEmpleadosSubMenu = new System.Windows.Forms.Panel();
             this.btnBuscarEmpleado = new System.Windows.Forms.Button();
             this.btnEliminarEmpleado = new System.Windows.Forms.Button();
@@ -57,6 +56,8 @@
             this.LBienvenido = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.btnPago = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelReportesSubMenu.SuspendLayout();
             this.panelEmpleadosSubMenu.SuspendLayout();
@@ -80,6 +81,7 @@
             this.panelSideMenu.Controls.Add(this.btnUsuarios);
             this.panelSideMenu.Controls.Add(this.panelProductoSubMenu);
             this.panelSideMenu.Controls.Add(this.btnProductos);
+            this.panelSideMenu.Controls.Add(this.btnPago);
             this.panelSideMenu.Controls.Add(this.btnRegistrar);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -101,7 +103,7 @@
             this.btnAyuda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 594);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 639);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(227, 54);
@@ -124,7 +126,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 648);
+            this.btnExit.Location = new System.Drawing.Point(0, 693);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(227, 45);
@@ -141,7 +143,7 @@
             this.panelReportesSubMenu.Controls.Add(this.btnReportesEmpleados);
             this.panelReportesSubMenu.Controls.Add(this.btnReportesVentas);
             this.panelReportesSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelReportesSubMenu.Location = new System.Drawing.Point(0, 510);
+            this.panelReportesSubMenu.Location = new System.Drawing.Point(0, 555);
             this.panelReportesSubMenu.Name = "panelReportesSubMenu";
             this.panelReportesSubMenu.Size = new System.Drawing.Size(227, 84);
             this.panelReportesSubMenu.TabIndex = 7;
@@ -190,30 +192,6 @@
             this.btnReportesVentas.UseVisualStyleBackColor = false;
             this.btnReportesVentas.Click += new System.EventHandler(this.button13_Click);
             // 
-            // btnReportes
-            // 
-            this.btnReportes.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(185)))), ((int)(((byte)(8)))));
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 465);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(227, 45);
-            this.btnReportes.TabIndex = 6;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = false;
-            this.btnReportes.Click += new System.EventHandler(this.btnTools_Click);
-            // 
             // panelEmpleadosSubMenu
             // 
             this.panelEmpleadosSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
@@ -221,7 +199,7 @@
             this.panelEmpleadosSubMenu.Controls.Add(this.btnEliminarEmpleado);
             this.panelEmpleadosSubMenu.Controls.Add(this.btnAgregarEmpleado);
             this.panelEmpleadosSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEmpleadosSubMenu.Location = new System.Drawing.Point(0, 345);
+            this.panelEmpleadosSubMenu.Location = new System.Drawing.Point(0, 390);
             this.panelEmpleadosSubMenu.Name = "panelEmpleadosSubMenu";
             this.panelEmpleadosSubMenu.Size = new System.Drawing.Size(227, 120);
             this.panelEmpleadosSubMenu.TabIndex = 4;
@@ -302,7 +280,7 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 300);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 345);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnUsuarios.Size = new System.Drawing.Size(227, 45);
@@ -320,7 +298,7 @@
             this.panelProductoSubMenu.Controls.Add(this.btnEliminarProductos);
             this.panelProductoSubMenu.Controls.Add(this.btnAgregarProducto);
             this.panelProductoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProductoSubMenu.Location = new System.Drawing.Point(0, 182);
+            this.panelProductoSubMenu.Location = new System.Drawing.Point(0, 227);
             this.panelProductoSubMenu.Name = "panelProductoSubMenu";
             this.panelProductoSubMenu.Size = new System.Drawing.Size(227, 118);
             this.panelProductoSubMenu.TabIndex = 2;
@@ -401,7 +379,7 @@
             this.btnProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 137);
+            this.btnProductos.Location = new System.Drawing.Point(0, 182);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnProductos.Size = new System.Drawing.Size(227, 45);
@@ -545,6 +523,53 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
+            // btnPago
+            // 
+            this.btnPago.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPago.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPago.FlatAppearance.BorderSize = 0;
+            this.btnPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.btnPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(185)))), ((int)(((byte)(8)))));
+            this.btnPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnPago.Image = ((System.Drawing.Image)(resources.GetObject("btnPago.Image")));
+            this.btnPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPago.Location = new System.Drawing.Point(0, 137);
+            this.btnPago.Name = "btnPago";
+            this.btnPago.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPago.Size = new System.Drawing.Size(227, 45);
+            this.btnPago.TabIndex = 2;
+            this.btnPago.Text = "Registrar Pago";
+            this.btnPago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPago.UseVisualStyleBackColor = false;
+            this.btnPago.Click += new System.EventHandler(this.btnPago_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(185)))), ((int)(((byte)(8)))));
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 510);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(227, 45);
+            this.btnReportes.TabIndex = 6;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnTools_Click);
+            // 
             // InfoBAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -586,7 +611,6 @@
         private System.Windows.Forms.Panel panelReportesSubMenu;
         private System.Windows.Forms.Button btnReportesEmpleados;
         private System.Windows.Forms.Button btnReportesVentas;
-        private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Panel panelEmpleadosSubMenu;
         private System.Windows.Forms.Button btnBuscarEmpleado;
@@ -604,6 +628,8 @@
         private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Timer horafecha;
+        private System.Windows.Forms.Button btnPago;
+        private System.Windows.Forms.Button btnReportes;
     }
 }
 

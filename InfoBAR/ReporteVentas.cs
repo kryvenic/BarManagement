@@ -19,6 +19,11 @@ namespace InfoBAR
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Todas las ventas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (chkTodas.Checked)
@@ -146,7 +151,11 @@ namespace InfoBAR
         {
 
         }
-
+        /// <summary>
+        /// Por Fecha
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void chkFecha_CheckedChanged(object sender, EventArgs e)
         {
             if (chkFecha.Checked)

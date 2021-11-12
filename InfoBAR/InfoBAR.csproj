@@ -119,6 +119,12 @@
     <Compile Include="Detalle_Pedido.cs">
       <DependentUpon>ModeloBar.tt</DependentUpon>
     </Compile>
+    <Compile Include="ElegirPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElegirPago.Designer.cs">
+      <DependentUpon>ElegirPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetallePedido.resx">
       <DependentUpon>DetallePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElegirPago.resx">
+      <DependentUpon>ElegirPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarProducto.resx">
       <DependentUpon>EliminarProducto.cs</DependentUpon>

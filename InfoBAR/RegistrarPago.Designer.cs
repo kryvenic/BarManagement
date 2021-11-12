@@ -33,12 +33,13 @@ namespace InfoBAR
             this.chkTodas = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnPago = new System.Windows.Forms.Button();
             this.chkFecha = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPago = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +51,7 @@ namespace InfoBAR
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -65,7 +66,6 @@ namespace InfoBAR
             // 
             // chkTodas
             // 
-            this.chkTodas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkTodas.AutoSize = true;
             this.chkTodas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.chkTodas.Location = new System.Drawing.Point(21, 94);
@@ -74,6 +74,7 @@ namespace InfoBAR
             this.chkTodas.TabIndex = 27;
             this.chkTodas.Text = "Todas Las Ventas";
             this.chkTodas.UseVisualStyleBackColor = true;
+            this.chkTodas.CheckedChanged += new System.EventHandler(this.chkTodas_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -93,10 +94,26 @@ namespace InfoBAR
             // dateFecha
             // 
             this.dateFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateFecha.Location = new System.Drawing.Point(282, 28);
+            this.dateFecha.Location = new System.Drawing.Point(277, 28);
             this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(500, 22);
+            this.dateFecha.Size = new System.Drawing.Size(505, 22);
             this.dateFecha.TabIndex = 4;
+            // 
+            // btnPago
+            // 
+            this.btnPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnPago.Location = new System.Drawing.Point(467, 84);
+            this.btnPago.Name = "btnPago";
+            this.btnPago.Size = new System.Drawing.Size(164, 36);
+            this.btnPago.TabIndex = 31;
+            this.btnPago.Text = "Registrar Pago";
+            this.btnPago.UseVisualStyleBackColor = false;
+            this.btnPago.Click += new System.EventHandler(this.btnPago_Click);
             // 
             // chkFecha
             // 
@@ -107,6 +124,7 @@ namespace InfoBAR
             this.chkFecha.TabIndex = 2;
             this.chkFecha.Text = "Fecha";
             this.chkFecha.UseVisualStyleBackColor = true;
+            this.chkFecha.CheckedChanged += new System.EventHandler(this.chkFecha_CheckedChanged_1);
             // 
             // dataGridView1
             // 
@@ -121,6 +139,7 @@ namespace InfoBAR
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Pago,
             this.Mesa,
             this.Nombre,
             this.Usuario,
@@ -132,21 +151,6 @@ namespace InfoBAR
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(818, 297);
             this.dataGridView1.TabIndex = 28;
-            // 
-            // btnPago
-            // 
-            this.btnPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
-            this.btnPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnPago.Location = new System.Drawing.Point(467, 84);
-            this.btnPago.Name = "btnPago";
-            this.btnPago.Size = new System.Drawing.Size(164, 36);
-            this.btnPago.TabIndex = 31;
-            this.btnPago.Text = "Registrar Pago";
-            this.btnPago.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -177,6 +181,12 @@ namespace InfoBAR
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            // 
+            // Pago
+            // 
+            this.Pago.HeaderText = "Pago";
+            this.Pago.MinimumWidth = 6;
+            this.Pago.Name = "Pago";
             // 
             // Mesa
             // 
@@ -236,6 +246,7 @@ namespace InfoBAR
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;

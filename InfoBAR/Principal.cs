@@ -241,5 +241,11 @@ namespace InfoBAR
             lblhora.Text = DateTime.Now.ToShortTimeString();
             lblfecha.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void btnPago_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RegistrarPago());
+            hideSubMenu();
+        }
     }
 }

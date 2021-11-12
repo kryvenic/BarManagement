@@ -49,3 +49,5 @@ C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Li
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.EagerFetching.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ModificarProducto.resources
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.DetallePedido.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.RegistrarPago.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ElegirPago.resources
