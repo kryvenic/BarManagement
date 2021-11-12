@@ -58,7 +58,7 @@ namespace InfoBAR
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnDetalle.Location = new System.Drawing.Point(657, 84);
+            this.btnDetalle.Location = new System.Drawing.Point(676, 84);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(125, 36);
             this.btnDetalle.TabIndex = 30;
@@ -88,7 +88,7 @@ namespace InfoBAR
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.groupBox1.Location = new System.Drawing.Point(30, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(799, 135);
+            this.groupBox1.Size = new System.Drawing.Size(818, 135);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -96,7 +96,7 @@ namespace InfoBAR
             // dateFecha
             // 
             this.dateFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateFecha.Location = new System.Drawing.Point(277, 28);
+            this.dateFecha.Location = new System.Drawing.Point(296, 28);
             this.dateFecha.Name = "dateFecha";
             this.dateFecha.Size = new System.Drawing.Size(505, 22);
             this.dateFecha.TabIndex = 4;
@@ -109,7 +109,7 @@ namespace InfoBAR
             this.btnPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnPago.Location = new System.Drawing.Point(467, 84);
+            this.btnPago.Location = new System.Drawing.Point(486, 84);
             this.btnPago.Name = "btnPago";
             this.btnPago.Size = new System.Drawing.Size(164, 36);
             this.btnPago.TabIndex = 31;

@@ -45,9 +45,14 @@ namespace InfoBAR
                                    };
 
                         //Añadir al datagrid
+                        int indice = 0;
                         foreach (var i in lista)
                         {
                             dataGridView1.Rows.Add(i.Usuario.Id, i.Tipo.Descripcion, i.Usuario.Nombre);
+                            if (i.Usuario.Activado == 0)
+                            {
+                                dataGridView1.Rows[indice].DefaultCellStyle.BackColor = Color.Red;
+                            }
                         }
                     }
 

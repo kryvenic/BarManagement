@@ -40,16 +40,16 @@ namespace InfoBAR
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -154,8 +154,7 @@ namespace InfoBAR
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Items.AddRange(new object[] {
             "Efectivo",
-            "Debito",
-            "Credito"});
+            "Debito"});
             this.cboTipo.Location = new System.Drawing.Point(164, 21);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(422, 24);
@@ -197,6 +196,46 @@ namespace InfoBAR
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(800, 297);
             this.dataGridView1.TabIndex = 23;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Pago";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Mesa
+            // 
+            this.Mesa.HeaderText = "Mesa";
+            this.Mesa.MinimumWidth = 6;
+            this.Mesa.Name = "Mesa";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Total";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.MinimumWidth = 6;
+            this.Usuario.Name = "Usuario";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
             // 
             // panel2
             // 
@@ -243,46 +282,6 @@ namespace InfoBAR
             this.label1.TabIndex = 0;
             this.label1.Text = "Reporte De Ventas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Pago";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Mesa
-            // 
-            this.Mesa.HeaderText = "Mesa";
-            this.Mesa.MinimumWidth = 6;
-            this.Mesa.Name = "Mesa";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Total";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.MinimumWidth = 6;
-            this.Fecha.Name = "Fecha";
             // 
             // btnDetalle
             // 

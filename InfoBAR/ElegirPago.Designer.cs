@@ -44,7 +44,7 @@ namespace InfoBAR
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 23);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Selecciona un metodo de pago";
+            this.label1.Text = "Seleccioná un metodo de pago";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // cboTipo
@@ -56,8 +56,7 @@ namespace InfoBAR
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Items.AddRange(new object[] {
             "Efectivo",
-            "Debito",
-            "Credito"});
+            "Debito"});
             this.cboTipo.Location = new System.Drawing.Point(59, 74);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(374, 24);
@@ -71,7 +70,7 @@ namespace InfoBAR
             this.btnPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnPago.Location = new System.Drawing.Point(165, 250);
+            this.btnPago.Location = new System.Drawing.Point(169, 158);
             this.btnPago.Name = "btnPago";
             this.btnPago.Size = new System.Drawing.Size(164, 36);
             this.btnPago.TabIndex = 32;
@@ -84,7 +83,7 @@ namespace InfoBAR
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(494, 310);
+            this.ClientSize = new System.Drawing.Size(494, 206);
             this.Controls.Add(this.btnPago);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboTipo);

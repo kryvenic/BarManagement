@@ -24,6 +24,7 @@ namespace InfoBAR
         public Nullable<int> Id_Tipo { get; set; }
         public string Nombre { get; set; }
         public string Clave { get; set; }
+        public Nullable<int> Activado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }

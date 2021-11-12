@@ -41,6 +41,7 @@ namespace InfoBAR
                             oUsuario.Nombre = TNombre.Text;
                             oUsuario.Id_Tipo = CTipo.SelectedIndex+1;
                             oUsuario.Clave = TClave.Text;
+                            oUsuario.Activado = 1;
                             db.Usuario.Add(oUsuario);
                             db.SaveChanges();
                         }

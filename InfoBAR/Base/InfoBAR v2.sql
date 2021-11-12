@@ -13,6 +13,7 @@ CREATE TABLE Usuario(
 	Id_Tipo INTEGER,
 	Nombre VARCHAR(30),
 	Clave VARCHAR(20),
+	Activado int,
 	FOREIGN KEY (Id_Tipo) REFERENCES TipoUsuario (Id)
 	)
 GO
@@ -78,4 +79,9 @@ insert into Usuario (Id_Tipo,Nombre,Clave) values (3,'empleado','empleado')
 
 insert into TipoPago values (1,'Efectivo')
 insert into TipoPago values (2,'Debito')
-insert into TipoPago values (3,'Credito')
+
+insert into Producto values (100,1,'Hamburguesa Especial',300,'C:\HamburguesaEspecial.jpg',1);
+insert into Producto values (101,1,'Pizza Mozzarella',400,'C:\pizzaMuzarela.jpg',1);
+insert into Producto values (200,2,'Agua Mineral',400,'C:\aguamineral.jpg',1);
+insert into Producto values (201,2,'Cerveza Corona 710CC',400,'C:\Cerveza_Corona_710CC.jpg',1);
+insert into Producto values (202,2,'Quilmes 1LT',400,'C:\QuilmesDeLitro.jpg',1);
