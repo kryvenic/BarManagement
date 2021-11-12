@@ -36,10 +36,6 @@ namespace InfoBAR
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.totaltxt = new System.Windows.Forms.Label();
             this.gridPedido = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -57,6 +53,11 @@ namespace InfoBAR
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtMesa = new System.Windows.Forms.TextBox();
             this.lblMesa = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPedido)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -156,6 +157,7 @@ namespace InfoBAR
             this.dataGridViewTextBoxColumn1,
             this.Nombre,
             this.Cantidad,
+            this.PrecioU,
             this.Importe});
             this.gridPedido.Location = new System.Drawing.Point(656, 99);
             this.gridPedido.Name = "gridPedido";
@@ -166,35 +168,6 @@ namespace InfoBAR
             this.gridPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.gridPedido.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.gridPedido_UserAddedRow);
             this.gridPedido.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.gridPedido_UserDeletedRow);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 42.78075F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 119.0731F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.FillWeight = 119.0731F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Importe
-            // 
-            this.Importe.FillWeight = 119.0731F;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MinimumWidth = 8;
-            this.Importe.Name = "Importe";
             // 
             // checkBox1
             // 
@@ -397,6 +370,41 @@ namespace InfoBAR
             this.lblMesa.Text = "Mesa";
             this.lblMesa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 42.78075F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 119.0731F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 119.0731F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PrecioU
+            // 
+            this.PrecioU.HeaderText = "Precio";
+            this.PrecioU.MinimumWidth = 6;
+            this.PrecioU.Name = "PrecioU";
+            // 
+            // Importe
+            // 
+            this.Importe.FillWeight = 119.0731F;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MinimumWidth = 8;
+            this.Importe.Name = "Importe";
+            // 
             // AgregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -452,13 +460,14 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewImageColumn Imagen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtMesa;
         private System.Windows.Forms.Label lblMesa;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
     }
 }

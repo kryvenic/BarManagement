@@ -303,8 +303,10 @@
   <ItemGroup>
     <Content Include="Base\InfoBAR v2.sql" />
     <Content Include="Imagenes\aguamineral.jpg" />
+    <Content Include="Imagenes\Cerveza_Corona_710CC.jpg" />
     <Content Include="Imagenes\HamburguesaEspecial.jpg" />
     <Content Include="Imagenes\pizzaMuzarela.jpg" />
+    <Content Include="Imagenes\QuilmesDeLitro.jpg" />
     <Content Include="ModeloBar.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloBar.edmx</DependentUpon>

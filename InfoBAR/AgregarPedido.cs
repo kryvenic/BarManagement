@@ -70,11 +70,9 @@ namespace InfoBAR
         private void AgregarAlDatagridPedido(List<string> valoresPorFila)
         {
             if (txtCantidad.Text.Equals("")) return;
-            gridPedido.Rows.Add(valoresPorFila[0], valoresPorFila[1], txtCantidad.Text,
+            gridPedido.Rows.Add(valoresPorFila[0], valoresPorFila[1], txtCantidad.Text, float.Parse(valoresPorFila[3]),
                 float.Parse(valoresPorFila[3]) * float.Parse(txtCantidad.Text));
             lblTotal.Text = CalcularImporteTotal().ToString();
-
-
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -101,6 +99,8 @@ namespace InfoBAR
                 //Agregar a la base de datos
                 try
                 {
+                    
+
                     using (InfobarEntities db = new InfobarEntities())
                     {
                         Pedido oPedido = new Pedido();
@@ -123,14 +123,19 @@ namespace InfoBAR
                         foreach (DataGridViewRow row in gridPedido.Rows)
                         {
                             Detalle_Pedido oDetalle = new Detalle_Pedido();
+                            int IDProducto = int.Parse(row.Cells[0].Value.ToString());
+                            int Cantidad = int.Parse(row.Cells[2].Value.ToString());
+                            decimal Precio = decimal.Parse(row.Cells[3].Value.ToString());
+                            decimal PrecioTotal = (decimal.Parse(row.Cells[3].Value.ToString()) * Cantidad);
+
                             oDetalle.Id_Pedido = ultimoId;
                             // Celda del Id
-                            oDetalle.Id_Prod = int.Parse(row.Cells[0].Value.ToString());
+                            oDetalle.Id_Prod = IDProducto;
                             // Cantidad
-                            oDetalle.Cantidad = int.Parse(row.Cells[2].Value.ToString());
+                            oDetalle.Cantidad = Cantidad;
                             // Importe
-                            oDetalle.Precio = decimal.Parse(row.Cells[3].Value.ToString());
-                            oDetalle.PrecioTotal = (decimal)CalcularImporteTotal();
+                            oDetalle.Precio = Precio;
+                            oDetalle.PrecioTotal = PrecioTotal;
                             db.Detalle_Pedido.Add(oDetalle);
                         }
                         db.SaveChanges();
@@ -264,13 +269,16 @@ namespace InfoBAR
         {
             lblTotal.Text = CalcularImporteTotal().ToString();
         }
-
+        /// <summary>
+        /// Sumatoria de todos los importes
+        /// </summary>
+        /// <returns></returns>
         private float CalcularImporteTotal()
         {
             float importeTotal = 0f;
             foreach (DataGridViewRow row in gridPedido.Rows)
             {
-               importeTotal  += float.Parse(row.Cells["Importe"].Value.ToString());
+               importeTotal += float.Parse(row.Cells["Importe"].Value.ToString());
             }
             return importeTotal;
         }

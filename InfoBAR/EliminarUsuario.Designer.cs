@@ -29,7 +29,7 @@ namespace InfoBAR
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -37,6 +37,7 @@ namespace InfoBAR
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,19 +50,20 @@ namespace InfoBAR
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnAgregar
+            // btnEliminar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnAgregar.Location = new System.Drawing.Point(479, 227);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(188, 41);
-            this.btnAgregar.TabIndex = 15;
-            this.btnAgregar.Text = "Eliminar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnEliminar.Location = new System.Drawing.Point(479, 227);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(188, 41);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // checkBox1
             // 
@@ -73,6 +75,7 @@ namespace InfoBAR
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "Todos Los Usuarios";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -116,8 +119,9 @@ namespace InfoBAR
             this.cboTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Items.AddRange(new object[] {
-            "Comidas",
-            "Bebidas"});
+            "Administrador",
+            "Gerente",
+            "Empleado"});
             this.cboTipo.Location = new System.Drawing.Point(119, 21);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(281, 24);
@@ -132,9 +136,12 @@ namespace InfoBAR
             this.chkTipo.TabIndex = 0;
             this.chkTipo.Text = "Tipo";
             this.chkTipo.UseVisualStyleBackColor = true;
+            this.chkTipo.CheckedChanged += new System.EventHandler(this.chkTipo_CheckedChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -143,6 +150,7 @@ namespace InfoBAR
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Tipo,
             this.Nombre});
             this.dataGridView1.Location = new System.Drawing.Point(12, 285);
@@ -151,6 +159,12 @@ namespace InfoBAR
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(660, 270);
             this.dataGridView1.TabIndex = 13;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
             // 
             // Tipo
             // 
@@ -182,11 +196,11 @@ namespace InfoBAR
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(158, 18);
+            this.label2.Location = new System.Drawing.Point(94, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(351, 23);
+            this.label2.Size = new System.Drawing.Size(478, 23);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Eliminá un usuario";
+            this.label2.Text = "Los usuarios seran eliminados de la base de datos";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -218,14 +232,14 @@ namespace InfoBAR
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(684, 561);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EliminarUsuario";
             this.Text = "EliminarUsuario";
             this.groupBox1.ResumeLayout(false);
@@ -240,7 +254,7 @@ namespace InfoBAR
 
         #endregion
 
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
@@ -252,6 +266,7 @@ namespace InfoBAR
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
