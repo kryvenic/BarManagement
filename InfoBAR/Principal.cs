@@ -54,7 +54,7 @@ namespace InfoBAR
             switch (Global.TipoUsuario)
             {
                 case 2:
-                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnRegistrar") || btnName.Equals("btnProductos"))
+                    if (btnName.Equals("btnUsuarios") || btnName.Equals("btnRegistrar") || btnName.Equals("btnPago") || btnName.Equals("btnProductos"))
                     {
                         c.Visible = false;
                     }

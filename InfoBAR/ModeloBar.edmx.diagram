@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="62c0f027c42b4d69ae377f4c73e2b7e1" Name="Diagram1">
+      <Diagram DiagramId="a26ea0e709f14d398a9768abba9d44e4" Name="Diagram1">
         <EntityTypeShape EntityType="InfobarModel.Detalle_Pedido" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="InfobarModel.Pedido" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="InfobarModel.Producto" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="InfobarModel.TipoPago" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="InfobarModel.TipoProducto" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="InfobarModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="InfobarModel.Usuario" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InfobarModel.Usuario" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="InfobarModel.FK__Detalle_P__Id_Pe__45F365D3" ManuallyRouted="false" />
         <AssociationConnector Association="InfobarModel.FK__Detalle_P__Id_Pr__46E78A0C" ManuallyRouted="false" />
         <AssociationConnector Association="InfobarModel.FK__Pedido__Id_TipoP__4222D4EF" ManuallyRouted="false" />
