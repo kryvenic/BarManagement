@@ -94,6 +94,7 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
+                                               where pedi.Id_TipoPago == null
                                                select new
                                                {
                                                    Pedido = pedi,
@@ -171,7 +172,7 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
-                                               where pedi.Fecha == dateFecha.Value.Date
+                                               where pedi.Fecha == dateFecha.Value.Date 
                                                select new
                                                {
                                                    Pedido = pedi,
@@ -190,11 +191,7 @@ namespace InfoBAR
                                 {
                                     tipopago = "No Pagado";
                                 }
-                                else
-                                {
-                                    tipopago = i.PagoPedido.Descripcion;
-
-                                }
+                                
                                 //Agregar fila
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
                                 //Cambiar color si esta pagado
@@ -245,6 +242,11 @@ namespace InfoBAR
             {
                 //TODO Mensaje de que solo se puede seleccionar una sola fila
             }
+        }
+
+        private void btnRefr_Click(object sender, EventArgs e)
+        {
+            ResetearGrid();
         }
     }
 }

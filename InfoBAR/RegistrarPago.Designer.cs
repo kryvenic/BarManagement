@@ -45,6 +45,7 @@ namespace InfoBAR
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
+            this.btnRefr = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -59,7 +60,7 @@ namespace InfoBAR
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnDetalle.Location = new System.Drawing.Point(811, 101);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(150, 43);
             this.btnDetalle.TabIndex = 30;
@@ -72,7 +73,7 @@ namespace InfoBAR
             this.chkTodas.AutoSize = true;
             this.chkTodas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.chkTodas.Location = new System.Drawing.Point(25, 113);
-            this.chkTodas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkTodas.Margin = new System.Windows.Forms.Padding(4);
             this.chkTodas.Name = "chkTodas";
             this.chkTodas.Size = new System.Drawing.Size(219, 24);
             this.chkTodas.TabIndex = 27;
@@ -82,6 +83,7 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefr);
             this.groupBox1.Controls.Add(this.dateFecha);
             this.groupBox1.Controls.Add(this.btnPago);
             this.groupBox1.Controls.Add(this.chkFecha);
@@ -89,9 +91,9 @@ namespace InfoBAR
             this.groupBox1.Controls.Add(this.chkTodas);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.groupBox1.Location = new System.Drawing.Point(36, 101);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(982, 162);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
@@ -101,7 +103,7 @@ namespace InfoBAR
             // 
             this.dateFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFecha.Location = new System.Drawing.Point(355, 34);
-            this.dateFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dateFecha.Name = "dateFecha";
             this.dateFecha.Size = new System.Drawing.Size(605, 26);
             this.dateFecha.TabIndex = 4;
@@ -115,7 +117,7 @@ namespace InfoBAR
             this.btnPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnPago.Location = new System.Drawing.Point(583, 101);
-            this.btnPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPago.Margin = new System.Windows.Forms.Padding(4);
             this.btnPago.Name = "btnPago";
             this.btnPago.Size = new System.Drawing.Size(197, 43);
             this.btnPago.TabIndex = 31;
@@ -127,7 +129,7 @@ namespace InfoBAR
             // 
             this.chkFecha.AutoSize = true;
             this.chkFecha.Location = new System.Drawing.Point(25, 34);
-            this.chkFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkFecha.Margin = new System.Windows.Forms.Padding(4);
             this.chkFecha.Name = "chkFecha";
             this.chkFecha.Size = new System.Drawing.Size(80, 24);
             this.chkFecha.TabIndex = 2;
@@ -155,7 +157,7 @@ namespace InfoBAR
             this.Fecha});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(36, 271);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -207,7 +209,7 @@ namespace InfoBAR
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1050, 71);
             this.panel1.TabIndex = 32;
@@ -240,6 +242,23 @@ namespace InfoBAR
             this.lblError.TabIndex = 1;
             this.lblError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnRefr
+            // 
+            this.btnRefr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnRefr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnRefr.Location = new System.Drawing.Point(403, 101);
+            this.btnRefr.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefr.Name = "btnRefr";
+            this.btnRefr.Size = new System.Drawing.Size(150, 43);
+            this.btnRefr.TabIndex = 32;
+            this.btnRefr.Text = "Refrescar";
+            this.btnRefr.UseVisualStyleBackColor = false;
+            this.btnRefr.Click += new System.EventHandler(this.btnRefr_Click);
+            // 
             // RegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -251,7 +270,7 @@ namespace InfoBAR
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegistrarPago";
             this.Text = "RegistrarPago";
             this.groupBox1.ResumeLayout(false);
@@ -280,5 +299,6 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button btnRefr;
     }
 }
