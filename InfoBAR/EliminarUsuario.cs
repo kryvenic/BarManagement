@@ -91,12 +91,7 @@ namespace InfoBAR
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            result = MessageBox.Show("¿Esta seguro que quiere proceder a eliminar este/os usuario/s?", "Proceso de baja", buttons, MessageBoxIcon.Question);
-            if (result != DialogResult.Yes)
-            {
-                return;
-            }
-            result = MessageBox.Show("¿Quiere eliminarlo permanentemente o solo darlo de baja? (Si: Permanentemente)", "Confirmacion de baja", buttons, MessageBoxIcon.Question);
+            result = MessageBox.Show("¿Esta seguro que quiere proceder a eliminar este/os usuario/s permanentemente?", "Confirmacion de eliminacion", buttons, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 #region Eliminar Permanentemente al Usuario
@@ -117,6 +112,7 @@ namespace InfoBAR
                     MessageBox.Show("El usuario se dio de baja exitosamente. No se elimino permanentemente", "Baja exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ResetearGrid();
                 }
+                //Dar de baja
                 catch (DbUpdateException)
                 {
                     //El usuario tiene un pedido o venta asignado en la base de datos
@@ -141,33 +137,7 @@ namespace InfoBAR
                 }
                 #endregion
             }
-            else
-            {
-                #region Dar de Baja Usuario
-                try
-                {
-                    //El usuario tiene un pedido o venta asignado en la base de datos
-                    using (InfobarEntities db = new InfobarEntities())
-                    {
-                        foreach (int id in UsuarioAElminar)
-                        {
-                            Usuario usuarioAElminar =
-                                (from usua in db.Usuario
-                                 where usua.Id == id
-                                 select usua).First();
-                            usuarioAElminar.Activado = 0;
-                        }
-                        db.SaveChanges();
-                    }
-                    MessageBox.Show("El usuario se dio de baja exitosamente. No se elimino permanentemente", "Baja exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ResetearGrid();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("No se pudo eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                #endregion
-            }
+           
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -258,6 +228,55 @@ namespace InfoBAR
                 }
             }
             ResetearGrid();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //Lista utilizada para luego eliminar cada producto desde la base de datos
+            List<int> UsuarioAElminar = new List<int>();
+
+            //Si hay filas seleccionadas -> Recolectar filas seleccionadas
+            if (selectedRowCount > 0)
+            {
+                //Recorre cada fila
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+                    //Añade a la lista
+                    UsuarioAElminar.Add(int.Parse(dataGridView1.SelectedRows[i].Cells[0].Value.ToString()));
+                }
+            }
+            //Eliminar de la base de datos las filas seleccionadas
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show("¿Quiere darlo de baja? ", "Confirmacion de baja", buttons, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                #region Dar de Baja Usuario
+                try
+                {
+                    //El usuario tiene un pedido o venta asignado en la base de datos
+                    using (InfobarEntities db = new InfobarEntities())
+                    {
+                        foreach (int id in UsuarioAElminar)
+                        {
+                            Usuario usuarioAElminar =
+                                (from usua in db.Usuario
+                                 where usua.Id == id
+                                 select usua).First();
+                            usuarioAElminar.Activado = 0;
+                        }
+                        db.SaveChanges();
+                    }
+                    MessageBox.Show("El usuario se dio de baja exitosamente. No se elimino permanentemente", "Baja exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetearGrid();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No se pudo eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                #endregion
+            }
         }
     }
 }
