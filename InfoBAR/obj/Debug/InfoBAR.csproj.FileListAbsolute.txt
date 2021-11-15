@@ -7,47 +7,47 @@ C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarM
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.exe
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.pdb
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.exe.config
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.exe
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.pdb
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.Properties.Resources.resources
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.GenerateResource.cache
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.CoreCompileInputs.cache
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.exe
-C:\Users\marti\source\repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.pdb
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\PlayerUI.Form1.resources
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.FormInicioSesion.resources
 C:\Users\LENOVO\Desktop\Sistemas UNNE\TERCER AÑO\Taller de Programación 2\BarManagment\InfoBAR\obj\Debug\InfoBAR.csproj.CopyComplete
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.AgregarProducto.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.FormInicioSesion.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.CopyComplete
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.AgregarPedido.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.AgregarUsuario.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.BuscarProducto.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.BuscarUsuario.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.EliminarProducto.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.EliminarUsuario.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.InfoBAR.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ReporteEmpleados.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ReporteVentas.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.exe.config
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.exe
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\InfoBAR.pdb
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Antlr3.Runtime.dll
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.dll
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.xml
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csprojAssemblyReference.cache
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Antlr3.Runtime.dll
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Iesi.Collections.dll
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\NHibernate.dll
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.dll
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.EagerFetching.dll
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Antlr3.Runtime.xml
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.xml
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Iesi.Collections.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\NHibernate.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.xml
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\bin\Debug\Remotion.Linq.EagerFetching.xml
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ModificarProducto.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csprojAssemblyReference.cache
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.AgregarPedido.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.AgregarProducto.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.AgregarUsuario.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.BuscarProducto.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.BuscarUsuario.resources
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.DetallePedido.resources
-C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.RegistrarPago.resources
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ElegirPago.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.EliminarProducto.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.EliminarUsuario.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ModificarProducto.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.InfoBAR.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.FormInicioSesion.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.Properties.Resources.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.RegistrarPago.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ReporteEmpleados.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ReporteVentas.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.GenerateResource.cache
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.CoreCompileInputs.cache
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.CopyComplete
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.exe
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.pdb

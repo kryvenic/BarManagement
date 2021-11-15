@@ -49,8 +49,6 @@ namespace InfoBAR
             usuario = txtUsuario.Text;
             contra = txtContra.Text;
 
-            try
-            {
                 using (InfobarEntities db = new InfobarEntities())
                 {
                     //Traer el producto con el nombre
@@ -85,11 +83,6 @@ namespace InfoBAR
                         MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de conexion a la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
         }
 
