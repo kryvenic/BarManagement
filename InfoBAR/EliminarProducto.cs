@@ -145,7 +145,7 @@ namespace InfoBAR
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            result = MessageBox.Show("¿Esta seguro que quiere activar el producto? ", "Confirmar baja", buttons, MessageBoxIcon.Question);
+            result = MessageBox.Show("¿Esta seguro que quiere activar el producto? ", "Confirmar activacion", buttons, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 using (InfobarEntities db = new InfobarEntities())

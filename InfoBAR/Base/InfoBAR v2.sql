@@ -73,15 +73,17 @@ insert into TipoUsuario values (1, 'Admin');
 insert into TipoUsuario values (2, 'Gerente');
 insert into TipoUsuario values (3, 'Empleado');
 
-insert into Usuario (Id_Tipo,Nombre,Clave) values (1,'admin','admin')
-insert into Usuario (Id_Tipo,Nombre,Clave) values (2,'gerente','gerente')
-insert into Usuario (Id_Tipo,Nombre,Clave) values (3,'empleado','empleado')
+insert into Usuario (Id_Tipo,Nombre,Clave,Activado) values (1,'admin','admin',1)
+insert into Usuario (Id_Tipo,Nombre,Clave,Activado) values (2,'gerente','gerente',1)
+insert into Usuario (Id_Tipo,Nombre,Clave,Activado) values (3,'martin','martin',1)
+insert into Usuario (Id_Tipo,Nombre,Clave,Activado) values (3,'nicolas','nicolas',1)
+
 
 insert into TipoPago values (1,'Efectivo')
 insert into TipoPago values (2,'Debito')
 
 insert into Producto values (100,1,'Hamburguesa Especial',300,'C:\HamburguesaEspecial.jpg',1);
 insert into Producto values (101,1,'Pizza Mozzarella',400,'C:\pizzaMuzarela.jpg',1);
-insert into Producto values (200,2,'Agua Mineral',400,'C:\aguamineral.jpg',1);
-insert into Producto values (201,2,'Cerveza Corona 710CC',400,'C:\Cerveza_Corona_710CC.jpg',1);
-insert into Producto values (202,2,'Quilmes 1LT',400,'C:\QuilmesDeLitro.jpg',1);
+insert into Producto values (200,2,'Agua Mineral',50,'C:\aguamineral.jpg',1);
+insert into Producto values (201,2,'Cerveza Corona 710CC',200,'C:\Cerveza_Corona_710CC.jpg',1);
+insert into Producto values (202,2,'Quilmes 1LT',250,'C:\QuilmesDeLitro.jpg',1);

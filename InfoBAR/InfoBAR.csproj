@@ -266,11 +266,11 @@
     <EmbeddedResource Include="ReporteVentas.resx">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.Config" />
     <EntityDeploy Include="ModeloBar.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloBar.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
     <None Include="ModeloBar.edmx.diagram">
       <DependentUpon>ModeloBar.edmx</DependentUpon>
     </None>

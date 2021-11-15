@@ -67,6 +67,7 @@
           <Property Name="Id_Tipo" Type="int" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" />
           <Property Name="Clave" Type="varchar" MaxLength="20" />
+          <Property Name="Activado" Type="int" />
         </EntityType>
         <Association Name="FK__Detalle_P__Id_Pe__45F365D3">
           <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
@@ -250,6 +251,7 @@
           <Property Name="Id_Tipo" Type="Int32" />
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Activado" Type="Int32" />
           <NavigationProperty Name="Pedido" Relationship="Self.FK__Pedido__Id_Usuar__4316F928" FromRole="Usuario" ToRole="Pedido" />
           <NavigationProperty Name="TipoUsuario" Relationship="Self.FK__Usuario__Id_Tipo__38996AB5" FromRole="Usuario" ToRole="TipoUsuario" />
         </EntityType>
@@ -430,6 +432,7 @@
                 <ScalarProperty Name="Id_Tipo" ColumnName="Id_Tipo" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Activado" ColumnName="Activado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

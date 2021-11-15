@@ -55,19 +55,26 @@ namespace InfoBAR
                 {
                     //Traer el producto con el nombre
                     var usuarBuscado = (from user in db.Usuario
-                                       join tipo in db.TipoUsuario on user.Id equals tipo.Id
+                                       join tipo in db.TipoUsuario on user.Id_Tipo equals tipo.Id
                                        where user.Nombre.Contains(usuario)
                                        select new
                                        {
                                            Usuario = user,
                                            Tipo = tipo
                                        }).FirstOrDefault();
+                    //No encontrado
                     if (usuarBuscado == null)
                     {
                         MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
+                    //Usuario Desactivado
+                    if(usuarBuscado.Usuario.Activado == 0)
+                    {
+                        MessageBox.Show("Usuario desactivado. No puede ingresar al sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    //Validar contraseña
                     if (contra.Equals(usuarBuscado.Usuario.Clave))
                     {
                         Global.TipoUsuario = usuarBuscado.Tipo.Id;
@@ -82,7 +89,6 @@ namespace InfoBAR
             catch (Exception)
             {
                 MessageBox.Show("Error de conexion a la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
 
         }

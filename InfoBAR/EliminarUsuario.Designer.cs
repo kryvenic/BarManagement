@@ -32,8 +32,6 @@ namespace InfoBAR
             this.btnEliminar = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.chkNombre = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.chkTipo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -44,6 +42,7 @@ namespace InfoBAR
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnActivar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -52,14 +51,15 @@ namespace InfoBAR
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnEliminar.Location = new System.Drawing.Point(479, 227);
+            this.btnEliminar.Location = new System.Drawing.Point(461, 228);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(188, 41);
+            this.btnEliminar.Size = new System.Drawing.Size(175, 41);
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -69,7 +69,7 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(479, 170);
+            this.checkBox1.Location = new System.Drawing.Point(22, 78);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 21);
             this.checkBox1.TabIndex = 11;
@@ -79,37 +79,16 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.chkNombre);
             this.groupBox1.Controls.Add(this.cboTipo);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.groupBox1.Location = new System.Drawing.Point(35, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 120);
+            this.groupBox1.Size = new System.Drawing.Size(420, 120);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(119, 76);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(281, 22);
-            this.txtNombre.TabIndex = 3;
-            // 
-            // chkNombre
-            // 
-            this.chkNombre.AutoSize = true;
-            this.chkNombre.Location = new System.Drawing.Point(22, 77);
-            this.chkNombre.Name = "chkNombre";
-            this.chkNombre.Size = new System.Drawing.Size(80, 21);
-            this.chkNombre.TabIndex = 2;
-            this.chkNombre.Text = "Nombre";
-            this.chkNombre.UseVisualStyleBackColor = true;
             // 
             // cboTipo
             // 
@@ -122,9 +101,9 @@ namespace InfoBAR
             "Administrador",
             "Gerente",
             "Empleado"});
-            this.cboTipo.Location = new System.Drawing.Point(119, 21);
+            this.cboTipo.Location = new System.Drawing.Point(127, 21);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(281, 24);
+            this.cboTipo.Size = new System.Drawing.Size(277, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
@@ -153,11 +132,12 @@ namespace InfoBAR
             this.Id,
             this.Tipo,
             this.Nombre});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(12, 285);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(660, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(801, 270);
             this.dataGridView1.TabIndex = 13;
             // 
             // Id
@@ -188,7 +168,7 @@ namespace InfoBAR
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(0, 66);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(684, 57);
+            this.panel2.Size = new System.Drawing.Size(825, 57);
             this.panel2.TabIndex = 12;
             // 
             // label2
@@ -196,11 +176,11 @@ namespace InfoBAR
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(94, 17);
+            this.label2.Location = new System.Drawing.Point(123, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(478, 23);
+            this.label2.Size = new System.Drawing.Size(602, 23);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Los usuarios seran eliminados de la base de datos";
+            this.label2.Text = "Selecciona un usuario para eliminar permanentemente o darlo de baja";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -210,7 +190,7 @@ namespace InfoBAR
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 54);
+            this.panel1.Size = new System.Drawing.Size(825, 54);
             this.panel1.TabIndex = 10;
             // 
             // label1
@@ -219,21 +199,37 @@ namespace InfoBAR
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(153, 0);
+            this.label1.Location = new System.Drawing.Point(223, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(366, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Eliminar Usuario";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnActivar
+            // 
+            this.btnActivar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActivar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnActivar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnActivar.Location = new System.Drawing.Point(642, 227);
+            this.btnActivar.Name = "btnActivar";
+            this.btnActivar.Size = new System.Drawing.Size(171, 41);
+            this.btnActivar.TabIndex = 16;
+            this.btnActivar.Text = "Activar";
+            this.btnActivar.UseVisualStyleBackColor = false;
+            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
+            // 
             // EliminarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.ClientSize = new System.Drawing.Size(825, 561);
+            this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
@@ -248,7 +244,6 @@ namespace InfoBAR
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -257,8 +252,6 @@ namespace InfoBAR
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.CheckBox chkNombre;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.CheckBox chkTipo;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -269,5 +262,6 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.Button btnActivar;
     }
 }

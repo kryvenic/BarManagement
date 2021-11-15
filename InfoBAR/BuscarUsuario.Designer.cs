@@ -51,7 +51,7 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(254, 74);
+            this.checkBox1.Location = new System.Drawing.Point(23, 72);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 21);
             this.checkBox1.TabIndex = 16;
@@ -83,15 +83,15 @@ namespace InfoBAR
             "Administrador",
             "Gerente",
             "Empleado"});
-            this.cboTipo.Location = new System.Drawing.Point(168, 24);
+            this.cboTipo.Location = new System.Drawing.Point(166, 25);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(387, 24);
+            this.cboTipo.Size = new System.Drawing.Size(474, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
             // 
             this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(86, 27);
+            this.chkTipo.Location = new System.Drawing.Point(23, 27);
             this.chkTipo.Name = "chkTipo";
             this.chkTipo.Size = new System.Drawing.Size(58, 21);
             this.chkTipo.TabIndex = 0;
@@ -163,7 +163,7 @@ namespace InfoBAR
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(351, 23);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Buscá un usuario";
+            this.label2.Text = "Busca usuarios y modificalos";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1

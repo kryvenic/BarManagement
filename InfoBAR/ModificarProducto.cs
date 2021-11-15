@@ -86,7 +86,8 @@ namespace InfoBAR
 
         private void TraerDatosDeBase()
         {
-            
+            try
+            {
                 using (InfobarEntities db = new InfobarEntities())
                 {
                     Producto oProducto = new Producto();
@@ -118,8 +119,11 @@ namespace InfoBAR
                         TPrecio.Text = p.Prod.Precio.ToString();
                     }
                 }
-
-            
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo traer de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnImagen_Click(object sender, EventArgs e)

@@ -233,7 +233,6 @@ namespace InfoBAR
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void horafecha_Tick(object sender, EventArgs e)
