@@ -36,6 +36,11 @@ namespace InfoBAR
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.totaltxt = new System.Windows.Forms.Label();
             this.gridPedido = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -53,11 +58,7 @@ namespace InfoBAR
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtMesa = new System.Windows.Forms.TextBox();
             this.lblMesa = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefr = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPedido)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,8 +71,9 @@ namespace InfoBAR
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1044, 54);
+            this.panel1.Size = new System.Drawing.Size(1253, 65);
             this.panel1.TabIndex = 18;
             // 
             // label1
@@ -80,9 +82,10 @@ namespace InfoBAR
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(333, 0);
+            this.label1.Location = new System.Drawing.Point(400, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 52);
+            this.label1.Size = new System.Drawing.Size(439, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registrar Pedido";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -91,9 +94,10 @@ namespace InfoBAR
             // 
             this.labelLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.labelLista.Location = new System.Drawing.Point(651, 57);
+            this.labelLista.Location = new System.Drawing.Point(781, 68);
+            this.labelLista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLista.Name = "labelLista";
-            this.labelLista.Size = new System.Drawing.Size(167, 39);
+            this.labelLista.Size = new System.Drawing.Size(200, 47);
             this.labelLista.TabIndex = 2;
             this.labelLista.Text = "Lista del Pedido";
             this.labelLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,9 +110,10 @@ namespace InfoBAR
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnAgregar.Location = new System.Drawing.Point(447, 541);
+            this.btnAgregar.Location = new System.Drawing.Point(536, 649);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(188, 46);
+            this.btnAgregar.Size = new System.Drawing.Size(226, 55);
             this.btnAgregar.TabIndex = 23;
             this.btnAgregar.Text = "Agregar Al Pedido";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -122,9 +127,10 @@ namespace InfoBAR
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(834, 542);
+            this.btnRegistrar.Location = new System.Drawing.Point(1001, 650);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(198, 47);
+            this.btnRegistrar.Size = new System.Drawing.Size(238, 56);
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrar Pedido";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -136,10 +142,10 @@ namespace InfoBAR
             this.totaltxt.AutoSize = true;
             this.totaltxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totaltxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.totaltxt.Location = new System.Drawing.Point(660, 520);
+            this.totaltxt.Location = new System.Drawing.Point(792, 624);
             this.totaltxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totaltxt.Name = "totaltxt";
-            this.totaltxt.Size = new System.Drawing.Size(104, 29);
+            this.totaltxt.Size = new System.Drawing.Size(120, 32);
             this.totaltxt.TabIndex = 23;
             this.totaltxt.Text = "TOTAL:";
             // 
@@ -159,23 +165,60 @@ namespace InfoBAR
             this.Cantidad,
             this.PrecioU,
             this.Importe});
-            this.gridPedido.Location = new System.Drawing.Point(656, 99);
+            this.gridPedido.Location = new System.Drawing.Point(787, 119);
+            this.gridPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridPedido.Name = "gridPedido";
             this.gridPedido.RowHeadersWidth = 51;
             this.gridPedido.RowTemplate.Height = 24;
-            this.gridPedido.Size = new System.Drawing.Size(376, 405);
+            this.gridPedido.Size = new System.Drawing.Size(451, 486);
             this.gridPedido.TabIndex = 22;
             this.gridPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.gridPedido.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.gridPedido_UserAddedRow);
             this.gridPedido.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.gridPedido_UserDeletedRow);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 42.78075F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 119.0731F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 119.0731F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PrecioU
+            // 
+            this.PrecioU.HeaderText = "Precio";
+            this.PrecioU.MinimumWidth = 6;
+            this.PrecioU.Name = "PrecioU";
+            // 
+            // Importe
+            // 
+            this.Importe.FillWeight = 119.0731F;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MinimumWidth = 8;
+            this.Importe.Name = "Importe";
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(212, 120);
+            this.checkBox1.Location = new System.Drawing.Point(254, 144);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(165, 21);
+            this.checkBox1.Size = new System.Drawing.Size(185, 24);
             this.checkBox1.TabIndex = 25;
             this.checkBox1.Text = "Todos Los Productos";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -183,15 +226,18 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefr);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 79);
+            this.groupBox1.Location = new System.Drawing.Point(14, 95);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(623, 147);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(748, 176);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -204,9 +250,10 @@ namespace InfoBAR
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnBuscar.Location = new System.Drawing.Point(22, 74);
+            this.btnBuscar.Location = new System.Drawing.Point(26, 89);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(107, 27);
+            this.btnBuscar.Size = new System.Drawing.Size(128, 32);
             this.btnBuscar.TabIndex = 27;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -217,9 +264,10 @@ namespace InfoBAR
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(144, 79);
+            this.txtNombre.Location = new System.Drawing.Point(173, 95);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(463, 22);
+            this.txtNombre.Size = new System.Drawing.Size(555, 26);
             this.txtNombre.TabIndex = 3;
             // 
             // cboTipo
@@ -232,17 +280,19 @@ namespace InfoBAR
             this.cboTipo.Items.AddRange(new object[] {
             "Comidas",
             "Bebidas"});
-            this.cboTipo.Location = new System.Drawing.Point(144, 21);
+            this.cboTipo.Location = new System.Drawing.Point(173, 25);
+            this.cboTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(463, 24);
+            this.cboTipo.Size = new System.Drawing.Size(555, 28);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
             // 
             this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(71, 24);
+            this.chkTipo.Location = new System.Drawing.Point(85, 29);
+            this.chkTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkTipo.Name = "chkTipo";
-            this.chkTipo.Size = new System.Drawing.Size(58, 21);
+            this.chkTipo.Size = new System.Drawing.Size(65, 24);
             this.chkTipo.TabIndex = 0;
             this.chkTipo.Text = "Tipo";
             this.chkTipo.UseVisualStyleBackColor = true;
@@ -264,12 +314,13 @@ namespace InfoBAR
             this.Categoria,
             this.Precio,
             this.Imagen});
-            this.gridProductos.Location = new System.Drawing.Point(12, 250);
+            this.gridProductos.Location = new System.Drawing.Point(14, 300);
+            this.gridProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridProductos.Name = "gridProductos";
             this.gridProductos.RowHeadersWidth = 51;
             this.gridProductos.RowTemplate.Height = 50;
             this.gridProductos.RowTemplate.ReadOnly = true;
-            this.gridProductos.Size = new System.Drawing.Size(623, 254);
+            this.gridProductos.Size = new System.Drawing.Size(748, 305);
             this.gridProductos.TabIndex = 26;
             // 
             // Id
@@ -316,10 +367,11 @@ namespace InfoBAR
             // 
             this.txtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidad.Font = new System.Drawing.Font("Montserrat Subrayada", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(156, 548);
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(187, 658);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(65, 36);
+            this.txtCantidad.Size = new System.Drawing.Size(78, 39);
             this.txtCantidad.TabIndex = 26;
             this.txtCantidad.Text = "1";
             // 
@@ -328,9 +380,10 @@ namespace InfoBAR
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(12, 552);
+            this.label2.Location = new System.Drawing.Point(14, 662);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 32);
+            this.label2.Size = new System.Drawing.Size(166, 38);
             this.label2.TabIndex = 28;
             this.label2.Text = "Cantidad";
             // 
@@ -340,10 +393,10 @@ namespace InfoBAR
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotal.Location = new System.Drawing.Point(702, 558);
+            this.lblTotal.Location = new System.Drawing.Point(842, 670);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(62, 29);
+            this.lblTotal.Size = new System.Drawing.Size(75, 32);
             this.lblTotal.TabIndex = 29;
             this.lblTotal.Text = "0.00";
             // 
@@ -351,10 +404,11 @@ namespace InfoBAR
             // 
             this.txtMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtMesa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMesa.Font = new System.Drawing.Font("Montserrat Subrayada", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMesa.Location = new System.Drawing.Point(324, 548);
+            this.txtMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMesa.Location = new System.Drawing.Point(389, 658);
+            this.txtMesa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMesa.Name = "txtMesa";
-            this.txtMesa.Size = new System.Drawing.Size(65, 36);
+            this.txtMesa.Size = new System.Drawing.Size(78, 39);
             this.txtMesa.TabIndex = 30;
             this.txtMesa.Text = "1";
             // 
@@ -363,54 +417,37 @@ namespace InfoBAR
             this.lblMesa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMesa.ForeColor = System.Drawing.Color.Snow;
-            this.lblMesa.Location = new System.Drawing.Point(227, 552);
+            this.lblMesa.Location = new System.Drawing.Point(272, 662);
+            this.lblMesa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMesa.Name = "lblMesa";
-            this.lblMesa.Size = new System.Drawing.Size(91, 32);
+            this.lblMesa.Size = new System.Drawing.Size(109, 38);
             this.lblMesa.TabIndex = 31;
             this.lblMesa.Text = "Mesa";
             this.lblMesa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dataGridViewTextBoxColumn1
+            // btnRefr
             // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 42.78075F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 119.0731F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.FillWeight = 119.0731F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // PrecioU
-            // 
-            this.PrecioU.HeaderText = "Precio";
-            this.PrecioU.MinimumWidth = 6;
-            this.PrecioU.Name = "PrecioU";
-            // 
-            // Importe
-            // 
-            this.Importe.FillWeight = 119.0731F;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MinimumWidth = 8;
-            this.Importe.Name = "Importe";
+            this.btnRefr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnRefr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnRefr.Location = new System.Drawing.Point(26, 136);
+            this.btnRefr.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefr.Name = "btnRefr";
+            this.btnRefr.Size = new System.Drawing.Size(128, 32);
+            this.btnRefr.TabIndex = 28;
+            this.btnRefr.Text = "Refrescar";
+            this.btnRefr.UseVisualStyleBackColor = false;
+            this.btnRefr.Click += new System.EventHandler(this.btnRefr_Click);
             // 
             // AgregarPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(1044, 601);
+            this.ClientSize = new System.Drawing.Size(1253, 721);
             this.Controls.Add(this.lblMesa);
             this.Controls.Add(this.txtMesa);
             this.Controls.Add(this.lblTotal);
@@ -469,5 +506,6 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioU;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.Button btnRefr;
     }
 }

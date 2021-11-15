@@ -332,5 +332,10 @@ namespace InfoBAR
 
             }
         }
+
+        private void btnRefr_Click(object sender, EventArgs e)
+        {
+            ResetearGridProductos();
+        }
     }
 }
