@@ -152,10 +152,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloBar.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ModificarProducto.cs">
+    <Compile Include="Producto\ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarProducto.Designer.cs">
+    <Compile Include="Producto\ModificarProducto.Designer.cs">
       <DependentUpon>ModificarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs">
@@ -232,7 +232,7 @@
     <EmbeddedResource Include="Usuario\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarProducto.resx">
+    <EmbeddedResource Include="Producto\ModificarProducto.resx">
       <DependentUpon>ModificarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
