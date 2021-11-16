@@ -91,16 +91,16 @@ namespace InfoBAR
             // dateHasta
             // 
             this.dateHasta.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dateHasta.Location = new System.Drawing.Point(436, 92);
+            this.dateHasta.Location = new System.Drawing.Point(417, 92);
             this.dateHasta.Name = "dateHasta";
-            this.dateHasta.Size = new System.Drawing.Size(150, 22);
+            this.dateHasta.Size = new System.Drawing.Size(169, 22);
             this.dateHasta.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(369, 97);
+            this.label3.Location = new System.Drawing.Point(353, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);

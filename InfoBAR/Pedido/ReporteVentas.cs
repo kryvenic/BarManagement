@@ -229,8 +229,8 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
-                                               where (dateDesde.Value.Date >= pedi.Fecha ||
-                                               dateHasta.Value.Date <= pedi.Fecha)
+                                               where (dateDesde.Value.Date <= pedi.Fecha &&
+                                               dateHasta.Value.Date >= pedi.Fecha)
                                                select new
                                                {
                                                    Pedido = pedi,
