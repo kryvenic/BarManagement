@@ -42,7 +42,15 @@ namespace InfoBAR
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            InfoBAR.openChildForm(formularioParaVolver);
+            if(formularioParaVolver.GetType() == typeof(ReporteVentas))
+            {
+                InfoBAR.openChildForm(new ReporteVentas());
+            }
+            else
+            {
+                InfoBAR.openChildForm(new RegistrarPago());
+            }
+
         }
 
         private void TraerListaDeProductos()
