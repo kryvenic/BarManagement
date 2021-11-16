@@ -296,5 +296,11 @@ namespace InfoBAR
                 //TODO Mensaje de que solo se puede seleccionar una sola fila
             }
         }
+
+        private void btnGrafico_Click(object sender, EventArgs e)
+        {
+            Form graficos = new ReporteGraficos();
+            graficos.Show();
+        }
     }
 }
