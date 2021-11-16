@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,45 +45,47 @@ namespace InfoBAR
             VerificarContraEIngresar();
         }
 
-        private void VerificarContraEIngresar()
+        private async void VerificarContraEIngresar()
         {
             usuario = txtUsuario.Text;
             contra = txtContra.Text;
 
-                using (InfobarEntities db = new InfobarEntities())
+            Application.UseWaitCursor = true;
+            using (InfobarEntities db = new InfobarEntities())
+            {
+                //Traer el producto con el nombre
+                var usuarBuscado = await (from user in db.Usuario
+                                          join tipo in db.TipoUsuario on user.Id_Tipo equals tipo.Id
+                                          where user.Nombre.Contains(usuario)
+                                          select new
+                                          {
+                                              Usuario = user,
+                                              Tipo = tipo
+                                          }).FirstOrDefaultAsync();
+                Application.UseWaitCursor = false;
+                //No encontrado
+                if (usuarBuscado == null)
                 {
-                    //Traer el producto con el nombre
-                    var usuarBuscado = (from user in db.Usuario
-                                       join tipo in db.TipoUsuario on user.Id_Tipo equals tipo.Id
-                                       where user.Nombre.Contains(usuario)
-                                       select new
-                                       {
-                                           Usuario = user,
-                                           Tipo = tipo
-                                       }).FirstOrDefault();
-                    //No encontrado
-                    if (usuarBuscado == null)
-                    {
-                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    //Usuario Desactivado
-                    if(usuarBuscado.Usuario.Activado == 0)
-                    {
-                        MessageBox.Show("Usuario desactivado. No puede ingresar al sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    //Validar contraseña
-                    if (contra.Equals(usuarBuscado.Usuario.Clave))
-                    {
-                        Global.TipoUsuario = usuarBuscado.Tipo.Id;
-                        Ingresar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+                //Usuario Desactivado
+                if (usuarBuscado.Usuario.Activado == 0)
+                {
+                    MessageBox.Show("Usuario desactivado. No puede ingresar al sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                //Validar contraseña
+                if (contra.Equals(usuarBuscado.Usuario.Clave))
+                {
+                    Global.TipoUsuario = usuarBuscado.Tipo.Id;
+                    Ingresar();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         }
 
@@ -102,10 +105,10 @@ namespace InfoBAR
             Application.Exit();
         }
 
-     
+
         private void txtContra_Leave(object sender, EventArgs e)
         {
-            
+
             if (txtContra.Text.Equals(""))
             {
                 txtContra.Text = "Contraseña";
@@ -146,7 +149,7 @@ namespace InfoBAR
 
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 VerificarContraEIngresar();
             }
@@ -169,7 +172,7 @@ namespace InfoBAR
         {
             if (checkBox1.Checked == true)
             {
-                if(txtContra.PasswordChar == '*')
+                if (txtContra.PasswordChar == '*')
                 {
                     txtContra.PasswordChar = '\0';
                 }
