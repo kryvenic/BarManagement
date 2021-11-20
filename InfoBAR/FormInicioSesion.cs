@@ -91,8 +91,8 @@ namespace InfoBAR
             }
             catch (Exception)
             {
+                Application.UseWaitCursor = false;
                 MessageBox.Show("Error de conexion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             
 
