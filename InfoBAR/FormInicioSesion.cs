@@ -51,41 +51,50 @@ namespace InfoBAR
             contra = txtContra.Text;
 
             Application.UseWaitCursor = true;
-            using (InfobarEntities db = new InfobarEntities())
+            try
             {
-                //Traer el producto con el nombre
-                var usuarBuscado = await (from user in db.Usuario
-                                          join tipo in db.TipoUsuario on user.Id_Tipo equals tipo.Id
-                                          where user.Nombre.Contains(usuario)
-                                          select new
-                                          {
-                                              Usuario = user,
-                                              Tipo = tipo
-                                          }).FirstOrDefaultAsync();
-                Application.UseWaitCursor = false;
-                //No encontrado
-                if (usuarBuscado == null)
+                using (InfobarEntities db = new InfobarEntities())
                 {
-                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                //Usuario Desactivado
-                if (usuarBuscado.Usuario.Activado == 0)
-                {
-                    MessageBox.Show("Usuario desactivado. No puede ingresar al sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                //Validar contraseña
-                if (contra.Equals(usuarBuscado.Usuario.Clave))
-                {
-                    Global.TipoUsuario = usuarBuscado.Tipo.Id;
-                    Ingresar();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //Traer el producto con el nombre
+                    var usuarBuscado = await (from user in db.Usuario
+                                              join tipo in db.TipoUsuario on user.Id_Tipo equals tipo.Id
+                                              where user.Nombre.Contains(usuario)
+                                              select new
+                                              {
+                                                  Usuario = user,
+                                                  Tipo = tipo
+                                              }).FirstOrDefaultAsync();
+                    Application.UseWaitCursor = false;
+                    //No encontrado
+                    if (usuarBuscado == null)
+                    {
+                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    //Usuario Desactivado
+                    if (usuarBuscado.Usuario.Activado == 0)
+                    {
+                        MessageBox.Show("Usuario desactivado. No puede ingresar al sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    //Validar contraseña
+                    if (contra.Equals(usuarBuscado.Usuario.Clave))
+                    {
+                        Global.TipoUsuario = usuarBuscado.Tipo.Id;
+                        Ingresar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de conexion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            
 
         }
 
