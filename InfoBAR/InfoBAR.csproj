@@ -69,6 +69,7 @@
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,61 +81,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarPedido.cs">
+    <Compile Include="Pedidos_Ventas\AgregarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarPedido.Designer.cs">
+    <Compile Include="Pedidos_Ventas\AgregarPedido.Designer.cs">
       <DependentUpon>AgregarPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarProducto.cs">
+    <Compile Include="Pedidos_Ventas\ReporteGraficos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarProducto.Designer.cs">
+    <Compile Include="Pedidos_Ventas\ReporteGraficos.Designer.cs">
+      <DependentUpon>ReporteGraficos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\AgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\AgregarProducto.Designer.cs">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarUsuario.cs">
+    <Compile Include="Usuario\AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarUsuario.Designer.cs">
+    <Compile Include="Usuario\AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarProducto.cs">
+    <Compile Include="Producto\BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarProducto.Designer.cs">
+    <Compile Include="Producto\BuscarProducto.Designer.cs">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarUsuario.cs">
+    <Compile Include="Usuario\BuscarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarUsuario.Designer.cs">
+    <Compile Include="Usuario\BuscarUsuario.Designer.cs">
       <DependentUpon>BuscarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetallePedido.cs">
+    <Compile Include="Pedidos_Ventas\DetallePedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetallePedido.Designer.cs">
+    <Compile Include="Pedidos_Ventas\DetallePedido.Designer.cs">
       <DependentUpon>DetallePedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Detalle_Pedido.cs">
       <DependentUpon>ModeloBar.tt</DependentUpon>
     </Compile>
-    <Compile Include="ElegirPago.cs">
+    <Compile Include="Pedidos_Ventas\ElegirPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ElegirPago.Designer.cs">
+    <Compile Include="Pedidos_Ventas\ElegirPago.Designer.cs">
       <DependentUpon>ElegirPago.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarProducto.cs">
+    <Compile Include="Producto\EliminarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarProducto.Designer.cs">
+    <Compile Include="Producto\EliminarProducto.Designer.cs">
       <DependentUpon>EliminarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarUsuario.cs">
+    <Compile Include="Usuario\EliminarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarUsuario.Designer.cs">
+    <Compile Include="Usuario\EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="ModeloBar.Context.cs">
@@ -152,10 +159,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloBar.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ModificarProducto.cs">
+    <Compile Include="Producto\ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarProducto.Designer.cs">
+    <Compile Include="Producto\ModificarProducto.Designer.cs">
       <DependentUpon>ModificarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs">
@@ -178,16 +185,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrarPago.cs">
+    <Compile Include="Pedidos_Ventas\RegistrarPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarPago.Designer.cs">
+    <Compile Include="Pedidos_Ventas\RegistrarPago.Designer.cs">
       <DependentUpon>RegistrarPago.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteVentas.cs">
+    <Compile Include="Pedidos_Ventas\ReporteVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteVentas.Designer.cs">
+    <Compile Include="Pedidos_Ventas\ReporteVentas.Designer.cs">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="TipoPago.cs">
@@ -205,34 +212,37 @@
     <Compile Include="Utilidades\CheckBoxs.cs" />
     <Compile Include="Utilidades\Global.cs" />
     <Compile Include="Utilidades\VerificarCampos.cs" />
-    <EmbeddedResource Include="AgregarPedido.resx">
+    <EmbeddedResource Include="Pedidos_Ventas\AgregarPedido.resx">
       <DependentUpon>AgregarPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarProducto.resx">
+    <EmbeddedResource Include="Pedidos_Ventas\ReporteGraficos.resx">
+      <DependentUpon>ReporteGraficos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarUsuario.resx">
+    <EmbeddedResource Include="Usuario\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarProducto.resx">
+    <EmbeddedResource Include="Producto\BuscarProducto.resx">
       <DependentUpon>BuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarUsuario.resx">
+    <EmbeddedResource Include="Usuario\BuscarUsuario.resx">
       <DependentUpon>BuscarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetallePedido.resx">
+    <EmbeddedResource Include="Pedidos_Ventas\DetallePedido.resx">
       <DependentUpon>DetallePedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ElegirPago.resx">
+    <EmbeddedResource Include="Pedidos_Ventas\ElegirPago.resx">
       <DependentUpon>ElegirPago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarProducto.resx">
+    <EmbeddedResource Include="Producto\EliminarProducto.resx">
       <DependentUpon>EliminarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarUsuario.resx">
+    <EmbeddedResource Include="Usuario\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarProducto.resx">
+    <EmbeddedResource Include="Producto\ModificarProducto.resx">
       <DependentUpon>ModificarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
@@ -251,11 +261,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegistrarPago.resx">
+    <EmbeddedResource Include="Pedidos_Ventas\RegistrarPago.resx">
       <DependentUpon>RegistrarPago.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteVentas.resx">
+    <EmbeddedResource Include="Pedidos_Ventas\ReporteVentas.resx">
       <DependentUpon>ReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
