@@ -44,6 +44,7 @@ C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.Inf
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.FormInicioSesion.resources
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.Properties.Resources.resources
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.RegistrarPago.resources
+C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ReporteEmpleados.resources
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.ReporteVentas.resources
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.GenerateResource.cache
 C:\Users\marti\Source\Repos\kryvenic\BarManagement\InfoBAR\obj\Debug\InfoBAR.csproj.CoreCompileInputs.cache

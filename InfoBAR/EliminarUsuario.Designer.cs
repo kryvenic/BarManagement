@@ -43,7 +43,6 @@ namespace InfoBAR
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnActivar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,11 +57,11 @@ namespace InfoBAR
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnEliminar.Location = new System.Drawing.Point(461, 212);
+            this.btnEliminar.Location = new System.Drawing.Point(461, 228);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(175, 57);
+            this.btnEliminar.Size = new System.Drawing.Size(175, 41);
             this.btnEliminar.TabIndex = 15;
-            this.btnEliminar.Text = "Eliminar Permanentemente";
+            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -215,7 +214,7 @@ namespace InfoBAR
             this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActivar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnActivar.Location = new System.Drawing.Point(642, 160);
+            this.btnActivar.Location = new System.Drawing.Point(642, 227);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.Size = new System.Drawing.Size(171, 41);
             this.btnActivar.TabIndex = 16;
@@ -223,29 +222,12 @@ namespace InfoBAR
             this.btnActivar.UseVisualStyleBackColor = false;
             this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.button1.Location = new System.Drawing.Point(642, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 56);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Deshabilitar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // EliminarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(825, 561);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
@@ -281,6 +263,5 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Button btnActivar;
-        private System.Windows.Forms.Button button1;
     }
 }

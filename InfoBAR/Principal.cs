@@ -153,9 +153,6 @@ namespace InfoBAR
             hideSubMenu();
         }
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-        }
 
         private void button10_Click(object sender, EventArgs e)
         {

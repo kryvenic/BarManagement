@@ -337,5 +337,10 @@ namespace InfoBAR
         {
             ResetearGridProductos();
         }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

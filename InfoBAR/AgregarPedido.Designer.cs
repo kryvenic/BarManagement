@@ -43,6 +43,7 @@ namespace InfoBAR
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefr = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
@@ -58,7 +59,6 @@ namespace InfoBAR
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtMesa = new System.Windows.Forms.TextBox();
             this.lblMesa = new System.Windows.Forms.Label();
-            this.btnRefr = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPedido)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,7 +71,7 @@ namespace InfoBAR
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1253, 65);
             this.panel1.TabIndex = 18;
@@ -111,7 +111,7 @@ namespace InfoBAR
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnAgregar.Location = new System.Drawing.Point(536, 649);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(226, 55);
             this.btnAgregar.TabIndex = 23;
@@ -128,7 +128,7 @@ namespace InfoBAR
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnRegistrar.Location = new System.Drawing.Point(1001, 650);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(238, 56);
             this.btnRegistrar.TabIndex = 24;
@@ -166,7 +166,7 @@ namespace InfoBAR
             this.PrecioU,
             this.Importe});
             this.gridPedido.Location = new System.Drawing.Point(787, 119);
-            this.gridPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridPedido.Margin = new System.Windows.Forms.Padding(4);
             this.gridPedido.Name = "gridPedido";
             this.gridPedido.RowHeadersWidth = 51;
             this.gridPedido.RowTemplate.Height = 24;
@@ -216,7 +216,7 @@ namespace InfoBAR
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.checkBox1.Location = new System.Drawing.Point(254, 144);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(185, 24);
             this.checkBox1.TabIndex = 25;
@@ -234,13 +234,30 @@ namespace InfoBAR
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.groupBox1.Location = new System.Drawing.Point(14, 95);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(748, 176);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // btnRefr
+            // 
+            this.btnRefr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnRefr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnRefr.Location = new System.Drawing.Point(26, 136);
+            this.btnRefr.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefr.Name = "btnRefr";
+            this.btnRefr.Size = new System.Drawing.Size(128, 32);
+            this.btnRefr.TabIndex = 28;
+            this.btnRefr.Text = "Refrescar";
+            this.btnRefr.UseVisualStyleBackColor = false;
+            this.btnRefr.Click += new System.EventHandler(this.btnRefr_Click);
             // 
             // btnBuscar
             // 
@@ -251,7 +268,7 @@ namespace InfoBAR
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnBuscar.Location = new System.Drawing.Point(26, 89);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 32);
             this.btnBuscar.TabIndex = 27;
@@ -265,7 +282,7 @@ namespace InfoBAR
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Location = new System.Drawing.Point(173, 95);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(555, 26);
             this.txtNombre.TabIndex = 3;
@@ -281,7 +298,7 @@ namespace InfoBAR
             "Comidas",
             "Bebidas"});
             this.cboTipo.Location = new System.Drawing.Point(173, 25);
-            this.cboTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTipo.Margin = new System.Windows.Forms.Padding(4);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(555, 28);
             this.cboTipo.TabIndex = 1;
@@ -290,7 +307,7 @@ namespace InfoBAR
             // 
             this.chkTipo.AutoSize = true;
             this.chkTipo.Location = new System.Drawing.Point(85, 29);
-            this.chkTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkTipo.Margin = new System.Windows.Forms.Padding(4);
             this.chkTipo.Name = "chkTipo";
             this.chkTipo.Size = new System.Drawing.Size(65, 24);
             this.chkTipo.TabIndex = 0;
@@ -315,7 +332,7 @@ namespace InfoBAR
             this.Precio,
             this.Imagen});
             this.gridProductos.Location = new System.Drawing.Point(14, 300);
-            this.gridProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridProductos.Margin = new System.Windows.Forms.Padding(4);
             this.gridProductos.Name = "gridProductos";
             this.gridProductos.RowHeadersWidth = 51;
             this.gridProductos.RowTemplate.Height = 50;
@@ -369,7 +386,7 @@ namespace InfoBAR
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Location = new System.Drawing.Point(187, 658);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(78, 39);
             this.txtCantidad.TabIndex = 26;
@@ -399,6 +416,7 @@ namespace InfoBAR
             this.lblTotal.Size = new System.Drawing.Size(75, 32);
             this.lblTotal.TabIndex = 29;
             this.lblTotal.Text = "0.00";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // txtMesa
             // 
@@ -406,7 +424,7 @@ namespace InfoBAR
             this.txtMesa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMesa.Location = new System.Drawing.Point(389, 658);
-            this.txtMesa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMesa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMesa.Name = "txtMesa";
             this.txtMesa.Size = new System.Drawing.Size(78, 39);
             this.txtMesa.TabIndex = 30;
@@ -424,23 +442,6 @@ namespace InfoBAR
             this.lblMesa.TabIndex = 31;
             this.lblMesa.Text = "Mesa";
             this.lblMesa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnRefr
-            // 
-            this.btnRefr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRefr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
-            this.btnRefr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnRefr.Location = new System.Drawing.Point(26, 136);
-            this.btnRefr.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefr.Name = "btnRefr";
-            this.btnRefr.Size = new System.Drawing.Size(128, 32);
-            this.btnRefr.TabIndex = 28;
-            this.btnRefr.Text = "Refrescar";
-            this.btnRefr.UseVisualStyleBackColor = false;
-            this.btnRefr.Click += new System.EventHandler(this.btnRefr_Click);
             // 
             // AgregarPedido
             // 
