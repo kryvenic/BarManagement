@@ -193,7 +193,7 @@ namespace InfoBAR
                                 }
                                 
                                 //Agregar fila
-                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
                                 //Cambiar color si esta pagado
                                 if (!tipopago.Equals("No Pagado"))
                                 {

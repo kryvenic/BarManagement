@@ -61,7 +61,7 @@ namespace InfoBAR
                                 {
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
-                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
                             }
                         }
                         else
@@ -128,7 +128,7 @@ namespace InfoBAR
                                 {
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
-                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
                             }
                             //Mostrar total
                             lblRecaudado.Text = pedidosYDetalles.FirstOrDefault().Total;
@@ -205,7 +205,7 @@ namespace InfoBAR
                                 {
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
-                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre,i.Pedido.Fecha);
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
                             }
                             lblRecaudado.Text = total.FirstOrDefault().Total;
                         }
@@ -266,7 +266,7 @@ namespace InfoBAR
                                 {
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
-                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
+                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
                             }
                             //Mostrar recaudacion
                             lblRecaudado.Text = pedidosYDetalles.FirstOrDefault().Total;
