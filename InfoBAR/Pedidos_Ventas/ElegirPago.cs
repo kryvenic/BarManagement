@@ -28,7 +28,7 @@ namespace InfoBAR
                 if (result == DialogResult.Yes)
                 {
                     //Invoca al evento pasando el tipo de pago seleccionado
-                    RegistrarPago.EventoRegistrarPago(cboTipo.SelectedIndex + 1);
+                    RegistrarPago.EventoRegistrarPago.Invoke(cboTipo.SelectedIndex + 1);
                     this.Close();
                 }
             }

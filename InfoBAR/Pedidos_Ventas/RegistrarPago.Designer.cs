@@ -260,6 +260,7 @@ namespace InfoBAR
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistrarPago";
             this.Text = "RegistrarPago";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrarPago_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

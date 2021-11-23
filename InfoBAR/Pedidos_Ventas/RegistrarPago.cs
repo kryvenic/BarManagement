@@ -19,6 +19,7 @@ namespace InfoBAR
 
         public RegistrarPago()
         {
+            IdPedidoSeleccionado = 0;
             InitializeComponent();
             ventanaElegirPago = null;
             EventoRegistrarPago += RegistrarPagoEnBase;
@@ -247,6 +248,11 @@ namespace InfoBAR
         private void btnRefr_Click(object sender, EventArgs e)
         {
             ResetearGrid();
+        }
+
+        private void RegistrarPago_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            EventoRegistrarPago -= RegistrarPagoEnBase;
         }
     }
 }
