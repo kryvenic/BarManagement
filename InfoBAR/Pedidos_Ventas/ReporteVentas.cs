@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -109,6 +110,7 @@ namespace InfoBAR
                                                {
                                                    Pedido = pedi,
                                                    PagoPedido = pdp,
+                                                   Total = pdp.Pedido.Sum(pedi => pedi.Importe_Total).ToString(),
                                                    Usuario = user
                                                };
                         //Verificar si no se encontraron pedidos
@@ -128,6 +130,8 @@ namespace InfoBAR
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
                             }
+                            //Mostrar total
+                            lblRecaudado.Text = pedidosYDetalles.FirstOrDefault().Total;
                         }
                         else
                         {
@@ -178,6 +182,14 @@ namespace InfoBAR
                                                    PagoPedido = pdp,
                                                    Usuario = user
                                                };
+
+                        var total = from pedi in db.Pedido
+                                    where pedi.Fecha == dateFecha.Value.Date && pedi.Id_TipoPago != null
+                                    group pedi by pedi.Fecha into pdf
+                                    select new
+                                    {
+                                        Total = pdf.Sum(pedi => pedi.Importe_Total).ToString()
+                                    };
                         //Verificar si no se encontraron pedidos
                         if (pedidosYDetalles.Any())
                         {
@@ -195,6 +207,7 @@ namespace InfoBAR
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre,i.Pedido.Fecha);
                             }
+                            lblRecaudado.Text = total.FirstOrDefault().Total;
                         }
                         else
                         {
@@ -235,6 +248,7 @@ namespace InfoBAR
                                                {
                                                    Pedido = pedi,
                                                    PagoPedido = pdp,
+                                                   Total = pdp.Pedido.Sum(pedi => pedi.Importe_Total).ToString(),
                                                    Usuario = user
                                                };
                         //Verificar si no se encontraron pedidos
@@ -254,6 +268,8 @@ namespace InfoBAR
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
                             }
+                            //Mostrar recaudacion
+                            lblRecaudado.Text = pedidosYDetalles.FirstOrDefault().Total;
                         }
                         else
                         {
