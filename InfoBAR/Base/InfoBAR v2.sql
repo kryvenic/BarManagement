@@ -47,7 +47,7 @@ CREATE TABLE Pedido(
 	Id_TipoPago INTEGER,
 	Id_Usuario INTEGER,
 	Mesa INTEGER,
-	Fecha DATE,
+	Fecha DATETIME,
 	Importe_Total DEC(8,2),
 	FOREIGN KEY (Id_TipoPago) REFERENCES TipoPago(Id_TipoPago),
 	FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id)

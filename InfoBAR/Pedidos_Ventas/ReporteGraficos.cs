@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,12 +30,12 @@ namespace InfoBAR
                 {
                     //Traer todas las ventas/pedidos con tipo de pago y usuario
                     var pedidosYDetalles = from pedi in db.Pedido
-                                           group pedi by pedi.Fecha into pdf
-                                           where (dateDesde.Value.Date <= pdf.Key &&
-                                               dateHasta.Value.Date >= pdf.Key)
+                                           group pedi by EntityFunctions.TruncateTime(pedi.Fecha.Value) into pdf
+                                           where (dateDesde.Value.Date <= EntityFunctions.TruncateTime(pdf.Key.Value) &&
+                                               dateHasta.Value.Date >= EntityFunctions.TruncateTime(pdf.Key.Value))
                                            select new
                                            {
-                                               Fecha = pdf,
+                                               Fecha = EntityFunctions.TruncateTime(pdf.Key.Value),
                                                Suma = pdf.Sum(pedi => pedi.Importe_Total).ToString()
                                            };
                 int f = 0;
@@ -45,7 +46,7 @@ namespace InfoBAR
                         //Añadir al datagrid
                         foreach (var i in pedidosYDetalles)
                         {
-                            chart1.Series.Add("Recaudado " + i.Fecha.Key + " " + i.Suma).Points.AddXY(i.Fecha.Key, i.Suma);
+                            chart1.Series.Add("Recaudado " + i.Fecha + " " + i.Suma).Points.AddXY(i.Fecha, i.Suma);
                             f++;
 
                         }
@@ -54,7 +55,6 @@ namespace InfoBAR
                     else
                     {
                         MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     }
 
                 }

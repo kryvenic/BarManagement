@@ -29,9 +29,9 @@ namespace InfoBAR
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnGrafico = new System.Windows.Forms.Button();
             this.dateHasta = new System.Windows.Forms.DateTimePicker();
@@ -42,17 +42,17 @@ namespace InfoBAR
             // chart1
             // 
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(509, 12);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(12, 75);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(594, 561);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(1128, 459);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -64,7 +64,7 @@ namespace InfoBAR
             this.btnGrafico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrafico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnGrafico.Location = new System.Drawing.Point(12, 95);
+            this.btnGrafico.Location = new System.Drawing.Point(12, 12);
             this.btnGrafico.Name = "btnGrafico";
             this.btnGrafico.Size = new System.Drawing.Size(161, 36);
             this.btnGrafico.TabIndex = 28;
@@ -75,7 +75,7 @@ namespace InfoBAR
             // dateHasta
             // 
             this.dateHasta.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateHasta.Location = new System.Drawing.Point(225, 148);
+            this.dateHasta.Location = new System.Drawing.Point(429, 18);
             this.dateHasta.Name = "dateHasta";
             this.dateHasta.Size = new System.Drawing.Size(169, 22);
             this.dateHasta.TabIndex = 30;
@@ -83,7 +83,7 @@ namespace InfoBAR
             // dateDesde
             // 
             this.dateDesde.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateDesde.Location = new System.Drawing.Point(12, 148);
+            this.dateDesde.Location = new System.Drawing.Point(210, 18);
             this.dateDesde.Name = "dateDesde";
             this.dateDesde.Size = new System.Drawing.Size(184, 22);
             this.dateDesde.TabIndex = 29;
@@ -92,7 +92,7 @@ namespace InfoBAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 585);
+            this.ClientSize = new System.Drawing.Size(1161, 546);
             this.Controls.Add(this.dateHasta);
             this.Controls.Add(this.dateDesde);
             this.Controls.Add(this.btnGrafico);
