@@ -107,7 +107,6 @@ namespace InfoBAR
                         if (pedidosYDetalles.Any())
                         {
                             //Añadir al datagrid
-                            int indice = 0;
                             foreach (var i in pedidosYDetalles)
                             {
                                 var tipopago = "";
@@ -121,12 +120,7 @@ namespace InfoBAR
                                 }
                                 //Agregar fila
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha);
-                                //Cambiar color si esta pagado
-                                if (!tipopago.Equals("No Pagado"))
-                                {
-                                    dataGridView1.Rows[indice].DefaultCellStyle.BackColor = Color.FromArgb(92, 239, 209);
-                                }
-                                indice++;
+                                
                             }
                         }
                         else
@@ -174,7 +168,8 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
-                                               where DbFunctions.TruncateTime(pedi.Fecha) == DbFunctions.TruncateTime(dateFecha.Value)
+                                               where DbFunctions.TruncateTime(pedi.Fecha) == DbFunctions.TruncateTime(dateFecha.Value) 
+                                               && pedi.Id_TipoPago == null
                                                select new
                                                {
                                                    Pedido = pedi,
@@ -185,7 +180,7 @@ namespace InfoBAR
                         if (pedidosYDetalles.Any())
                         {
                             //Añadir al datagrid
-                            int indice = 0;
+
                             foreach (var i in pedidosYDetalles)
                             {
                                 var tipopago = "";
@@ -196,12 +191,6 @@ namespace InfoBAR
                                 
                                 //Agregar fila
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
-                                //Cambiar color si esta pagado
-                                if (!tipopago.Equals("No Pagado"))
-                                {
-                                    dataGridView1.Rows[indice].DefaultCellStyle.BackColor = Color.FromArgb(92, 239, 209);
-                                }
-                                indice++;
                             }
                         }
                         else
