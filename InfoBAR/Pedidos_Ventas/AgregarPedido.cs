@@ -55,7 +55,7 @@ namespace InfoBAR
                     //Guarda los valores por fila
                     List<string> valoresPorFila = new List<string>();
                     //Recorre cada valor de celda
-                    for(int j = 0; j < gridProductos.ColumnCount; j++)
+                    for (int j = 0; j < gridProductos.ColumnCount; j++)
                     {
                         //Añade
                         valoresPorFila.Add(gridProductos.SelectedRows[i].Cells[j].Value.ToString());
@@ -77,7 +77,7 @@ namespace InfoBAR
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if(gridPedido.Rows.Count > 0)
+            if (gridPedido.Rows.Count > 0)
             {
                 RegistrarPedidoEnBase();
             }
@@ -85,7 +85,7 @@ namespace InfoBAR
             {
                 MessageBox.Show("No hay comidas/bebidas agregadas al pedido", "Error: No hay productos agregados", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void RegistrarPedidoEnBase()
@@ -93,28 +93,28 @@ namespace InfoBAR
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            result = MessageBox.Show("¿Quiere registrar el pedido? " , "Confirmar alta", buttons, MessageBoxIcon.Question);
+            result = MessageBox.Show("¿Quiere registrar el pedido? ", "Confirmar alta", buttons, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
                 //Agregar a la base de datos
                 try
                 {
-                    
+
 
                     using (InfobarEntities db = new InfobarEntities())
                     {
                         Pedido oPedido = new Pedido();
                         int IdUsuario = (from user in db.Usuario
-                                        where user.Nombre.Contains(Global.Usuario)
-                                        select user.Id).FirstOrDefault();
+                                         where user.Nombre.Contains(Global.Usuario)
+                                         select user.Id).FirstOrDefault();
                         oPedido.Id_Usuario = IdUsuario;
                         oPedido.Fecha = DateTime.Now;
                         oPedido.Mesa = int.Parse(txtMesa.Text);
                         oPedido.Importe_Total = decimal.Parse(lblTotal.Text);
                         db.Pedido.Add(oPedido);
-                        
+
                         db.SaveChanges();
-                        
+
                     }
                     using (InfobarEntities db = new InfobarEntities())
                     {
@@ -149,7 +149,7 @@ namespace InfoBAR
                     MessageBox.Show("No se agrego correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-             
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -189,7 +189,7 @@ namespace InfoBAR
                             {
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
-                            gridProductos.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                            gridProductos.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
                         }
 
                     }
@@ -237,7 +237,7 @@ namespace InfoBAR
                             {
                                 imagen = Image.FromFile(i.Prod.Imagen);
                             }
-                            gridProductos.Rows.Add(i.Prod.Id_Producto,i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                            gridProductos.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
                         }
                     }
 
@@ -278,7 +278,7 @@ namespace InfoBAR
             float importeTotal = 0f;
             foreach (DataGridViewRow row in gridPedido.Rows)
             {
-               importeTotal += float.Parse(row.Cells["Importe"].Value.ToString());
+                importeTotal += float.Parse(row.Cells["Importe"].Value.ToString());
             }
             return importeTotal;
         }
@@ -291,7 +291,10 @@ namespace InfoBAR
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             gridProductos.Rows.Clear();
-            BuscarPorNombre();
+            if (txtNombre.TextLength != 0)
+            {
+                BuscarPorNombre();
+            }
         }
         private void BuscarPorNombre()
         {

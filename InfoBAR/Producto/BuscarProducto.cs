@@ -166,7 +166,10 @@ namespace InfoBAR
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            BuscarPorNombre();
+            if (txtNombre.TextLength != 0)
+            {
+                BuscarPorNombre();
+            }
         }
 
         private void BuscarPorNombre()
