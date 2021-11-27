@@ -50,13 +50,15 @@ namespace InfoBAR
             this.btnDetalle = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblRecaudado = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGraficoPorTipo = new System.Windows.Forms.Button();
             this.btnGraficoPeriodo = new System.Windows.Forms.Button();
-            this.lblError = new System.Windows.Forms.Label();
+            this.picError = new FontAwesome.Sharp.IconPictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).BeginInit();
             this.SuspendLayout();
             // 
             // chkTodas
@@ -196,7 +198,7 @@ namespace InfoBAR
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(909, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(912, 310);
             this.dataGridView1.TabIndex = 23;
             // 
             // ID
@@ -242,12 +244,14 @@ namespace InfoBAR
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.panel1.Controls.Add(this.picError);
             this.panel1.Controls.Add(this.lblError);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(933, 28);
+            this.panel1.Size = new System.Drawing.Size(936, 28);
             this.panel1.TabIndex = 20;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnDetalle
             // 
@@ -257,7 +261,7 @@ namespace InfoBAR
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnDetalle.Location = new System.Drawing.Point(715, 528);
+            this.btnDetalle.Location = new System.Drawing.Point(718, 528);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(206, 36);
             this.btnDetalle.TabIndex = 26;
@@ -291,6 +295,19 @@ namespace InfoBAR
             this.lblRecaudado.Text = "0.00";
             this.lblRecaudado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // lblError
+            // 
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblError.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Location = new System.Drawing.Point(277, 6);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(380, 20);
+            this.lblError.TabIndex = 0;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -301,7 +318,7 @@ namespace InfoBAR
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.button2.Image = global::InfoBAR.Properties.Resources.chart;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(667, 162);
+            this.button2.Location = new System.Drawing.Point(670, 162);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(254, 36);
             this.button2.TabIndex = 30;
@@ -319,7 +336,7 @@ namespace InfoBAR
             this.btnGraficoPorTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnGraficoPorTipo.Image = global::InfoBAR.Properties.Resources.chart;
             this.btnGraficoPorTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGraficoPorTipo.Location = new System.Drawing.Point(667, 55);
+            this.btnGraficoPorTipo.Location = new System.Drawing.Point(670, 55);
             this.btnGraficoPorTipo.Name = "btnGraficoPorTipo";
             this.btnGraficoPorTipo.Size = new System.Drawing.Size(254, 36);
             this.btnGraficoPorTipo.TabIndex = 29;
@@ -337,7 +354,7 @@ namespace InfoBAR
             this.btnGraficoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnGraficoPeriodo.Image = global::InfoBAR.Properties.Resources.chart;
             this.btnGraficoPeriodo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGraficoPeriodo.Location = new System.Drawing.Point(667, 109);
+            this.btnGraficoPeriodo.Location = new System.Drawing.Point(670, 109);
             this.btnGraficoPeriodo.Name = "btnGraficoPeriodo";
             this.btnGraficoPeriodo.Size = new System.Drawing.Size(254, 36);
             this.btnGraficoPeriodo.TabIndex = 27;
@@ -345,24 +362,30 @@ namespace InfoBAR
             this.btnGraficoPeriodo.UseVisualStyleBackColor = false;
             this.btnGraficoPeriodo.Click += new System.EventHandler(this.btnGrafico_Click);
             // 
-            // lblError
+            // picError
             // 
-            this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(434, 4);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 20);
-            this.lblError.TabIndex = 0;
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.picError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.picError.ErrorImage = null;
+            this.picError.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.picError.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.picError.IconColor = System.Drawing.SystemColors.ControlText;
+            this.picError.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.picError.IconSize = 23;
+            this.picError.InitialImage = null;
+            this.picError.Location = new System.Drawing.Point(248, 2);
+            this.picError.Name = "picError";
+            this.picError.Size = new System.Drawing.Size(23, 23);
+            this.picError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picError.TabIndex = 1;
+            this.picError.TabStop = false;
             // 
             // ReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(933, 569);
+            this.ClientSize = new System.Drawing.Size(936, 569);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGraficoPorTipo);
             this.Controls.Add(this.lblRecaudado);
@@ -379,7 +402,7 @@ namespace InfoBAR
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,5 +434,6 @@ namespace InfoBAR
         private System.Windows.Forms.Button btnGraficoPorTipo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblError;
+        private FontAwesome.Sharp.IconPictureBox picError;
     }
 }

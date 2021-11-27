@@ -1,4 +1,5 @@
-﻿using InfoBAR.Utilidades;
+﻿using InfoBAR.Properties;
+using InfoBAR.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,8 +73,7 @@ namespace InfoBAR
                         }
                         else
                         {
-                            lblError.Text = "No se encontraron pedidos";
-                            SystemSounds.Beep.Play();
+                            MensajesError.MostrarError(lblError, "No se encontraron pedidos");
                         }
 
                     }
@@ -144,8 +144,7 @@ namespace InfoBAR
                         }
                         else
                         {
-                            lblError.Text = "No se encontraron pedidos";
-                            SystemSounds.Beep.Play();
+                            MensajesError.MostrarError(lblError, "No se encontraron pedidos");
                         }
                     }
                 }
@@ -224,8 +223,7 @@ namespace InfoBAR
                         }
                         else
                         {
-                            lblError.Text = "No se encontraron pedidos";
-                            SystemSounds.Beep.Play();
+                            MensajesError.MostrarError(lblError,"No se encontraron pedidos");
                         }
                     }
                 }
@@ -300,7 +298,7 @@ namespace InfoBAR
                         }
                         else
                         {
-                            MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MensajesError.MostrarError(lblError, "No se encontraron pedidos");
                         }
 
                     }
@@ -356,6 +354,11 @@ namespace InfoBAR
         {
             Form graficos = new GraficoTodas();
             graficos.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

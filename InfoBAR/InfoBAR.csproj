@@ -87,11 +87,23 @@
     <Compile Include="Pedidos_Ventas\AgregarPedido.Designer.cs">
       <DependentUpon>AgregarPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos_Ventas\ReporteGraficos.cs">
+    <Compile Include="Pedidos_Ventas\GraficoTodas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pedidos_Ventas\ReporteGraficos.Designer.cs">
-      <DependentUpon>ReporteGraficos.cs</DependentUpon>
+    <Compile Include="Pedidos_Ventas\GraficoTodas.Designer.cs">
+      <DependentUpon>GraficoTodas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos_Ventas\GraficoPorTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos_Ventas\GraficoPorTipo.Designer.cs">
+      <DependentUpon>GraficoPorTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos_Ventas\GraficoPorPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos_Ventas\GraficoPorPeriodo.Designer.cs">
+      <DependentUpon>GraficoPorPeriodo.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto\AgregarProducto.cs">
       <SubType>Form</SubType>
@@ -211,12 +223,19 @@
     </Compile>
     <Compile Include="Utilidades\CheckBoxs.cs" />
     <Compile Include="Utilidades\Global.cs" />
+    <Compile Include="Utilidades\MensajesError.cs" />
     <Compile Include="Utilidades\VerificarCampos.cs" />
     <EmbeddedResource Include="Pedidos_Ventas\AgregarPedido.resx">
       <DependentUpon>AgregarPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos_Ventas\ReporteGraficos.resx">
-      <DependentUpon>ReporteGraficos.cs</DependentUpon>
+    <EmbeddedResource Include="Pedidos_Ventas\GraficoTodas.resx">
+      <DependentUpon>GraficoTodas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos_Ventas\GraficoPorTipo.resx">
+      <DependentUpon>GraficoPorTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos_Ventas\GraficoPorPeriodo.resx">
+      <DependentUpon>GraficoPorPeriodo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
@@ -304,6 +323,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Base\InfoBAR v2.sql" />
+    <None Include="Iconos\chart.png" />
+    <None Include="Iconos\error.png" />
     <Content Include="Imagenes\aguamineral.jpg" />
     <Content Include="Imagenes\Cerveza_Corona_710CC.jpg" />
     <Content Include="Imagenes\HamburguesaEspecial.jpg" />
