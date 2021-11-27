@@ -52,8 +52,11 @@ namespace InfoBAR
                                                {
                                                    Pedido = pedi,
                                                    PagoPedido = pdp,
-                                                   Usuario = user
+                                                   Usuario = user,
                                                };
+                        var total = (from pedi in db.Pedido
+                                     where pedi.Id_TipoPago != null
+                                     select pedi.Importe_Total).ToList().Sum();
                         #endregion
                         //Verificar si no se encontraron pedidos
                         if (pedidosYDetalles.Any())
@@ -72,6 +75,7 @@ namespace InfoBAR
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
                             }
+                            lblRecaudado.Text = total.ToString();
                         }
                         else
                         {
