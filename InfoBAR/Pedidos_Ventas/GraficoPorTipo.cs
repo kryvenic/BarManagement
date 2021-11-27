@@ -34,6 +34,7 @@ namespace InfoBAR
                 var pedidosYDetalles = from pedi in db.Pedido
                                        join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                        from pdp in PedidoPago.DefaultIfEmpty()
+                                       where pdp.Id_TipoPago != null
                                        group pdp by pdp.Id_TipoPago into pdt
                                        select new
                                        {
@@ -48,7 +49,7 @@ namespace InfoBAR
                     //Añadir al datagrid
                     foreach (var i in pedidosYDetalles)
                     {
-                        chart1.Series[0].Points.AddXY(i.TipoPago,double.Parse(i.Total));
+                        chart1.Series[0].Points.AddXY(i.TipoPago,i.Total);
                         chart1.Series[0].IsValueShownAsLabel = true;
                         chart1.Series[0].Points[f].Color = colores[f];
                         f++;
