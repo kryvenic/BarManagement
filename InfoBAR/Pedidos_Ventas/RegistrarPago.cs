@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,7 @@ namespace InfoBAR
                     db.SaveChanges();
                 }
                 MessageBox.Show("Pago realizado!", "Pagado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                ResetearGrid();
             }
             catch (Exception)
             {
@@ -173,7 +174,7 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
-                                               where pedi.Fecha == dateFecha.Value.Date 
+                                               where DbFunctions.TruncateTime(pedi.Fecha) == DbFunctions.TruncateTime(dateFecha.Value)
                                                select new
                                                {
                                                    Pedido = pedi,
