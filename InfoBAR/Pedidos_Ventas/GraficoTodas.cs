@@ -45,7 +45,17 @@ namespace InfoBAR
                     foreach (var i in pedidosYDetalles)
                     {
                         string fecha = i.Fecha.Value.ToString("dd/MM/yyyy");
-                        chart1.Series.Add(fecha).Points.AddXY(i.Fecha.Value.Date,double.Parse(i.Suma));
+                        
+                        try
+                        {
+                            //Añadir fecha como serie
+                            chart1.Series.Add(fecha).Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
+                            
+                        } catch (System.ArgumentException)
+                        {
+                            //Si ya existe, referenciarla
+                            chart1.Series[fecha].Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
+                        }
                         chart1.Series[fecha].SmartLabelStyle.Enabled = true;
                         chart1.Series[fecha].IsValueShownAsLabel = true;
                     }
