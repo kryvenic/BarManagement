@@ -47,22 +47,21 @@ namespace InfoBAR
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnDetalle = new System.Windows.Forms.Button();
-            this.btnGrafico = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblRecaudado = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnGraficoPorTipo = new System.Windows.Forms.Button();
+            this.btnGraficoPeriodo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chkTodas
             // 
-            this.chkTodas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkTodas.AutoSize = true;
             this.chkTodas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.chkTodas.Location = new System.Drawing.Point(636, 75);
+            this.chkTodas.Location = new System.Drawing.Point(22, 143);
             this.chkTodas.Name = "chkTodas";
             this.chkTodas.Size = new System.Drawing.Size(145, 21);
             this.chkTodas.TabIndex = 21;
@@ -76,14 +75,15 @@ namespace InfoBAR
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateDesde);
             this.groupBox1.Controls.Add(this.chkPeriodo);
+            this.groupBox1.Controls.Add(this.chkTodas);
             this.groupBox1.Controls.Add(this.dateFecha);
             this.groupBox1.Controls.Add(this.chkFecha);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 75);
+            this.groupBox1.Location = new System.Drawing.Point(12, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(602, 131);
+            this.groupBox1.Size = new System.Drawing.Size(632, 172);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -91,7 +91,7 @@ namespace InfoBAR
             // dateHasta
             // 
             this.dateHasta.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dateHasta.Location = new System.Drawing.Point(417, 92);
+            this.dateHasta.Location = new System.Drawing.Point(447, 103);
             this.dateHasta.Name = "dateHasta";
             this.dateHasta.Size = new System.Drawing.Size(169, 22);
             this.dateHasta.TabIndex = 13;
@@ -100,7 +100,7 @@ namespace InfoBAR
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(353, 97);
+            this.label3.Location = new System.Drawing.Point(383, 107);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);
@@ -110,7 +110,7 @@ namespace InfoBAR
             // dateDesde
             // 
             this.dateDesde.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dateDesde.Location = new System.Drawing.Point(164, 92);
+            this.dateDesde.Location = new System.Drawing.Point(194, 102);
             this.dateDesde.Name = "dateDesde";
             this.dateDesde.Size = new System.Drawing.Size(184, 22);
             this.dateDesde.TabIndex = 11;
@@ -118,7 +118,7 @@ namespace InfoBAR
             // chkPeriodo
             // 
             this.chkPeriodo.AutoSize = true;
-            this.chkPeriodo.Location = new System.Drawing.Point(22, 93);
+            this.chkPeriodo.Location = new System.Drawing.Point(22, 102);
             this.chkPeriodo.Name = "chkPeriodo";
             this.chkPeriodo.Size = new System.Drawing.Size(79, 21);
             this.chkPeriodo.TabIndex = 10;
@@ -129,7 +129,7 @@ namespace InfoBAR
             // dateFecha
             // 
             this.dateFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateFecha.Location = new System.Drawing.Point(164, 60);
+            this.dateFecha.Location = new System.Drawing.Point(194, 60);
             this.dateFecha.Name = "dateFecha";
             this.dateFecha.Size = new System.Drawing.Size(422, 22);
             this.dateFecha.TabIndex = 4;
@@ -155,7 +155,7 @@ namespace InfoBAR
             this.cboTipo.Items.AddRange(new object[] {
             "Efectivo",
             "Debito"});
-            this.cboTipo.Location = new System.Drawing.Point(164, 21);
+            this.cboTipo.Location = new System.Drawing.Point(194, 21);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(422, 24);
             this.cboTipo.TabIndex = 1;
@@ -194,7 +194,7 @@ namespace InfoBAR
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 318);
+            this.dataGridView1.Size = new System.Drawing.Size(909, 310);
             this.dataGridView1.TabIndex = 23;
             // 
             // ID
@@ -240,57 +240,27 @@ namespace InfoBAR
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(824, 54);
+            this.panel1.Size = new System.Drawing.Size(933, 28);
             this.panel1.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(183, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 52);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reporte De Ventas";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
             this.btnDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnDetalle.Location = new System.Drawing.Point(636, 168);
+            this.btnDetalle.Location = new System.Drawing.Point(715, 528);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(161, 36);
+            this.btnDetalle.Size = new System.Drawing.Size(206, 36);
             this.btnDetalle.TabIndex = 26;
-            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.Text = "Detalle De Venta";
             this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
-            // 
-            // btnGrafico
-            // 
-            this.btnGrafico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGrafico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
-            this.btnGrafico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrafico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrafico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnGrafico.Location = new System.Drawing.Point(636, 121);
-            this.btnGrafico.Name = "btnGrafico";
-            this.btnGrafico.Size = new System.Drawing.Size(161, 36);
-            this.btnGrafico.TabIndex = 27;
-            this.btnGrafico.Text = "Grafico";
-            this.btnGrafico.UseVisualStyleBackColor = false;
-            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
             // 
             // lblTotal
             // 
@@ -298,7 +268,7 @@ namespace InfoBAR
             this.lblTotal.CausesValidation = false;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.lblTotal.Location = new System.Drawing.Point(7, 533);
+            this.lblTotal.Location = new System.Drawing.Point(7, 541);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(211, 31);
             this.lblTotal.TabIndex = 1;
@@ -311,24 +281,79 @@ namespace InfoBAR
             this.lblRecaudado.CausesValidation = false;
             this.lblRecaudado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecaudado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.lblRecaudado.Location = new System.Drawing.Point(224, 533);
+            this.lblRecaudado.Location = new System.Drawing.Point(224, 541);
             this.lblRecaudado.Name = "lblRecaudado";
             this.lblRecaudado.Size = new System.Drawing.Size(188, 31);
             this.lblRecaudado.TabIndex = 28;
             this.lblRecaudado.Text = "0.00";
             this.lblRecaudado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.button2.Image = global::InfoBAR.Properties.Resources.chart;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(667, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(254, 36);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "Grafico Todas";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnGraficoPorTipo
+            // 
+            this.btnGraficoPorTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGraficoPorTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnGraficoPorTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGraficoPorTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraficoPorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraficoPorTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnGraficoPorTipo.Image = global::InfoBAR.Properties.Resources.chart;
+            this.btnGraficoPorTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraficoPorTipo.Location = new System.Drawing.Point(667, 55);
+            this.btnGraficoPorTipo.Name = "btnGraficoPorTipo";
+            this.btnGraficoPorTipo.Size = new System.Drawing.Size(254, 36);
+            this.btnGraficoPorTipo.TabIndex = 29;
+            this.btnGraficoPorTipo.Text = "Grafico Por Tipo";
+            this.btnGraficoPorTipo.UseVisualStyleBackColor = false;
+            this.btnGraficoPorTipo.Click += new System.EventHandler(this.btnGraficoPorTipo_Click);
+            // 
+            // btnGraficoPeriodo
+            // 
+            this.btnGraficoPeriodo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGraficoPeriodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnGraficoPeriodo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGraficoPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraficoPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraficoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnGraficoPeriodo.Image = global::InfoBAR.Properties.Resources.chart;
+            this.btnGraficoPeriodo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraficoPeriodo.Location = new System.Drawing.Point(667, 109);
+            this.btnGraficoPeriodo.Name = "btnGraficoPeriodo";
+            this.btnGraficoPeriodo.Size = new System.Drawing.Size(254, 36);
+            this.btnGraficoPeriodo.TabIndex = 27;
+            this.btnGraficoPeriodo.Text = "Grafico Por Periodo";
+            this.btnGraficoPeriodo.UseVisualStyleBackColor = false;
+            this.btnGraficoPeriodo.Click += new System.EventHandler(this.btnGrafico_Click);
+            // 
             // ReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(824, 561);
+            this.ClientSize = new System.Drawing.Size(933, 569);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGraficoPorTipo);
             this.Controls.Add(this.lblRecaudado);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.btnGrafico);
+            this.Controls.Add(this.btnGraficoPeriodo);
             this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.chkTodas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -338,9 +363,7 @@ namespace InfoBAR
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -353,7 +376,6 @@ namespace InfoBAR
         private System.Windows.Forms.CheckBox chkTipo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateFecha;
         private System.Windows.Forms.DateTimePicker dateHasta;
         private System.Windows.Forms.Label label3;
@@ -366,8 +388,10 @@ namespace InfoBAR
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.Button btnDetalle;
-        private System.Windows.Forms.Button btnGrafico;
+        private System.Windows.Forms.Button btnGraficoPeriodo;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblRecaudado;
+        private System.Windows.Forms.Button btnGraficoPorTipo;
+        private System.Windows.Forms.Button button2;
     }
 }
