@@ -8,6 +8,7 @@ using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -71,8 +72,8 @@ namespace InfoBAR
                         }
                         else
                         {
-                            MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            lblError.Text = "No se encontraron pedidos";
+                            SystemSounds.Beep.Play();
                         }
 
                     }
@@ -143,9 +144,9 @@ namespace InfoBAR
                         }
                         else
                         {
-                            MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            lblError.Text = "No se encontraron pedidos";
+                            SystemSounds.Beep.Play();
                         }
-
                     }
                 }
                 catch (Exception)
@@ -184,7 +185,7 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
-                                               where DbFunctions.TruncateTime(pedi.Fecha.Value) == DbFunctions.TruncateTime(pedi.Fecha.Value)
+                                               where DbFunctions.TruncateTime(pedi.Fecha.Value) == DbFunctions.TruncateTime(dateFecha.Value)
                                                select new
                                                {
                                                    Pedido = pedi,
@@ -193,7 +194,7 @@ namespace InfoBAR
                                                };
 
                         var total = from pedi in db.Pedido
-                                    where DbFunctions.TruncateTime(pedi.Fecha.Value) == DbFunctions.TruncateTime(pedi.Fecha.Value)
+                                    where DbFunctions.TruncateTime(pedi.Fecha.Value) == DbFunctions.TruncateTime(dateFecha.Value)
                                     && pedi.Id_TipoPago != null
                                     group pedi by DbFunctions.TruncateTime(pedi.Fecha.Value) into pdf
                                     select new
@@ -223,7 +224,8 @@ namespace InfoBAR
                         }
                         else
                         {
-                            MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            lblError.Text = "No se encontraron pedidos";
+                            SystemSounds.Beep.Play();
                         }
                     }
                 }

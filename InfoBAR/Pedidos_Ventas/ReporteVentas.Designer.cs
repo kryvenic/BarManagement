@@ -53,8 +53,10 @@ namespace InfoBAR
             this.button2 = new System.Windows.Forms.Button();
             this.btnGraficoPorTipo = new System.Windows.Forms.Button();
             this.btnGraficoPeriodo = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chkTodas
@@ -240,6 +242,7 @@ namespace InfoBAR
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.panel1.Controls.Add(this.lblError);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -342,6 +345,18 @@ namespace InfoBAR
             this.btnGraficoPeriodo.UseVisualStyleBackColor = false;
             this.btnGraficoPeriodo.Click += new System.EventHandler(this.btnGrafico_Click);
             // 
+            // lblError
+            // 
+            this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(434, 4);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 20);
+            this.lblError.TabIndex = 0;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -363,6 +378,8 @@ namespace InfoBAR
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +410,6 @@ namespace InfoBAR
         private System.Windows.Forms.Label lblRecaudado;
         private System.Windows.Forms.Button btnGraficoPorTipo;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblError;
     }
 }
