@@ -19,10 +19,10 @@ namespace InfoBAR.Utilidades
                     estanVacios = true;
                 }
 
-                if (c is ComboBox )
+                if (c is ComboBox)
                 {
-                    ComboBox combo = (ComboBox) c;
-                    if(combo.SelectedIndex == -1)
+                    ComboBox combo = (ComboBox)c;
+                    if (combo.SelectedIndex == -1)
                     {
                         estanVacios = true;
                     }
@@ -53,6 +53,12 @@ namespace InfoBAR.Utilidades
             }
 
             return estanVacios;
+        }
+
+
+        public static bool SonNumeros(TextBox textBox)
+        {
+            return int.TryParse(textBox.Text, out _); ;
         }
     }
 }

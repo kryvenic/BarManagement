@@ -36,7 +36,15 @@ namespace InfoBAR
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (VerificarCampos.VerificarCamposVacios(this) && PathImagen.Equals(""))
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+
+            //Verificar cada campo si los tipos de datos son correctos
+            if (!ValidandoNumerosYLetras()) return;
+
+            if (VerificarCampos.VerificarCamposVacios(this))
             {
                 MessageBox.Show("Debe rellenar/completar todos los campos", "Error: Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -116,6 +124,34 @@ namespace InfoBAR
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AgregarProducto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool ValidandoNumerosYLetras()
+        {
+            bool correcto = true;
+            if (!VerificarCampos.SonNumeros(txtId))
+            {
+                errorProvider1.SetError(txtId, "Debe ingresar solo numeros.");
+                correcto = false;
+            }
+
+            if (!VerificarCampos.SonNumeros(txtprecio))
+            {
+                errorProvider4.SetError(txtprecio, "Debe ingresar solo numeros.");
+                correcto =  false;
+            }
+
+            if (CCategoria.SelectedIndex == -1)
+            {
+                errorProvider3.SetError(CCategoria, "No se selecciono categoria.");
+                correcto = false;
+            }
+            return correcto;
         }
     }
 }

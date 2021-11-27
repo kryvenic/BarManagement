@@ -29,6 +29,7 @@ namespace InfoBAR
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.TDescripcion = new System.Windows.Forms.TextBox();
@@ -45,9 +46,17 @@ namespace InfoBAR
             this.txtprecio = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.LabelId = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,7 +66,7 @@ namespace InfoBAR
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 54);
+            this.panel1.Size = new System.Drawing.Size(799, 54);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -66,7 +75,7 @@ namespace InfoBAR
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(153, 0);
+            this.label1.Location = new System.Drawing.Point(210, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(366, 52);
             this.label1.TabIndex = 0;
@@ -80,7 +89,7 @@ namespace InfoBAR
             this.TDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TDescripcion.Location = new System.Drawing.Point(181, 195);
             this.TDescripcion.Name = "TDescripcion";
-            this.TDescripcion.Size = new System.Drawing.Size(294, 22);
+            this.TDescripcion.Size = new System.Drawing.Size(396, 22);
             this.TDescripcion.TabIndex = 1;
             // 
             // panel2
@@ -92,7 +101,7 @@ namespace InfoBAR
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(0, 60);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(684, 57);
+            this.panel2.Size = new System.Drawing.Size(799, 57);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -101,7 +110,7 @@ namespace InfoBAR
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(158, 18);
+            this.label2.Location = new System.Drawing.Point(215, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(351, 23);
             this.label2.TabIndex = 1;
@@ -122,7 +131,7 @@ namespace InfoBAR
             // btnImagen
             // 
             this.btnImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImagen.Location = new System.Drawing.Point(527, 311);
+            this.btnImagen.Location = new System.Drawing.Point(642, 311);
             this.btnImagen.Name = "btnImagen";
             this.btnImagen.Size = new System.Drawing.Size(124, 29);
             this.btnImagen.TabIndex = 5;
@@ -152,7 +161,7 @@ namespace InfoBAR
             "Bebidas"});
             this.CCategoria.Location = new System.Drawing.Point(181, 262);
             this.CCategoria.Name = "CCategoria";
-            this.CCategoria.Size = new System.Drawing.Size(294, 24);
+            this.CCategoria.Size = new System.Drawing.Size(396, 24);
             this.CCategoria.TabIndex = 7;
             this.CCategoria.SelectedIndexChanged += new System.EventHandler(this.CCategoria_SelectedIndexChanged);
             // 
@@ -192,7 +201,7 @@ namespace InfoBAR
             // 
             this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.picImagen.Location = new System.Drawing.Point(502, 134);
+            this.picImagen.Location = new System.Drawing.Point(617, 134);
             this.picImagen.Name = "picImagen";
             this.picImagen.Size = new System.Drawing.Size(170, 171);
             this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -216,7 +225,7 @@ namespace InfoBAR
             this.txtprecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtprecio.Location = new System.Drawing.Point(180, 330);
             this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(296, 22);
+            this.txtprecio.Size = new System.Drawing.Size(398, 22);
             this.txtprecio.TabIndex = 10;
             this.txtprecio.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -227,7 +236,7 @@ namespace InfoBAR
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtId.Location = new System.Drawing.Point(180, 132);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(294, 22);
+            this.txtId.Size = new System.Drawing.Size(396, 22);
             this.txtId.TabIndex = 12;
             // 
             // LabelId
@@ -240,12 +249,28 @@ namespace InfoBAR
             this.LabelId.TabIndex = 13;
             this.LabelId.Text = "Id del Producto";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.ClientSize = new System.Drawing.Size(799, 561);
             this.ControlBox = false;
             this.Controls.Add(this.LabelId);
             this.Controls.Add(this.txtId);
@@ -266,9 +291,14 @@ namespace InfoBAR
             this.Name = "AgregarProducto";
             this.ShowIcon = false;
             this.Text = "AgregarProducto";
+            this.Load += new System.EventHandler(this.AgregarProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +322,9 @@ namespace InfoBAR
         private System.Windows.Forms.TextBox txtprecio;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label LabelId;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
     }
 }
