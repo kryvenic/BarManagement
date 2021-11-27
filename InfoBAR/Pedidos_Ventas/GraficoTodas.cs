@@ -50,14 +50,15 @@ namespace InfoBAR
                         {
                             //Añadir fecha como serie
                             chart1.Series.Add(fecha).Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
-                            
+                            chart1.Series[fecha].SmartLabelStyle.Enabled = true;
+                            chart1.Series[fecha].IsValueShownAsLabel = true;
+
                         } catch (System.ArgumentException)
                         {
                             //Si ya existe, referenciarla
                             chart1.Series[fecha].Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
                         }
-                        chart1.Series[fecha].SmartLabelStyle.Enabled = true;
-                        chart1.Series[fecha].IsValueShownAsLabel = true;
+                        
                     }
 
                 }
