@@ -48,6 +48,7 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
+                                               where pedi.Id_TipoPago != null  
                                                select new
                                                {
                                                    Pedido = pedi,
@@ -192,7 +193,7 @@ namespace InfoBAR
                                                join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
-                                               where DbFunctions.TruncateTime(pedi.Fecha.Value) == DbFunctions.TruncateTime(dateFecha.Value)
+                                               where DbFunctions.TruncateTime(pedi.Fecha.Value) == DbFunctions.TruncateTime(dateFecha.Value) && pedi.Id_TipoPago != null
                                                select new
                                                {
                                                    Pedido = pedi,
@@ -266,7 +267,7 @@ namespace InfoBAR
                                                from pdp in PedidoPago.DefaultIfEmpty()
                                                join user in db.Usuario on pedi.Id_Usuario equals user.Id
                                                where (DbFunctions.TruncateTime(dateDesde.Value) <= DbFunctions.TruncateTime(pedi.Fecha.Value) &&
-                                               DbFunctions.TruncateTime(dateHasta.Value) >= DbFunctions.TruncateTime(pedi.Fecha.Value))
+                                               DbFunctions.TruncateTime(dateHasta.Value) >= DbFunctions.TruncateTime(pedi.Fecha.Value)) && pedi.Id_TipoPago != null
                                                select new
                                                {
                                                    Pedido = pedi,
@@ -367,6 +368,11 @@ namespace InfoBAR
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
