@@ -33,6 +33,8 @@ namespace InfoBAR
         {
             if (chkTodas.Checked)
             {
+                MensajesError.BorrarError(lblError);
+
                 dataGridView1.Rows.Clear();
                 //Buscar en la based de datos
                 try
@@ -100,6 +102,7 @@ namespace InfoBAR
         {
             if (chkTipo.Checked)
             {
+                MensajesError.BorrarError(lblError);
                 dataGridView1.Rows.Clear();
                 //Buscar en la base de datos
                 try
@@ -172,6 +175,7 @@ namespace InfoBAR
         {
             if (chkFecha.Checked)
             {
+                MensajesError.BorrarError(lblError);
                 dataGridView1.Rows.Clear();
                 //Buscar en la base de datos
                 try
@@ -243,6 +247,8 @@ namespace InfoBAR
         {
             if (chkPeriodo.Checked)
             {
+                MensajesError.BorrarError(lblError);
+
                 dataGridView1.Rows.Clear();
                 //Buscar en la base de datos
                 try

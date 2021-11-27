@@ -20,5 +20,11 @@ namespace InfoBAR.Utilidades
             lblError.Text = mensaje;
             SystemSounds.Exclamation.Play();
         }
+
+        public static void BorrarError(Label lblError)
+        {
+            lblError.Image = null;
+            lblError.Text = "";
+        }
     }
 }
