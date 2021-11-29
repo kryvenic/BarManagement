@@ -41,7 +41,6 @@ namespace InfoBAR
             this.CCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.picImagen = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtprecio = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -50,13 +49,14 @@ namespace InfoBAR
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.picImagen = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,6 +91,8 @@ namespace InfoBAR
             this.TDescripcion.Name = "TDescripcion";
             this.TDescripcion.Size = new System.Drawing.Size(396, 22);
             this.TDescripcion.TabIndex = 1;
+            this.TDescripcion.TextChanged += new System.EventHandler(this.TDescripcion_TextChanged);
+            this.TDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDescripcion_KeyPress);
             // 
             // panel2
             // 
@@ -197,17 +199,6 @@ namespace InfoBAR
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // picImagen
-            // 
-            this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.picImagen.Location = new System.Drawing.Point(617, 134);
-            this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(170, 171);
-            this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picImagen.TabIndex = 4;
-            this.picImagen.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -265,6 +256,17 @@ namespace InfoBAR
             // 
             this.errorProvider4.ContainerControl = this;
             // 
+            // picImagen
+            // 
+            this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
+            this.picImagen.Location = new System.Drawing.Point(617, 134);
+            this.picImagen.Name = "picImagen";
+            this.picImagen.Size = new System.Drawing.Size(170, 171);
+            this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagen.TabIndex = 4;
+            this.picImagen.TabStop = false;
+            // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -294,11 +296,11 @@ namespace InfoBAR
             this.Load += new System.EventHandler(this.AgregarProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

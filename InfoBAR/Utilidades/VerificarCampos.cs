@@ -60,5 +60,14 @@ namespace InfoBAR.Utilidades
         {
             return int.TryParse(textBox.Text, out _); ;
         }
+
+        public static void LongitudMaximaDeCampo(KeyPressEventArgs e,ErrorProvider provider, TextBox box, int lenght)
+        {
+            if (box.Text.Length > lenght && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                provider.SetError(box, "Longitud maxima de " + lenght + " caracteres.");
+            }
+        }
     }
 }

@@ -82,7 +82,7 @@ namespace InfoBAR
             // 
             // TId
             // 
-            this.TId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TId.Location = new System.Drawing.Point(216, 88);
@@ -103,7 +103,7 @@ namespace InfoBAR
             // 
             // TPrecio
             // 
-            this.TPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TPrecio.Location = new System.Drawing.Point(216, 286);
@@ -145,7 +145,7 @@ namespace InfoBAR
             // 
             // CCategoria
             // 
-            this.CCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -191,7 +191,7 @@ namespace InfoBAR
             // 
             // TDescripcion
             // 
-            this.TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TDescripcion.Location = new System.Drawing.Point(217, 151);

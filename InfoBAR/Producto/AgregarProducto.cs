@@ -15,6 +15,8 @@ namespace InfoBAR
     {
 
         private string PathImagen;
+        //No permitir escribir mas de la longitud en la base de datos
+        private int LongitudDescripcion = 60;
         public AgregarProducto()
         {
             InitializeComponent();
@@ -152,6 +154,16 @@ namespace InfoBAR
                 correcto = false;
             }
             return correcto;
+        }
+
+        private void TDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VerificarCampos.LongitudMaximaDeCampo(e,errorProvider3,TDescripcion,LongitudDescripcion);
         }
     }
 }
