@@ -243,6 +243,31 @@ namespace InfoBAR
             lblTotal.Text = CalcularImporteTotal().ToString();
         }
 
+        /// <summary>
+        /// Verifica si el pedido ya ha sido agregado al datagrid pedido y devuelve
+        /// el index para modificar luego la fila.
+        /// </summary>
+        /// <param name="compararId"></param>
+        /// <returns></returns>
+        private int IdEnDatagridPedido(int compararId)
+        {
+            foreach (DataGridViewRow row in gridPedido.Rows)
+            {
+                if (int.Parse(row.Cells[0].Value.ToString()) == compararId)
+                {
+                    return row.Index;
+                }
+            }
+            return -1;
+        }
+
+        private void ActualizarDatagridPedido(int filaIndex, int cantidadNueva)
+        {
+            if (txtCantidad.Text.Equals("")) return;
+            gridPedido.Rows[filaIndex].Cells["Cantidad"].Value = cantidadNueva;
+            lblTotal.Text = CalcularImporteTotal().ToString();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             int selectedRowCount = gridProductos.Rows.GetRowCount(DataGridViewElementStates.Selected);
@@ -260,8 +285,19 @@ namespace InfoBAR
                         //Añade
                         valoresPorFila.Add(gridProductos.SelectedRows[i].Cells[j].Value.ToString());
                     }
-                    AgregarAlDatagridPedido(valoresPorFila);
-                    //Limpia la lista
+                    //Si el mismo producto ya esta en la lista, modificar solo su cantidad
+                    int IndexFila = IdEnDatagridPedido(int.Parse(valoresPorFila[0]));
+                    //El producto esta en la lista
+                    if (IndexFila != -1)
+                    {
+                        ActualizarDatagridPedido(IndexFila, int.Parse(txtCantidad.Text));
+                    }
+                    else //No esta, agregar nuevo
+                    {
+                        AgregarAlDatagridPedido(valoresPorFila);
+
+                    }
+                    //Limpia la lista temporal
                     valoresPorFila.Clear();
                 }
             }
