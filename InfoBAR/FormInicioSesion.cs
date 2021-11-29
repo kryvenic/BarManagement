@@ -20,6 +20,7 @@ namespace InfoBAR
         public FormInicioSesion()
         {
             InitializeComponent();
+            Global.InicioSesion = this;
         }
 
         private void txtUsuario_Enter(object sender, EventArgs e)
@@ -106,6 +107,8 @@ namespace InfoBAR
                 Visible = true
             };
             fm.Show();
+            txtContra.Text = "";
+            txtUsuario.Text = "";
             this.Hide();
         }
 

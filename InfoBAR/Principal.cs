@@ -15,7 +15,7 @@ namespace InfoBAR
     public partial class InfoBAR : Form
     {
         public static Panel panelContenedorPrincipal;
-
+        private bool cerrandoSesion = false;
         public InfoBAR()
         {
             InitializeComponent();
@@ -207,7 +207,7 @@ namespace InfoBAR
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(activeForm != null) activeForm.Close();
+            if (activeForm != null) activeForm.Close();
             hideSubMenu();
         }
 
@@ -218,7 +218,10 @@ namespace InfoBAR
 
         private void InfoBAR_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!cerrandoSesion)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
@@ -240,6 +243,24 @@ namespace InfoBAR
         {
             openChildForm(new RegistrarPago());
             hideSubMenu();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            CerrarSesion();
+        }
+
+        private void CerrarSesion()
+        {
+            Global.InicioSesion.Show();
+            cerrandoSesion = true;
+            this.Close();
+            cerrandoSesion = false;
+        }
+
+        private void InfoBAR_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
         }
     }
 }
