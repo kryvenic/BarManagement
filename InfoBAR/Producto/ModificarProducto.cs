@@ -15,6 +15,8 @@ namespace InfoBAR
     {
         private int IdProductoAModificar;
         private string PathImagen;
+        //No permitir escribir mas de la longitud en la base de datos
+        private int LongitudDescripcion = 60;
         public ModificarProducto(int IdProductoAModificar)
         {
             InitializeComponent();
@@ -42,8 +44,40 @@ namespace InfoBAR
             }
         }
 
+        private bool ValidandoNumerosYLetras()
+        {
+            bool correcto = true;
+            if (!VerificarCampos.SonNumeros(TId))
+            {
+                errorProvider1.SetError(TId, "Debe ingresar solo numeros.");
+                correcto = false;
+            }
+
+            if (!VerificarCampos.SonNumeros(TPrecio))
+            {
+                errorProvider4.SetError(TPrecio, "Debe ingresar solo numeros.");
+                correcto = false;
+            }
+
+            if (CCategoria.SelectedIndex == -1)
+            {
+                errorProvider3.SetError(CCategoria, "No se selecciono categoria.");
+                correcto = false;
+            }
+            return correcto;
+        }
+
         private void btnModificar_Click(object sender, EventArgs e)
         {
+
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            errorProvider3.Clear();
+            errorProvider4.Clear();
+
+            //Verificar cada campo si los tipos de datos son correctos
+            if (!ValidandoNumerosYLetras()) return;
+
             if (VerificarCampos.VerificarCamposVacios(this) && PathImagen.Equals(""))
             {
                 MessageBox.Show("Debe rellenar/completar todos los campos", "Error: Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -138,6 +172,11 @@ namespace InfoBAR
                 MessageBox.Show("Se ha agregado la imagen: " + open.FileName, " Subido exitosamente!");
                 PathImagen = open.FileName;
             }
+        }
+
+        private void TDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VerificarCampos.LongitudMaximaDeCampo(e, errorProvider3, TDescripcion, LongitudDescripcion);
         }
     }
 }

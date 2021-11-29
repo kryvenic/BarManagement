@@ -29,6 +29,7 @@ namespace InfoBAR
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.LabelId = new System.Windows.Forms.Label();
@@ -43,8 +44,16 @@ namespace InfoBAR
             this.label3 = new System.Windows.Forms.Label();
             this.TDescripcion = new System.Windows.Forms.TextBox();
             this.picImagen = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,7 +63,7 @@ namespace InfoBAR
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 54);
+            this.panel1.Size = new System.Drawing.Size(800, 54);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -63,7 +72,7 @@ namespace InfoBAR
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Location = new System.Drawing.Point(151, 2);
+            this.label1.Location = new System.Drawing.Point(170, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(454, 52);
             this.label1.TabIndex = 0;
@@ -82,13 +91,13 @@ namespace InfoBAR
             // 
             // TId
             // 
-            this.TId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TId.Location = new System.Drawing.Point(216, 88);
             this.TId.Name = "TId";
             this.TId.ReadOnly = true;
-            this.TId.Size = new System.Drawing.Size(294, 22);
+            this.TId.Size = new System.Drawing.Size(332, 22);
             this.TId.TabIndex = 24;
             // 
             // label5
@@ -103,12 +112,12 @@ namespace InfoBAR
             // 
             // TPrecio
             // 
-            this.TPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TPrecio.Location = new System.Drawing.Point(216, 286);
             this.TPrecio.Name = "TPrecio";
-            this.TPrecio.Size = new System.Drawing.Size(296, 22);
+            this.TPrecio.Size = new System.Drawing.Size(334, 22);
             this.TPrecio.TabIndex = 22;
             // 
             // btnCancelar
@@ -145,7 +154,7 @@ namespace InfoBAR
             // 
             // CCategoria
             // 
-            this.CCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.CCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -155,7 +164,7 @@ namespace InfoBAR
             "Bebidas"});
             this.CCategoria.Location = new System.Drawing.Point(217, 218);
             this.CCategoria.Name = "CCategoria";
-            this.CCategoria.Size = new System.Drawing.Size(294, 24);
+            this.CCategoria.Size = new System.Drawing.Size(332, 24);
             this.CCategoria.TabIndex = 19;
             // 
             // label4
@@ -171,7 +180,7 @@ namespace InfoBAR
             // btnImagen
             // 
             this.btnImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImagen.Location = new System.Drawing.Point(563, 267);
+            this.btnImagen.Location = new System.Drawing.Point(630, 267);
             this.btnImagen.Name = "btnImagen";
             this.btnImagen.Size = new System.Drawing.Size(124, 29);
             this.btnImagen.TabIndex = 17;
@@ -191,31 +200,48 @@ namespace InfoBAR
             // 
             // TDescripcion
             // 
-            this.TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TDescripcion.Location = new System.Drawing.Point(217, 151);
             this.TDescripcion.Name = "TDescripcion";
-            this.TDescripcion.Size = new System.Drawing.Size(294, 22);
+            this.TDescripcion.Size = new System.Drawing.Size(332, 22);
             this.TDescripcion.TabIndex = 14;
+            this.TDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDescripcion_KeyPress);
             // 
             // picImagen
             // 
             this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(129)))));
-            this.picImagen.Location = new System.Drawing.Point(538, 90);
+            this.picImagen.Location = new System.Drawing.Point(605, 90);
             this.picImagen.Name = "picImagen";
             this.picImagen.Size = new System.Drawing.Size(170, 171);
             this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagen.TabIndex = 16;
             this.picImagen.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
             // ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(762, 499);
+            this.ClientSize = new System.Drawing.Size(800, 499);
             this.Controls.Add(this.LabelId);
             this.Controls.Add(this.TId);
             this.Controls.Add(this.label5);
@@ -234,6 +260,10 @@ namespace InfoBAR
             this.Text = "ModificarProucto";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +285,9 @@ namespace InfoBAR
         private System.Windows.Forms.PictureBox picImagen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TDescripcion;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
     }
 }
