@@ -13,10 +13,20 @@ namespace InfoBAR
 {
     public partial class AgregarPedido : Form
     {
+        public enum FiltroSeleccionado
+        {
+            Todos,
+            Tipo,
+            Nombre,
+            Ninguno
+        }
+        private FiltroSeleccionado filtro;
+
         public AgregarPedido()
         {
             InitializeComponent();
             ((DataGridViewImageColumn)gridProductos.Columns[4]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+            filtro = FiltroSeleccionado.Ninguno;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -65,7 +75,7 @@ namespace InfoBAR
                     //El producto esta en la lista
                     if (IndexFila != -1)
                     {
-                        ActualizarDatagridPedido(IndexFila,int.Parse(txtCantidad.Text));
+                        ActualizarDatagridPedido(IndexFila, int.Parse(txtCantidad.Text));
                     }
                     else //No esta, agregar nuevo
                     {
@@ -78,7 +88,7 @@ namespace InfoBAR
             }
         }
 
-        
+
 
         private void AgregarAlDatagridPedido(List<string> valoresPorFila)
         {
@@ -96,9 +106,9 @@ namespace InfoBAR
         /// <returns></returns>
         private int IdEnDatagridPedido(int compararId)
         {
-            foreach(DataGridViewRow row in gridPedido.Rows)
+            foreach (DataGridViewRow row in gridPedido.Rows)
             {
-                if(int.Parse(row.Cells[0].Value.ToString()) == compararId)
+                if (int.Parse(row.Cells[0].Value.ToString()) == compararId)
                 {
                     return row.Index;
                 }
@@ -117,7 +127,7 @@ namespace InfoBAR
 
         private void ActualizarTotal()
         {
-            lblTotal.Text = String.Format("{0:n}", CalcularImporteTotal()) ;
+            lblTotal.Text = String.Format("{0:n}", CalcularImporteTotal());
         }
 
 
@@ -145,8 +155,6 @@ namespace InfoBAR
                 //Agregar a la base de datos
                 try
                 {
-
-
                     using (InfobarEntities db = new InfobarEntities())
                     {
                         Pedido oPedido = new Pedido();
@@ -203,48 +211,53 @@ namespace InfoBAR
 
         }
 
+        private void BuscarTodos()
+        {
+            //Buscar en la based de datos
+            try
+            {
+                using (InfobarEntities db = new InfobarEntities())
+                {
+                    Producto oProducto = new Producto();
+
+                    //Traer todos los productos con categoria
+                    var list = from prod in db.Producto
+                               join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                               where prod.Activado == 1
+                               select new
+                               {
+                                   //Necesario para hacer el foreach
+                                   Prod = prod,
+                                   Tipo = tipo
+                               };
+
+                    //Añadir al datagrid
+                    foreach (var i in list)
+                    {
+                        Image imagen = null;
+                        if (i.Prod.Imagen != null)
+                        {
+                            imagen = Image.FromFile(i.Prod.Imagen);
+                        }
+                        gridProductos.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                    }
+                    filtro = FiltroSeleccionado.Todos;
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         //Data grid productos por Tipo
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
                 gridProductos.Rows.Clear();
-                //Buscar en la based de datos
-                try
-                {
-                    using (InfobarEntities db = new InfobarEntities())
-                    {
-                        Producto oProducto = new Producto();
-
-                        //Traer todos los productos con categoria
-                        var list = from prod in db.Producto
-                                   join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
-                                   where prod.Activado == 1
-                                   select new
-                                   {
-                                       //Necesario para hacer el foreach
-                                       Prod = prod,
-                                       Tipo = tipo
-                                   };
-
-                        //Añadir al datagrid
-                        foreach (var i in list)
-                        {
-                            Image imagen = null;
-                            if (i.Prod.Imagen != null)
-                            {
-                                imagen = Image.FromFile(i.Prod.Imagen);
-                            }
-                            gridProductos.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
-                        }
-
-                    }
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                BuscarTodos();
             }
             else
             {
@@ -257,45 +270,59 @@ namespace InfoBAR
             if (chkTipo.Checked)
             {
                 gridProductos.Rows.Clear();
-                //Buscar en la based de datos
-                try
-                {
-                    using (InfobarEntities db = new InfobarEntities())
-                    {
-                        Producto oProducto = new Producto();
-
-                        //Traer todos los productos con categoria
-                        var list = from prod in db.Producto
-                                   join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
-                                   where tipo.Id_TipoProd == (cboTipo.SelectedIndex + 1) && prod.Activado == 1
-                                   select new
-                                   {
-                                       //Necesario para hacer el foreach
-                                       Prod = prod,
-                                       Tipo = tipo
-                                   };
-
-                        //Añadir al datagrid
-                        foreach (var i in list)
-                        {
-                            Image imagen = null;
-                            if (i.Prod.Imagen != null)
-                            {
-                                imagen = Image.FromFile(i.Prod.Imagen);
-                            }
-                            gridProductos.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
-                        }
-                    }
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                BuscarPorTipo();
             }
             else
             {
                 ResetearGridProductos();
+            }
+        }
+
+        private void BuscarPorTipo()
+        {
+            //Buscar en la based de datos
+            try
+            {
+                using (InfobarEntities db = new InfobarEntities())
+                {
+                    Producto oProducto = new Producto();
+
+                    //Traer todos los productos con categoria
+                    var list = from prod in db.Producto
+                               join tipo in db.TipoProducto on prod.Id_TipoProd equals tipo.Id_TipoProd
+                               where tipo.Id_TipoProd == (cboTipo.SelectedIndex + 1) && prod.Activado == 1
+                               select new
+                               {
+                                   //Necesario para hacer el foreach
+                                   Prod = prod,
+                                   Tipo = tipo
+                               };
+
+                    //Añadir al datagrid
+                    foreach (var i in list)
+                    {
+                        Image imagen = null;
+                        if (i.Prod.Imagen != null)
+                        {
+                            imagen = Image.FromFile(i.Prod.Imagen);
+                        }
+                        gridProductos.Rows.Add(i.Prod.Id_Producto, i.Prod.Descripcion, i.Tipo.Descripcion, i.Prod.Precio, imagen);
+                    }
+                    //Filtro anterior para refrescar
+                    if (cboTipo.SelectedIndex != -1)
+                    {
+                        filtro = FiltroSeleccionado.Tipo;
+                    }
+                    else
+                    {
+                        filtro = FiltroSeleccionado.Ninguno;
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -373,6 +400,7 @@ namespace InfoBAR
                     }
                     gridProductos.Rows.Add(prodBuscado.Prod.Id_Producto, prodBuscado.Prod.Descripcion,
                         prodBuscado.Tipo.Descripcion, prodBuscado.Prod.Precio, imagen);
+                    filtro = FiltroSeleccionado.Nombre;
                 }
             }
             catch (Exception)
@@ -385,6 +413,20 @@ namespace InfoBAR
         private void btnRefr_Click(object sender, EventArgs e)
         {
             ResetearGridProductos();
+            switch (filtro)
+            {
+                case FiltroSeleccionado.Nombre:
+                    BuscarPorNombre();
+                    break;
+                case FiltroSeleccionado.Tipo:
+                    BuscarPorTipo();
+                    break;
+                case FiltroSeleccionado.Todos:
+                    BuscarTodos();
+                    break;
+                case FiltroSeleccionado.Ninguno:
+                    break;
+            }
         }
 
         private void lblTotal_Click(object sender, EventArgs e)

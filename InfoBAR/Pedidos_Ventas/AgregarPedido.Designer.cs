@@ -209,7 +209,7 @@ namespace InfoBAR
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.checkBox1.Location = new System.Drawing.Point(212, 120);
+            this.checkBox1.Location = new System.Drawing.Point(22, 109);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(165, 21);
             this.checkBox1.TabIndex = 25;
@@ -228,7 +228,7 @@ namespace InfoBAR
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(623, 147);
+            this.groupBox1.Size = new System.Drawing.Size(623, 165);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -241,11 +241,11 @@ namespace InfoBAR
             this.btnRefr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnRefr.Location = new System.Drawing.Point(22, 113);
+            this.btnRefr.Image = global::InfoBAR.Properties.Resources.reload;
+            this.btnRefr.Location = new System.Drawing.Point(577, 127);
             this.btnRefr.Name = "btnRefr";
-            this.btnRefr.Size = new System.Drawing.Size(107, 27);
+            this.btnRefr.Size = new System.Drawing.Size(40, 32);
             this.btnRefr.TabIndex = 28;
-            this.btnRefr.Text = "Refrescar";
             this.btnRefr.UseVisualStyleBackColor = false;
             this.btnRefr.Click += new System.EventHandler(this.btnRefr_Click);
             // 
@@ -257,7 +257,7 @@ namespace InfoBAR
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnBuscar.Location = new System.Drawing.Point(22, 74);
+            this.btnBuscar.Location = new System.Drawing.Point(22, 64);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(107, 27);
             this.btnBuscar.TabIndex = 27;
@@ -270,9 +270,9 @@ namespace InfoBAR
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(144, 79);
+            this.txtNombre.Location = new System.Drawing.Point(206, 69);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(463, 22);
+            this.txtNombre.Size = new System.Drawing.Size(401, 22);
             this.txtNombre.TabIndex = 3;
             // 
             // cboTipo
@@ -285,15 +285,15 @@ namespace InfoBAR
             this.cboTipo.Items.AddRange(new object[] {
             "Comidas",
             "Bebidas"});
-            this.cboTipo.Location = new System.Drawing.Point(144, 21);
+            this.cboTipo.Location = new System.Drawing.Point(206, 24);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(463, 24);
+            this.cboTipo.Size = new System.Drawing.Size(401, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
             // 
             this.chkTipo.AutoSize = true;
-            this.chkTipo.Location = new System.Drawing.Point(71, 24);
+            this.chkTipo.Location = new System.Drawing.Point(22, 24);
             this.chkTipo.Name = "chkTipo";
             this.chkTipo.Size = new System.Drawing.Size(58, 21);
             this.chkTipo.TabIndex = 0;
