@@ -32,10 +32,6 @@ namespace InfoBAR
                     this.Close();
                 }
             }
-            else if(cboTipo.SelectedIndex > 1)
-            {
-                MessageBox.Show("Solo puede elegir 1 pedido para pagar a la vez", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }
