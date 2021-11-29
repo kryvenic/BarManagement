@@ -249,5 +249,21 @@ namespace InfoBAR
         {
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //Seleccionar una sola
+            if (selectedRowCount > 0 && selectedRowCount <= 1)
+            {
+                //Añade a la lista
+                IdPedidoSeleccionado = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                InfoBAR.openChildForm(new ModificarPedido(IdPedidoSeleccionado));
+            }
+            else
+            {
+                //TODO Mensaje de que solo se puede seleccionar una sola fila
+            }
+        }
     }
 }
