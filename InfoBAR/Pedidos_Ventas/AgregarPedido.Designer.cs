@@ -375,6 +375,7 @@ namespace InfoBAR
             this.txtCantidad.Size = new System.Drawing.Size(65, 34);
             this.txtCantidad.TabIndex = 26;
             this.txtCantidad.Text = "1";
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label2
             // 
@@ -411,6 +412,7 @@ namespace InfoBAR
             this.txtMesa.Size = new System.Drawing.Size(65, 34);
             this.txtMesa.TabIndex = 30;
             this.txtMesa.Text = "1";
+            this.txtMesa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMesa_KeyPress);
             // 
             // lblMesa
             // 

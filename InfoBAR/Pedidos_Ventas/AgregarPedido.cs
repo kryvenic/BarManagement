@@ -383,5 +383,15 @@ namespace InfoBAR
         {
 
         }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VerificarCampos.SoloNumeros(e);
+        }
+
+        private void txtMesa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VerificarCampos.SoloNumeros(e);
+        }
     }
 }

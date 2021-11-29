@@ -325,5 +325,10 @@ namespace InfoBAR
 
 
         }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VerificarCampos.SoloNumeros(e);
+        }
     }//Clase
 }//Namespace

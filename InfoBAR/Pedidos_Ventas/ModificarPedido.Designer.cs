@@ -141,6 +141,7 @@ namespace InfoBAR
             this.txtCantidad.Size = new System.Drawing.Size(65, 34);
             this.txtCantidad.TabIndex = 33;
             this.txtCantidad.Text = "1";
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // btnAgregar
             // 

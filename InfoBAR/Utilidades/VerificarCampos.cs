@@ -69,5 +69,25 @@ namespace InfoBAR.Utilidades
                 provider.SetError(box, "Longitud maxima de " + lenght + " caracteres.");
             }
         }
+
+        public static void SoloNumeros(KeyPressEventArgs v)
+        {
+            if (Char.IsDigit(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsSeparator(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (Char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
+            }
+        }
     }
 }
