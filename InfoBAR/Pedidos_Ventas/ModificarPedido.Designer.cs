@@ -183,12 +183,13 @@ namespace InfoBAR
             this.btnRefr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnRefr.Location = new System.Drawing.Point(500, 120);
+            this.btnRefr.Image = global::InfoBAR.Properties.Resources.reload;
+            this.btnRefr.Location = new System.Drawing.Point(580, 120);
             this.btnRefr.Name = "btnRefr";
-            this.btnRefr.Size = new System.Drawing.Size(107, 27);
+            this.btnRefr.Size = new System.Drawing.Size(37, 30);
             this.btnRefr.TabIndex = 28;
-            this.btnRefr.Text = "Refrescar";
             this.btnRefr.UseVisualStyleBackColor = false;
+            this.btnRefr.Click += new System.EventHandler(this.btnRefr_Click);
             // 
             // btnBuscar
             // 
@@ -204,6 +205,7 @@ namespace InfoBAR
             this.btnBuscar.TabIndex = 27;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNombre
             // 

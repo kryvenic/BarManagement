@@ -13,13 +13,7 @@ namespace InfoBAR
 {
     public partial class AgregarPedido : Form
     {
-        public enum FiltroSeleccionado
-        {
-            Todos,
-            Tipo,
-            Nombre,
-            Ninguno
-        }
+        
         private FiltroSeleccionado filtro;
 
         public AgregarPedido()
