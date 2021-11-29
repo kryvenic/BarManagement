@@ -85,7 +85,7 @@ namespace InfoBAR
             if (txtCantidad.Text.Equals("")) return;
             gridPedido.Rows.Add(valoresPorFila[0], valoresPorFila[1], txtCantidad.Text, float.Parse(valoresPorFila[3]),
                 float.Parse(valoresPorFila[3]) * float.Parse(txtCantidad.Text));
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            ActualizarTotal();
         }
 
         /// <summary>
@@ -110,8 +110,16 @@ namespace InfoBAR
         {
             if (txtCantidad.Text.Equals("")) return;
             gridPedido.Rows[filaIndex].Cells["Cantidad"].Value = cantidadNueva;
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            gridPedido.Rows[filaIndex].Cells["Importe"].Value =
+                Convert.ToDecimal(gridPedido.Rows[filaIndex].Cells[3].Value) * cantidadNueva;
+            ActualizarTotal();
         }
+
+        private void ActualizarTotal()
+        {
+            lblTotal.Text = String.Format("{0:n}", CalcularImporteTotal()) ;
+        }
+
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -305,7 +313,7 @@ namespace InfoBAR
 
         private void gridPedido_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            ActualizarTotal();
         }
         /// <summary>
         /// Sumatoria de todos los importes
@@ -323,7 +331,7 @@ namespace InfoBAR
 
         private void gridPedido_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            ActualizarTotal();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

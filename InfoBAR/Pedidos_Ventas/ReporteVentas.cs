@@ -59,6 +59,7 @@ namespace InfoBAR
                                      where pedi.Id_TipoPago != null
                                      select pedi.Importe_Total).ToList().Sum();
                         #endregion
+                        int count = 0;
                         //Verificar si no se encontraron pedidos
                         if (pedidosYDetalles.Any())
                         {
@@ -75,8 +76,11 @@ namespace InfoBAR
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
+                                count += 1;
                             }
-                            lblRecaudado.Text = total.ToString();
+                            //Format agrega comas
+                            lblRecaudado.Text = String.Format("{0:n}", total);
+                            lblProm.Text = Math.Round((double)total / count,2).ToString();
                         }
                         else
                         {
@@ -125,11 +129,12 @@ namespace InfoBAR
                                                {
                                                    Pedido = pedi,
                                                    PagoPedido = pdp,
-                                                   Total = pdp.Pedido.Sum(pedi => pedi.Importe_Total).ToString(),
+                                                   Total = pdp.Pedido.Sum(pedi => pedi.Importe_Total),
                                                    Usuario = user
                                                };
 
                         #endregion
+                        int count = 0;
                         //Verificar si no se encontraron pedidos
                         if (pedidosYDetalles.Any())
                         {
@@ -146,9 +151,12 @@ namespace InfoBAR
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
+                                count += 1;
                             }
                             //Mostrar total
-                            lblRecaudado.Text = pedidosYDetalles.FirstOrDefault().Total;
+                            lblRecaudado.Text = String.Format("{0:n}", pedidosYDetalles.FirstOrDefault().Total);
+                            lblProm.Text = Math.Round(
+                                (double)pedidosYDetalles.FirstOrDefault().Total / count, 2).ToString();
                         }
                         else
                         {
@@ -207,10 +215,11 @@ namespace InfoBAR
                                     group pedi by DbFunctions.TruncateTime(pedi.Fecha.Value) into pdf
                                     select new
                                     {
-                                        Total = pdf.Sum(pedi => pedi.Importe_Total).ToString()
+                                        Total = pdf.Sum(pedi => pedi.Importe_Total)
                                     };
 
                         #endregion
+                        int count = 0;
                         //Verificar si no se encontraron pedidos
                         if (pedidosYDetalles.Any())
                         {
@@ -227,8 +236,11 @@ namespace InfoBAR
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
+                                count += 1;
                             }
-                            lblRecaudado.Text = total.FirstOrDefault().Total;
+                            lblRecaudado.Text = String.Format("{0:n}", total.FirstOrDefault().Total);
+                            lblProm.Text = Math.Round(
+                               (double)total.FirstOrDefault().Total / count, 2).ToString();
                         }
                         else
                         {
@@ -283,10 +295,10 @@ namespace InfoBAR
                                                DbFunctions.TruncateTime(dateHasta.Value) >= DbFunctions.TruncateTime(pedi.Fecha.Value)) into pdf
                                     select new
                                     {
-                                        Total = pdf.Sum(pedi => pedi.Importe_Total).ToString()
+                                        Total = pdf.Sum(pedi => pedi.Importe_Total)
                                     };
                         #endregion
-
+                        int count = 0;
                         //Verificar si no se encontraron pedidos
                         if (pedidosYDetalles.Any())
                         {
@@ -303,9 +315,12 @@ namespace InfoBAR
                                     tipopago = i.PagoPedido.Descripcion;
                                 }
                                 dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
+                                count += 1;
                             }
                             //Mostrar recaudacion
-                            lblRecaudado.Text = total.FirstOrDefault().Total;
+                            lblRecaudado.Text = String.Format("{0:n}", total.FirstOrDefault().Total);
+                            lblProm.Text = Math.Round(
+                               (double)total.FirstOrDefault().Total / count, 2).ToString();
                         }
                         else
                         {

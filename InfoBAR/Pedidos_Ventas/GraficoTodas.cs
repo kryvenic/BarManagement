@@ -46,7 +46,7 @@ namespace InfoBAR
                     if (pedidosYDetalles.Any())
                     {
                         chart1.Series.Clear();
-                        chart1.Series.Add("Todas las ventas");
+                        chart1.Series.Add("Ventas por fecha");
                         //Añadir al chart
                         foreach (var i in pedidosYDetalles)
                         {

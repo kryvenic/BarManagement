@@ -35,7 +35,7 @@ namespace InfoBAR
 
         private void ActualizarTotal()
         {
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            lblTotal.Text = String.Format("{0:n}", CalcularImporteTotal());
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -272,6 +272,8 @@ namespace InfoBAR
         {
             if (txtCantidad.Text.Equals("")) return;
             gridPedido.Rows[filaIndex].Cells["Cantidad"].Value = cantidadNueva;
+            gridPedido.Rows[filaIndex].Cells["Importe"].Value =
+               Convert.ToDecimal(gridPedido.Rows[filaIndex].Cells[3].Value) * cantidadNueva;
             ActualizarTotal();
         }
 
