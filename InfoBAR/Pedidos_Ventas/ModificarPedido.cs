@@ -14,7 +14,6 @@ namespace InfoBAR
     public partial class ModificarPedido : Form
     {
         private int IdPedidoAModificar;
-        private string PathImagen;
         public ModificarPedido(int IdPedidoAModificar)
         {
             InitializeComponent();
@@ -29,8 +28,14 @@ namespace InfoBAR
                 //Traer datos usando el id pasado por parametro
                 this.IdPedidoAModificar = IdPedidoAModificar;
                 TraerListaDePedidos();
+                ActualizarTotal();
             }
 
+        }
+
+        private void ActualizarTotal()
+        {
+            lblTotal.Text = CalcularImporteTotal().ToString();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -232,15 +237,17 @@ namespace InfoBAR
 
         private void gridPedido_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            ActualizarTotal();
         }
+
+        
 
         private void AgregarAlDatagridPedido(List<string> valoresPorFila)
         {
             if (txtCantidad.Text.Equals("")) return;
             gridPedido.Rows.Add(valoresPorFila[0], valoresPorFila[1], txtCantidad.Text, float.Parse(valoresPorFila[3]),
                 float.Parse(valoresPorFila[3]) * float.Parse(txtCantidad.Text));
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            ActualizarTotal();
         }
 
         /// <summary>
@@ -265,7 +272,7 @@ namespace InfoBAR
         {
             if (txtCantidad.Text.Equals("")) return;
             gridPedido.Rows[filaIndex].Cells["Cantidad"].Value = cantidadNueva;
-            lblTotal.Text = CalcularImporteTotal().ToString();
+            ActualizarTotal();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

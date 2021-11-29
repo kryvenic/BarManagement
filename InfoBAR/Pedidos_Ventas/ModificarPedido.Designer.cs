@@ -393,7 +393,7 @@ namespace InfoBAR
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotal.Location = new System.Drawing.Point(726, 556);
+            this.lblTotal.Location = new System.Drawing.Point(751, 556);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(62, 29);
@@ -406,7 +406,7 @@ namespace InfoBAR
             this.totaltxt.AutoSize = true;
             this.totaltxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totaltxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.totaltxt.Location = new System.Drawing.Point(673, 527);
+            this.totaltxt.Location = new System.Drawing.Point(697, 527);
             this.totaltxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totaltxt.Name = "totaltxt";
             this.totaltxt.Size = new System.Drawing.Size(104, 29);
