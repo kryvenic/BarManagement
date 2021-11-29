@@ -17,9 +17,11 @@ namespace InfoBAR
         private Form ventanaElegirPago;
         private int IdPedidoSeleccionado;
         internal static Action<int> EventoRegistrarPago;
+        private bool noError;
 
         public RegistrarPago()
         {
+            noError = true;
             IdPedidoSeleccionado = 0;
             InitializeComponent();
             ventanaElegirPago = null;
@@ -194,7 +196,14 @@ namespace InfoBAR
                     }
                     else
                     {
+                        if (!noError)
+                        {
                         MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            noError = false;
+                        }
                     }
 
                 }

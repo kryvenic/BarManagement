@@ -35,28 +35,31 @@ namespace InfoBAR
                                        select new
                                        {
                                            Fecha = EntityFunctions.TruncateTime(pdf.Key.Value),
-                                           Suma = pdf.Sum(pedi => pedi.Importe_Total).ToString()
+                                           Suma = pdf.Sum(pedi => pedi.Importe_Total).ToString(),
                                        };
-
+                var tiposPagos = from tipo in db.TipoPago
+                                 select tipo.Descripcion;
+               
                 //Verificar si no se encontraron pedidos
-                if (pedidosYDetalles.Any())
+                if (pedidosYDetalles.Any() && tiposPagos.Any())
                 {
-                    //Añadir al datagrid
+                    chart1.Series.Clear();
+                    chart1.Series.Add("Todas las ventas");
+                    //Añadir al chart
                     foreach (var i in pedidosYDetalles)
                     {
                         string fecha = i.Fecha.Value.ToString("dd/MM/yyyy");
                         
                         try
                         {
-                            //Añadir fecha como serie
-                            chart1.Series.Add(fecha).Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
-                            chart1.Series[fecha].SmartLabelStyle.Enabled = true;
-                            chart1.Series[fecha].IsValueShownAsLabel = true;
+                            chart1.Series[0].Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
+                            chart1.Series[0].SmartLabelStyle.Enabled = true;
+                            chart1.Series[0].IsValueShownAsLabel = true;
 
                         } catch (System.ArgumentException)
                         {
                             //Si ya existe, referenciarla
-                            chart1.Series[fecha].Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
+                            chart1.Series[0].Points.AddXY(i.Fecha.Value.Date, double.Parse(i.Suma));
                         }
                         
                     }
