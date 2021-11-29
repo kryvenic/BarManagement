@@ -157,13 +157,17 @@ namespace InfoBAR
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnActivar);
             this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.chkTipo);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.groupBox1.Location = new System.Drawing.Point(35, 123);
+            this.groupBox1.Location = new System.Drawing.Point(12, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 140);
+            this.groupBox1.Size = new System.Drawing.Size(756, 140);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -192,7 +196,7 @@ namespace InfoBAR
             "Bebidas"});
             this.cboTipo.Location = new System.Drawing.Point(119, 33);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(281, 24);
+            this.cboTipo.Size = new System.Drawing.Size(621, 24);
             this.cboTipo.TabIndex = 1;
             // 
             // chkTipo
@@ -213,7 +217,7 @@ namespace InfoBAR
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnEliminar.Location = new System.Drawing.Point(473, 222);
+            this.btnEliminar.Location = new System.Drawing.Point(578, 90);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(139, 41);
             this.btnEliminar.TabIndex = 9;
@@ -223,12 +227,12 @@ namespace InfoBAR
             // 
             // btnActivar
             // 
-            this.btnActivar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(167)))));
+            this.btnActivar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(112)))), ((int)(((byte)(204)))));
             this.btnActivar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActivar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.btnActivar.Location = new System.Drawing.Point(629, 222);
+            this.btnActivar.Location = new System.Drawing.Point(433, 90);
             this.btnActivar.Name = "btnActivar";
             this.btnActivar.Size = new System.Drawing.Size(139, 41);
             this.btnActivar.TabIndex = 10;
@@ -242,8 +246,6 @@ namespace InfoBAR
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(780, 561);
-            this.Controls.Add(this.btnActivar);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);

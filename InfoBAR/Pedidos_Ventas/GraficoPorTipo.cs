@@ -27,7 +27,7 @@ namespace InfoBAR
         private void btnGrafico_Click(object sender, EventArgs e)
         {
             //Colores para los distintos tipos
-            Color[] colores = { Color.FromArgb(100,65, 140, 240), Color.FromArgb(100, 252, 180, 65)};
+            Color[] colores = { Color.FromArgb(100,65, 140, 240), Color.FromArgb(100, 252, 180, 65), Color.Green};
             using (InfobarEntities db = new InfobarEntities())
             {
                 //Traer todas las ventas/pedidos con tipo de pago y usuario
@@ -46,7 +46,10 @@ namespace InfoBAR
                 if (pedidosYDetalles.Any())
                 {
                     int f = 0;
-                    //Añadir al datagrid
+                    chart1.Series.Clear();
+                    chart1.Series.Add("Efectivo");
+                    chart1.Series.Add("Debito");
+                    //Añadir al chart
                     foreach (var i in pedidosYDetalles)
                     {
                         chart1.Series[0].Points.AddXY(i.TipoPago,i.Total);
