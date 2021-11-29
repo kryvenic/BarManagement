@@ -24,6 +24,8 @@ namespace InfoBAR
             InitializeComponent();
             ventanaElegirPago = null;
             EventoRegistrarPago += RegistrarPagoEnBase;
+            //Cargar los pedidos de hoy automaticamente
+            PedidosDeHoyBD();
         }
 
         private void RegistrarPagoEnBase(int pagoSeleccionado)
@@ -153,57 +155,63 @@ namespace InfoBAR
             CheckBoxs.DesHabilitarCheckboxs(groupBox1);
         }
 
+        private void PedidosDeHoyBD()
+        {
+            //Buscar en la base de datos
+            try
+            {
+                using (InfobarEntities db = new InfobarEntities())
+                {
+                    //Traer todas las ventas/pedidos por fecha
+                    var pedidosYDetalles = from pedi in db.Pedido
+                                           join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
+                                           from pdp in PedidoPago.DefaultIfEmpty()
+                                           join user in db.Usuario on pedi.Id_Usuario equals user.Id
+                                           where DbFunctions.TruncateTime(pedi.Fecha) == DbFunctions.TruncateTime(dateFecha.Value)
+                                           && pedi.Id_TipoPago == null
+                                           select new
+                                           {
+                                               Pedido = pedi,
+                                               PagoPedido = pdp,
+                                               Usuario = user
+                                           };
+                    //Verificar si no se encontraron pedidos
+                    if (pedidosYDetalles.Any())
+                    {
+                        //Añadir al datagrid
+
+                        foreach (var i in pedidosYDetalles)
+                        {
+                            var tipopago = "";
+                            if (i.PagoPedido == null)
+                            {
+                                tipopago = "No Pagado";
+                            }
+
+                            //Agregar fila
+                            dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void chkFecha_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkFecha.Checked)
             {
                 dataGridView1.Rows.Clear();
                 //Buscar en la base de datos
-                try
-                {
-                    using (InfobarEntities db = new InfobarEntities())
-                    {
-                        //Traer todas las ventas/pedidos por fecha
-                        var pedidosYDetalles = from pedi in db.Pedido
-                                               join tipo in db.TipoPago on pedi.Id_TipoPago equals tipo.Id_TipoPago into PedidoPago
-                                               from pdp in PedidoPago.DefaultIfEmpty()
-                                               join user in db.Usuario on pedi.Id_Usuario equals user.Id
-                                               where DbFunctions.TruncateTime(pedi.Fecha) == DbFunctions.TruncateTime(dateFecha.Value) 
-                                               && pedi.Id_TipoPago == null
-                                               select new
-                                               {
-                                                   Pedido = pedi,
-                                                   PagoPedido = pdp,
-                                                   Usuario = user
-                                               };
-                        //Verificar si no se encontraron pedidos
-                        if (pedidosYDetalles.Any())
-                        {
-                            //Añadir al datagrid
-
-                            foreach (var i in pedidosYDetalles)
-                            {
-                                var tipopago = "";
-                                if (i.PagoPedido == null)
-                                {
-                                    tipopago = "No Pagado";
-                                }
-                                
-                                //Agregar fila
-                                dataGridView1.Rows.Add(i.Pedido.Id_Pedido, tipopago, i.Pedido.Mesa, i.Pedido.Importe_Total, i.Usuario.Nombre, i.Pedido.Fecha.Value.ToString("dd/MM/yyyy"));
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontraron pedidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("No se pudo traer los productos de la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                PedidosDeHoyBD();
             }
             else
             {
